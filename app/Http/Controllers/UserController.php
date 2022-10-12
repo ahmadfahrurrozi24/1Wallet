@@ -77,7 +77,7 @@ class UserController extends Controller
     {
         $data = $request->all();
         $data["password"] = Hash::make($request->password);
-        $data["balance"] = $data["balance"];
+        $data["balance"] = join("" , explode("." , str_replace( ",00" , "" , $data["balance"])));;
         unset($data["_token"]);
 
         User::create($data);
@@ -99,7 +99,6 @@ class UserController extends Controller
         }
 
         return back()->with("message" , "Invalid email or password");
-
     }
 
     public function logout(){
