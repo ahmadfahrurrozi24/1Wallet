@@ -14,17 +14,25 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // \App\Models\User::factory(10)->create();
+
+        \App\Models\Role::create([
+            "name" => "Administrator"
+        ]);
+
+        \App\Models\Role::create([
+            "name" => "User"
+        ]);
 
         \App\Models\User::create([
             'name' => 'Diandra Rifqi',
             'email' => 'diandra@gmail.com',
-            "password" => "12345678",
+            "password" => '$2y$10$lyHoIWuzoQ1n3yFTd83F1e7ajzCEMXRkzMXaCwQZWYFUlL2VFowfa',
+            "role_id" => 1,
             "balance" => 120000.00
         ]);
 
         \App\Models\Category::create([
-            "name" => "Entertaiment" 
+            "name" => "Entertaiment"
         ]);
 
         \App\Models\Record::create([
@@ -32,6 +40,5 @@ class DatabaseSeeder extends Seeder
             "category_id" => 1,
             "amount" => 20000.00
         ]);
-
     }
 }
