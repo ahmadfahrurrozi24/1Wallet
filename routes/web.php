@@ -15,18 +15,19 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::middleware("isLogin")->group(function () {
-    Route::get('/login', [UserController::class , "login"])->name("login");
-    Route::get('/register', [UserController::class , "register"])->name("register");
-    
-    Route::post('/login', [UserController::class , "signIn"]);
-    Route::post('/register', [UserController::class , "signUp"]);
+    Route::get('/login', [UserController::class, "login"])->name("login");
+    Route::get('/register', [UserController::class, "register"])->name("register");
+
+    Route::post('/login', [UserController::class, "signIn"]);
+    Route::post('/register', [UserController::class, "signUp"]);
 });
 
 Route::middleware("auth")->group(function () {
-    Route::post("/logout" , [UserController::class , "logout"]);
+    Route::post("/logout", [UserController::class, "logout"]);
 
-    Route::get('/', function () {
-        return view('welcome');
-    })->name("home");
+    Route::middleware(["isAdmin"])->group(function () {
+        Route::get('/', function () {
+            return view('welcome');
+        })->name("home");
+    });
 });
-
