@@ -15,7 +15,9 @@ class UserController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(){}
+    public function index()
+    {
+    }
 
     /**
      * Store a newly created resource in storage.
@@ -23,7 +25,7 @@ class UserController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    
+
 
     /**
      * Display the specified resource.
@@ -59,32 +61,36 @@ class UserController extends Controller
         //
     }
 
-    public function login(){
+    public function login()
+    {
         $data = [
             "title" => "Login"
         ];
-        return view("auth.login" , $data);
+        return view("auth.login", $data);
     }
 
-    public function register(){
+    public function register()
+    {
         $data = [
             "title" => "Register"
         ];
-        return view("auth.register" , $data);
+        return view("auth.register", $data);
     }
 
     public function signUp(UserRequest $request)
     {
         $data = $request->all();
+        $data["role_id"] = 2;
         $data["password"] = Hash::make($request->password);
-        $data["balance"] = join("" , explode("." , str_replace( ",00" , "" , $data["balance"])));;
+        $data["balance"] = join("", explode(".", str_replace(",00", "", $data["balance"])));;
         unset($data["_token"]);
 
         User::create($data);
-        return redirect()->to("login")->with("message" , "Register success, please login!");
+        return redirect()->to("login")->with("message", "Register success, please login!");
     }
 
-    public function signIn(Request $request){
+    public function signIn(Request $request)
+    {
         $request->validate([
             "email" => "required|email",
             "password" => "required"
@@ -93,17 +99,17 @@ class UserController extends Controller
         $credential = $request->all();
         unset($credential["_token"]);
 
-        if(Auth::attempt($credential)) {
+        if (Auth::attempt($credential)) {
             $request->session()->regenerate();
             return redirect()->intended();
         }
 
-        return back()->with("message" , "Invalid email or password");
+        return back()->with("message", "Invalid email or password");
     }
 
-    public function logout(){
+    public function logout()
+    {
         auth()->logout();
         return redirect()->to("/login");
     }
-
 }
