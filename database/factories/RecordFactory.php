@@ -17,7 +17,9 @@ class RecordFactory extends Factory
     public function definition()
     {
         return [
-            //
+            "user_id" => fake()->numberBetween(1, 11),
+            "category_id" => fake()->numberBetween(1, 2),
+            "amount" => fake()->numberBetween(20000, 100000)
         ];
     }
 }

@@ -16,11 +16,11 @@ class DatabaseSeeder extends Seeder
     {
 
         \App\Models\Role::create([
-            "name" => "Administrator"
+            "name" => "ADMINISTRATOR"
         ]);
 
         \App\Models\Role::create([
-            "name" => "User"
+            "name" => "USER"
         ]);
 
         \App\Models\User::create([
@@ -31,8 +31,26 @@ class DatabaseSeeder extends Seeder
             "balance" => 120000.00
         ]);
 
+        \App\Models\User::factory(10)->create();
+
+        \App\Models\Type::create([
+            "name" => "EXPENSE"
+        ]);
+
+        \App\Models\Type::create([
+            "name" => "INCOME"
+        ]);
+
         \App\Models\Category::create([
-            "name" => "Entertaiment"
+            "type_id" => 1,
+            "name" => "food & Beverage",
+            "icon" => "fa-solid fa-martini-glass"
+        ]);
+
+        \App\Models\Category::create([
+            "type_id" => 2,
+            "name" => "Salary",
+            "icon" => "fa-solid fa-sack-dollar"
         ]);
 
         \App\Models\Record::create([
@@ -40,5 +58,7 @@ class DatabaseSeeder extends Seeder
             "category_id" => 1,
             "amount" => 20000.00
         ]);
+
+        \App\Models\Record::factory(100)->create();
     }
 }
