@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -25,9 +26,13 @@ Route::middleware("isLogin")->group(function () {
 Route::middleware("auth")->group(function () {
     Route::post("/logout", [UserController::class, "logout"]);
 
-    Route::middleware(["isAdmin"])->group(function () {
-        Route::get('/', function () {
-            return view('welcome');
-        })->name("home");
+    Route::prefix('/dashboard')->group(function () {
+        Route::get("/", [DashboardController::class, "index"]);
     });
+
+    Route::get('/', function () {
+        return view('welcome');
+    })->name("home");
+    // Route::middleware(["isAdmin"])->group(function () {
+    // });
 });
