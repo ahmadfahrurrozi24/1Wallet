@@ -82,7 +82,13 @@ class UserController extends Controller
         $data = $request->all();
         $data["role_id"] = 2;
         $data["password"] = Hash::make($request->password);
-        $data["balance"] = join("", explode(".", str_replace(",00", "", $data["balance"])));;
+
+        $balance = join("", explode(".", str_replace(",00", "", $data["balance"])));
+
+        $data["current_balance"] = $balance;
+        $data["first_balance"] = $balance;
+
+        unset($data["balance"]);
         unset($data["_token"]);
 
         User::create($data);
