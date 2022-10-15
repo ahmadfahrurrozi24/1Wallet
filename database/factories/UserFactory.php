@@ -17,12 +17,15 @@ class UserFactory extends Factory
      */
     public function definition()
     {
+        $balance = fake()->numberBetween(0, 1000000);
+
         return [
             'name' => fake()->name(),
             'email' => fake()->unique()->safeEmail(),
             'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
             "role_id" => 2,
-            'balance' => fake()->numberBetween(0, 1000000),
+            'current_balance' => $balance,
+            'first_balance' => $balance
         ];
     }
 

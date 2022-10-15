@@ -20,7 +20,8 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
-            $table->decimal("balance", 12, 2);
+            $table->decimal("current_balance", 12, 2);
+            $table->decimal("first_balance", 12, 2);
             $table->rememberToken()->nullable();
             $table->timestamps();
         });

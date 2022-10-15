@@ -28,7 +28,8 @@ class DatabaseSeeder extends Seeder
             'email' => 'diandra@gmail.com',
             "password" => '$2y$10$lyHoIWuzoQ1n3yFTd83F1e7ajzCEMXRkzMXaCwQZWYFUlL2VFowfa',
             "role_id" => 1,
-            "balance" => 120000.00
+            "current_balance" => 120000,
+            "first_balance" => 120000
         ]);
 
         \App\Models\User::factory(10)->create();
@@ -56,7 +57,7 @@ class DatabaseSeeder extends Seeder
         \App\Models\Record::create([
             "user_id" => 1,
             "category_id" => 1,
-            "amount" => 20000.00
+            "amount" => -20000
         ]);
 
         \App\Models\Record::factory(100)->create();
