@@ -11,7 +11,8 @@ class DashboardController extends Controller
     {
         $data = [
             "title" => "Dashboard",
-            "recordTotal" => Record::MyTotal()
+            "recordTotal" => Record::MyTotal(),
+            "lastRecord" => Record::MyLastTransaction()->take(5)->get()
         ];
 
         return view("dashboard.index", $data);

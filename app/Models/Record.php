@@ -64,26 +64,17 @@ class Record extends Model
                 });
             })->oldest()->get();
 
-        $totalExpenseWeek = $expenseWeek->map(function ($item) {
-            return $item->amount;
-        })->sum();
-        $totalExpenseMonth = $expenseMonth->map(function ($item) {
-            return $item->amount;
-        })->sum();
-        $totalIncomeWeek = $incomeWeek->map(function ($item) {
-            return $item->amount;
-        })->sum();
-        $totalIncomeMonth = $incomeMonth->map(function ($item) {
-            return $item->amount;
-        })->sum();
-
-        //dd($totalExpenseWeek, $totalExpenseMonth, $totalIncomeWeek, $totalIncomeMonth);
 
         return collect([
-            "totalExpenseWeek" => $totalExpenseWeek,
-            "totalExpenseMonth" => $totalExpenseMonth,
-            "totalIncomeWeek" => $totalIncomeWeek,
-            "totalIncomeMonth" => $totalIncomeMonth
+            "totalExpenseWeek" => $expenseWeek->sum("amount"),
+            "totalExpenseMonth" => $expenseMonth->sum("amount"),
+            "totalIncomeWeek" => $incomeWeek->sum("amount"),
+            "totalIncomeMonth" => $incomeMonth->sum("amount"),
         ]);
+    }
+
+    public function scopeMyLastTransaction()
+    {
+        return $this->where("user_id", auth()->user()->id)->latest();
     }
 }
