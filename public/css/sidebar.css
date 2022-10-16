@@ -1,0 +1,163 @@
+/* Bagan Navbar */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 78px;
+    background-color: rgb(9, 11, 69);
+    padding: 12px;
+    transition: all 0.5s ease;
+}
+
+.sidebar.active {
+    width: 240px;
+}
+
+/* Logo Navbar */
+.logo_content {
+    display: flex;
+    align-items: center;
+}
+.sidebar .logo_content .logo {
+    color: beige;
+    display: flex;
+    height: 50px;
+    width: 100%;
+    align-items: center;
+    transition: all 0.5s ease;
+}
+
+.sidebar .logo_content .logo img {
+    width: 50px;
+}
+
+.sidebar .logo_content .logo button {
+    background: transparent;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+.logo_content .logo i {
+    font-size: 28px;
+    margin-right: 5px;
+}
+
+.sidebar .logo_content .logo .logo_name {
+    font-size: 15px;
+    font-weight: 400;
+    font-family: "Courgette", cursive;
+}
+
+.sidebar #btn {
+    position: absolute;
+    cursor: pointer;
+    color: beige;
+    font-size: 20px;
+    margin-top: 23px;
+    left: 50%;
+    top: 15px;
+    line-height: 50px;
+    transform: translate(-50%, -50%);
+}
+
+.sidebar.active #btn {
+    position: inherit;
+    transform: translate(0, 0);
+    margin-top: 0;
+    height: 50px;
+    width: 50px;
+    text-align: center;
+}
+
+.sidebar.active #btn {
+    left: 90%;
+}
+
+/* Navbar Menu */
+
+.sidebar ul {
+    margin-top: 20px;
+}
+
+.sidebar ul li {
+    position: relative;
+    height: 50px;
+    /* width: 50px; */
+    border-radius: 10px;
+    margin: 5px;
+    transition: all 0.5s;
+    list-style: none;
+    cursor: pointer;
+    line-height: 50px;
+}
+
+.sidebar ul li a {
+    color: beige;
+    font-weight: 400;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    transition: all 0.4s ease;
+    border-radius: 13px;
+    white-space: nowrap;
+    font-size: 20px;
+}
+
+.sidebar ul li button {
+    color: beige;
+    font-weight: 400;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    transition: all 0.4s ease;
+    border-radius: 13px;
+    white-space: nowrap;
+    background-color: transparent;
+    cursor: pointer;
+    border: none;
+    font-size: 20px;
+}
+
+.sidebar ul li button i {
+    margin-left: -5px;
+    font-size: 20px;
+}
+
+.sidebar ul li:hover {
+    background: rgb(211, 211, 208);
+}
+
+.sidebar ul li:hover a,
+.sidebar ul li:hover button {
+    color: rgb(109, 109, 106);
+}
+
+.sidebar ul li i {
+    height: 50px;
+    min-width: 50px;
+    border-radius: 12px;
+    line-height: 50px;
+    text-align: center;
+}
+
+.sidebar .name {
+    opacity: 0;
+    display: none;
+    pointer-events: none;
+}
+
+.sidebar.active .name {
+    opacity: 1;
+    display: inherit;
+    pointer-events: auto;
+}
+
+.sidebar ul li a i {
+    height: 50px;
+    min-width: 40px;
+    border-radius: 13px;
+    line-height: 50px;
+    text-align: center;
+}
