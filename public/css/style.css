@@ -92,6 +92,152 @@ body {
     cursor: pointer;
 }
 
+/* Css Tabel Transaksi */
+.tabelTransaksi {
+    margin-top: 78px;
+    margin-left: 70px;
+}
+.tabelTransaksi body {
+    background-color: #3e94ec;
+    font-family: "Roboto", helvetica, arial, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    text-rendering: optimizeLegibility;
+}
+
+.tabelTransaksi div.table-title {
+    display: block;
+    margin: auto;
+    max-width: 600px;
+    padding: 5px;
+    width: 100%;
+}
+
+.table-title h3 {
+    color: #fafafa;
+    font-size: 30px;
+    font-weight: 400;
+    font-style: normal;
+    font-family: "Roboto", helvetica, arial, sans-serif;
+    text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.1);
+    text-transform: uppercase;
+}
+
+/* Style Tabel */
+
+.table-fill {
+    background: white;
+    border-radius: 12px;
+    border-collapse: collapse;
+    height: 320px;
+    margin: auto;
+    max-width: 600px;
+    padding: 5px;
+    width: 100%;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    animation: float 5s infinite;
+}
+
+.tabelTransaksi th {
+    color: #d5dde5;
+    background: rgb(21, 23, 99);
+    /* border-bottom: 4px solid #9ea7af;
+      border-right: 1px solid #343a45; */
+    font-size: 23px;
+    font-weight: 100;
+    padding: 24px;
+    text-align: left;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+    vertical-align: middle;
+}
+
+.tabelTransaksi th:first-child {
+    border-top-left-radius: 12px;
+}
+
+.tabelTransaksi th:last-child {
+    border-top-right-radius: 12px;
+    border-right: none;
+}
+
+.tabelTransaksi tr {
+    border-top: 1px solid #c1c3d1;
+    border-bottom: 1px solid #c1c3d1;
+    color: #666b85;
+    font-size: 16px;
+    font-weight: normal;
+    text-shadow: 0 1px 1px rgba(256, 256, 256, 0.1);
+}
+
+.tabelTransaksi tr:hover td {
+    background: rgb(46, 48, 135);
+    color: #ffffff;
+    border-top: 1px solid rgb(46, 48, 135);
+}
+
+.tabelTransaksi tr:first-child {
+    border-top: none;
+}
+
+.tabelTransaksi tr:last-child {
+    border-bottom: none;
+}
+
+.tabelTransaksi tr:nth-child(odd) td {
+    background: #ebebeb;
+}
+
+.tabelTransaksi tr:nth-child(odd):hover td {
+    background: rgb(62, 64, 180);
+}
+
+.tabelTransaksi tr:last-child td:first-child {
+    border-bottom-left-radius: 12px;
+}
+
+.tabelTransaksi tr:last-child td:last-child {
+    border-bottom-right-radius: 12px;
+}
+
+.tabelTransaksi td {
+    background: #ffffff;
+    padding: 20px;
+    text-align: left;
+    vertical-align: middle;
+    font-weight: 300;
+    font-size: 18px;
+    text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.1);
+    border-right: 1px solid #c1c3d1;
+}
+
+.tabelTransaksi td:last-child {
+    border-right: 0px;
+}
+
+.tabelTransaksi th.text-left {
+    text-align: left;
+}
+
+.tabelTransaksi th.text-center {
+    text-align: center;
+}
+
+.tabelTransaksi th.text-right {
+    text-align: right;
+}
+
+.tabelTransaksi td.text-left {
+    text-align: left;
+}
+
+.tabelTransaksi td.text-center {
+    text-align: center;
+}
+
+.tabelTransaksi td.text-right {
+    text-align: right;
+}
+
 @media screen and (max-width: 515px) {
     .sidebar {
         transform: translateX(-240px);

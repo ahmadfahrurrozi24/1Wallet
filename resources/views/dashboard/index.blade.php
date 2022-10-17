@@ -60,17 +60,3 @@
         </div>
     </div> --}}
 @endsection
-@section('js')
-    <script>
-        let btn = document.querySelectorAll(".hamburger-button");
-        let sidebar = document.querySelector(".sidebar");
-
-        btn.forEach(element => {
-            element.onclick = function () {
-                sidebar.classList.toggle("active");
-            };
-        });
-
-
-    </script>
-@endsection

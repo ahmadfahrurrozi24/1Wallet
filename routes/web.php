@@ -28,6 +28,11 @@ Route::middleware("auth")->group(function () {
 
     Route::prefix('/dashboard')->group(function () {
         Route::get("/", [DashboardController::class, "index"]);
+        Route::get("/history", function (){
+            return view("dashboard.history" , [
+                "title" =>"history"
+            ]);
+        });
     });
 
     Route::get('/', function () {

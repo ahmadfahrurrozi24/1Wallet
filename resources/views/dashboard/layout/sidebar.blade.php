@@ -2,7 +2,7 @@
   <!-- Logo -->
   <div class="logo_content">
     <div class="logo">
-      <img src="img/logo.png" alt="" />
+      <img src="{{ asset("img/logo.png") }}" alt="" />
       <button class="hamburger-button">
         <i class="bx bx-menu sidebar-hamburger" ></i>
       </button>
@@ -11,14 +11,14 @@
   <!-- Navbar -->
   <ul class="navList">
     <li>
-      <a href="1-Wallet.html">
+      <a href="/dashboard">
         <i class="bx bxs-dashboard"></i>
         <span class="name">Dashboard</span>
       </a>
       <!-- <span class="tooltip">Dashboard</span> -->
     </li>
     <li>
-      <a href="Histori.html">
+      <a href="/dashboard/history">
         <i class="bx bx-history"></i>
         <span class="name">History</span>
       </a>

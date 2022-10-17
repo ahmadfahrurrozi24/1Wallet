@@ -8,8 +8,8 @@
   @yield('css')
   <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/sidebar.css">
+  <link rel="stylesheet" href="{{ asset("css/style.css") }}">
+  <link rel="stylesheet" href="{{ asset("css/sidebar.css") }}">
 </head>
 <body>
   @include('dashboard.layout.sidebar')
@@ -21,6 +21,16 @@
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
     AOS.init();
+    
+    let btn = document.querySelectorAll(".hamburger-button");
+        let sidebar = document.querySelector(".sidebar");
+
+        btn.forEach(element => {
+            element.onclick = function () {
+                sidebar.classList.toggle("active");
+            };
+        });
+
   </script>
   @yield('js')
 </body>
