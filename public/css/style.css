@@ -94,8 +94,8 @@ body {
 
 /* Css Tabel Transaksi */
 .tabelTransaksi {
-    margin-top: 78px;
-    margin-left: 70px;
+    /* margin-top: 78px;
+    margin-right: 557px; */
 }
 .tabelTransaksi body {
     background-color: #3e94ec;
@@ -130,7 +130,7 @@ body {
     border-radius: 12px;
     border-collapse: collapse;
     height: 320px;
-    margin: auto;
+    /* margin: auto; */
     max-width: 600px;
     padding: 5px;
     width: 100%;
@@ -140,7 +140,7 @@ body {
 
 .tabelTransaksi th {
     color: #d5dde5;
-    background: rgb(21, 23, 99);
+    background: rgb(99, 21, 21);
     /* border-bottom: 4px solid #9ea7af;
       border-right: 1px solid #343a45; */
     font-size: 23px;
