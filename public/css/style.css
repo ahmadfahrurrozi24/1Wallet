@@ -40,7 +40,8 @@ body {
 }
 
 .box-dashboard {
-    width: 380px;
+    /* width: 380px; */
+    flex-grow: 1;
     border-radius: 10px;
     background-image: linear-gradient(
         to right,
@@ -140,7 +141,7 @@ body {
 
 .tabelTransaksi th {
     color: #d5dde5;
-    background: rgb(99, 21, 21);
+    background: rgb(21, 23, 99);
     /* border-bottom: 4px solid #9ea7af;
       border-right: 1px solid #343a45; */
     font-size: 23px;
