@@ -2,6 +2,8 @@
 
 namespace App\Helper;
 
+use App\Models\Category;
+
 class Helper
 {
   public static function balanceFormat($balance)
@@ -20,4 +22,19 @@ class Helper
       return "- Rp $amount";
     }
   }
+
+  public static function storeNumberFormat($amount){
+    return join("", explode(".", str_replace(",00", "", $amount)));
+  }
+
+  public static function newRecordCategoryCheck($id , $amount){
+    $category = Category::findOrFail($id);
+
+    if($category->type->name == "EXPENSE"){ 
+      return $amount * -1;
+    }
+
+    return $amount;
+  }
+
 }
