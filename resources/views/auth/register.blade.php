@@ -1,6 +1,9 @@
 @extends('layout.template')
+@section('css')
+  <link rel="stylesheet" href="{{ asset("css/signUp.css") }}">  
+@endsection
 @section('content')
-    <h1>Register</h1>
+    {{-- <h1>Register</h1>
     <form action="" method="POST">
       @csrf
       <div>
@@ -43,6 +46,35 @@
     digitGroupSeparator : '.',
     decimalCharacter    : ',',
   });
-</script>
+</script> --}}
+
+<div class="container">
+  <form action="">
+      <h1>Sign Up</h1>
+      <div class="user">
+          <div class="username">
+              <i class='bx bx-user'></i>
+              <input type="text" placeholder="Username">
+          </div>
+          <div class="email">
+              <i class='bx bx-envelope bx-flip-horizontal'></i>
+              <input type="email" placeholder="Email">
+          </div>
+          <div class="password">
+              <i class='bx bxs-key' ></i>
+              <input type="password" placeholder="Password">
+          </div>
+          <div class="balance">
+              <i class='bx bx-wallet bx-flip-horizontal'></i>
+              <input type="text" placeholder="Balance">
+          </div>
+          <div class="check">
+              <input type="checkbox">
+              <p>I Agree</p>
+          </div>
+      </div>
+      <button type="submit">Create Account</button>
+  </form>
+</div>
 
 @endsection
