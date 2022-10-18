@@ -71,7 +71,7 @@
           </div>
           <div class="check">
               <input type="checkbox">
-              <p>I Agree</p>
+              <p>I Accept This Requirements</p>
           </div>
       </div>
       <button type="submit">Create Account</button>
