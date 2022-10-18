@@ -36,7 +36,8 @@ h1 {
     color: black;
     margin-top: 0;
 }
-.user {
+.user{
+    width: 70%;
     height: 50%;
     display: flex;
     flex-direction: column;
@@ -62,7 +63,8 @@ h1 {
     height: 17px;
 }
 
-.user div {
+.user div{
+    width: 100%;
     display: flex;
     align-items: center;
     gap: 10px;
@@ -74,8 +76,8 @@ input {
     padding: 10px;
     box-sizing: border-box;
     border: none;
-    font-family: "Roboto", sans-serif;
-    font-size: 20px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 15px;
     background-color: rgba(0, 0, 0, 0);
     border-bottom: 1px solid black;
     letter-spacing: 0.7px;
@@ -122,7 +124,10 @@ p a {
     form {
         width: 95%;
     }
-    .user i {
+    .user{
+        width: 90%;
+    }
+    .user i{
         font-size: 30px;
     }
     input {
