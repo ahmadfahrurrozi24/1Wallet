@@ -28,18 +28,19 @@
       <button type="submit">submit</button>
     </form> -->
     <div class="container">
-        <form action="">
+        <form action="" method="POST">
             {{-- <img src="p.png" alt="logo"> --}}
+            @csrf
             <img src="{{ asset("img/logo1.png") }}" alt="" />
             <h1>Sign In</h1>
             <div class="user">
                 <div class="email">
                     <i class='bx bx-envelope bx-flip-horizontal'></i>
-                    <input type="text" placeholder="Email">
+                    <input type="text" name="email" placeholder="Email">
                 </div>
                 <div class="password">
                     <i class='bx bxs-key' ></i>
-                    <input type="password" id="password" placeholder="Password">
+                    <input type="password" id="password" placeholder="Password" name="password">
                     <i class='bx bx-hide'></i>
                 </div>
             </div>
