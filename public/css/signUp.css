@@ -42,6 +42,7 @@ h1 {
     display: flex;
     align-items: center;
     gap: 10px;
+    position: relative;
 }
 .user .check {
     width: 100%;
@@ -72,6 +73,16 @@ input {
 }
 input:focus {
     outline: none;
+}
+.password i.bx-show{
+    position: absolute;
+    right: 0;
+    cursor: pointer;
+}
+.password i.bx-hide{
+    position: absolute;
+    right: 0;
+    cursor: pointer;
 }
 button {
     width: 50%;

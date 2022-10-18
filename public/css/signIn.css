@@ -11,7 +11,7 @@
     justify-content: center;
 }
 form{
-    width: 30%;
+    width: 400px;
     height: 550px;
     padding: 10px;
     box-sizing: border-box;
@@ -44,7 +44,7 @@ h1{
 }
 
 .user i{
-    font-size: 40px;
+    font-size: 30px;
 }
 
 .user .check{
@@ -74,7 +74,6 @@ input{
     border: none;
     font-family: 'Roboto', sans-serif;
     font-size: 20px;
-    font-weight: bold;
     background-color: rgba(0, 0, 0, 0);
     border-bottom: 1px solid black;
     letter-spacing: 0.7px;
@@ -109,9 +108,17 @@ button:hover{
     box-shadow: 5px 5px 5px 0px #09117c;
 }
 
+P{
+    margin-top: 15px;
+}
+p a{
+    text-decoration: none;
+    color: #0812A4;
+}
+
 @media (max-width: 500px ){
     form{
-        width: 80%;
+        width: 95%;
     }
     .user i{
         font-size: 30px;
