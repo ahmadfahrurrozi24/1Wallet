@@ -1,6 +1,11 @@
 @extends('layout.template')
+@section('css')
+    <link rel="stylesheet" href="{{ asset("css/signIn.css")}}">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+@endsection
+
 @section('content')
-    <h1>Login</h1>
+    {{-- <!-- <h1>Login</h1>
     @if (session()->has('message'))
         <h2>{{ session()->get('message') }}</h2>
     @endif
@@ -21,5 +26,41 @@
         @enderror
       </div>
       <button type="submit">submit</button>
-    </form>
+    </form> --> --}}
+    <div class="container">
+        <form action="" method="POST">
+          @csrf
+            {{-- <img src="p.png" alt="logo"> --}}
+            <img src="{{ asset("img/logo1.png") }}" alt="" />
+            <h1>Sign In</h1>
+            <div class="user">
+                <div class="username">
+                    <i class='bx bx-envelope bx-flip-horizontal'></i>
+                    <input type="email" placeholder="Email" name="email">
+                </div>
+                <div class="password">
+                    <i class='bx bxs-key' ></i>
+                    <input type="password" id="password" name="password" placeholder="Password">
+                    <i class='bx bx-hide'></i>
+                </div>
+            </div>
+            <button type="submit">Sign In</button>
+        </form>
+    </div>
+@endsection
+@section('js')
+    <script>
+      const showPW = document.querySelector('.bx-hide');
+      const password = document.getElementById('password');
+      showPW.addEventListener('click', function(){
+          if(showPW.className == 'bx bx-hide'){
+              showPW.setAttribute('class', 'bx bx-show');
+              password.type = "text";
+          } else{
+              showPW.setAttribute('class', 'bx bx-hide');
+              password.type = "password";
+          }
+      });
+    </script>
+    
 @endsection

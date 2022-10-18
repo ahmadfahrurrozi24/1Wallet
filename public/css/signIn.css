@@ -1,0 +1,125 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.container{
+    background-image:linear-gradient(90deg,rgb(6, 8, 51),rgb(17, 19, 83));             
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+form{
+    width: 30%;
+    height: 550px;
+    padding: 10px;
+    box-sizing: border-box;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    /* background-image:linear-gradient(90deg,rgb(5, 7, 44),rgb(19, 22, 92)); */
+    font-family: 'Roboto', sans-serif;
+    color: black;
+    box-shadow: 0 0 9px 7px #0c1374;
+}
+img{
+    width: 110px;
+    height: 110px;
+}
+h1{
+    color: black;
+    margin-top: 0;
+}
+.user{
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 35px;
+}
+
+.user i{
+    font-size: 40px;
+}
+
+.user .check{
+    width: 100%;
+    padding-left: 15px;
+    box-sizing: border-box;
+    display: flex;
+    gap: 15px;
+}
+
+.check input{
+    width: 17px;
+    height: 17px;
+}
+
+.user div{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    position: relative;
+}
+input{
+    width: 100%;
+    height: 40px;
+    padding: 10px;
+    box-sizing: border-box;
+    border: none;
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    background-color: rgba(0, 0, 0, 0);
+    border-bottom: 1px solid black;
+    letter-spacing: 0.7px;
+}
+input:focus{
+    outline: none;
+}
+.password i.bx-show{
+    position: absolute;
+    right: 0;
+    cursor: pointer;
+}
+.password i.bx-hide{
+    position: absolute;
+    right: 0;
+    cursor: pointer;
+}
+button{
+    width: 50%;
+    height: 50px;
+    background-color: rgb(27, 26, 26);
+    color: white;
+    border: none;
+    font-family: 'Roboto', sans-serif;
+    border-radius: 5px;
+    font-size: 17px;
+    cursor: pointer;
+    transition: .4s;
+}
+button:hover{
+    background-color: #121875;
+    box-shadow: 5px 5px 5px 0px #09117c;
+}
+
+@media (max-width: 500px ){
+    form{
+        width: 80%;
+    }
+    .user i{
+        font-size: 30px;
+    }
+    input{
+        width: 70%;
+    }
+    button{
+        width: 60%;
+    }
+}
