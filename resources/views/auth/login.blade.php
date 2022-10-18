@@ -1,6 +1,6 @@
 @extends('layout.template')
 @section('content')
-    {{-- <h1>Login</h1>
+    <h1>Login</h1>
     @if (session()->has('message'))
         <h2>{{ session()->get('message') }}</h2>
     @endif
@@ -21,6 +21,6 @@
         @enderror
       </div>
       <button type="submit">submit</button>
-    </form> --}}
+    </form>
     
 @endsection
