@@ -74,6 +74,9 @@
           </div>
       </div>
       <button type="submit">Create Account</button>
+      <div class="question">
+        <p>Already have an account ? <a href="/login" class="click">Click Here!</a></p>
+      </div>
   </form>
 </div>
 
