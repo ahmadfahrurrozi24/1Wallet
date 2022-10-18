@@ -25,7 +25,7 @@
       <!-- <span class="tooltip">History</span> -->
     </li>
     <li>
-      <a href="">
+      <a href="/dashboard/newrecord">
         <i class="bx bx-wallet"></i>
         <span class="name">Add Record</span>
       </a>
