@@ -5,7 +5,7 @@
 @endsection
 
 @section('content')
-    <!-- <h1>Login</h1>
+    {{-- <!-- <h1>Login</h1>
     @if (session()->has('message'))
         <h2>{{ session()->get('message') }}</h2>
     @endif
@@ -26,7 +26,7 @@
         @enderror
       </div>
       <button type="submit">submit</button>
-    </form> -->
+    </form> --> --}}
     <div class="container">
         <form action="" method="POST">
             {{-- <img src="p.png" alt="logo"> --}}
@@ -36,11 +36,11 @@
             <div class="user">
                 <div class="email">
                     <i class='bx bx-envelope bx-flip-horizontal'></i>
-                    <input type="text" name="email" placeholder="Email">
+                    <input type="email" placeholder="Email" name="email">
                 </div>
                 <div class="password">
                     <i class='bx bxs-key' ></i>
-                    <input type="password" id="password" placeholder="Password" name="password">
+                    <input type="password" id="password" name="password" placeholder="Password">
                     <i class='bx bx-hide'></i>
                 </div>
             </div>

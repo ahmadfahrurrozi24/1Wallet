@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Helper\Helper;
+use App\Http\Requests\StoreRecordRequest;
 use App\Models\Record;
+use Illuminate\Http\Request;
 
 class RecordController extends Controller
 {
@@ -31,11 +34,19 @@ class RecordController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function store( $request)
+    public function store(StoreRecordRequest $request)
     {
-        //
-    }
+       $data = $request->all();
+       $data["amount"] = Helper::storeNumberFormat($data["amount"]);
+       $data["amount"] = Helper::newRecordCategoryCheck($data["category_id"], $data["amount"]);
+       $data["user_id"] = auth()->user()->id;
 
+       unset($data["_token"]);
+
+       Record::create($data);
+
+       return redirect()->to("/dashboard")->with("message", "New record succesfully created");
+    }
     /**
      * Display the specified resource.
      *

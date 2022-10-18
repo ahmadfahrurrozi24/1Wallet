@@ -25,7 +25,7 @@
       <!-- <span class="tooltip">History</span> -->
     </li>
     <li>
-      <a href="">
+      <a href="/dashboard/newrecord">
         <i class="bx bx-wallet"></i>
         <span class="name">Add Record</span>
       </a>
@@ -38,8 +38,9 @@
     </li>
     <hr />
     <li>
-      <form action="">
-        <button>
+      <form action="/logout" method="POST">
+        @csrf
+        <button type="submit">
           <i class="bx bx-log-out-circle"></i>
           <span class="name">Logout</span>
         </button>
