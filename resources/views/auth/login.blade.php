@@ -1,46 +1,22 @@
 @extends('layout.template')
 @section('css')
     <link rel="stylesheet" href="{{ asset("css/signIn.css")}}">
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 @endsection
 
 @section('content')
-    {{-- <!-- <h1>Login</h1>
-    @if (session()->has('message'))
-        <h2>{{ session()->get('message') }}</h2>
-    @endif
-    <form action="" method="POST" >
-      @csrf
-      <div>
-        <label for="email">email</label>
-        <input type="email" value="{{ old("name") }}" name="email" >
-        @error('email')
-          <p>{{ $message }}</p>
-        @enderror
-      </div>
-      <div>
-        <label for="password">password</label>
-        <input type="password" value="{{ old("email") }}" name="password" >
-        @error('password')
-          <p>{{ $message }}</p>
-        @enderror
-      </div>
-      <button type="submit">submit</button>
-    </form> --> --}}
     <div class="container">
         <form action="" method="POST">
-            {{-- <img src="p.png" alt="logo"> --}}
             @csrf
             <img src="{{ asset("img/logo1.png") }}" alt="" />
             <h1>Sign In</h1>
             <div class="user">
                 <div class="email">
                     <i class='bx bx-envelope bx-flip-horizontal'></i>
-                    <input type="email" placeholder="Email" name="email">
+                    <input type="email" placeholder="Email" value="{{ old("email") }}" name="email">
                 </div>
                 <div class="password">
                     <i class='bx bxs-key' ></i>
-                    <input type="password" id="password" name="password" placeholder="Password">
+                    <input type="password" id="password" placeholder="Password" name="password" value="{{ old("password") }}">
                     <i class='bx bx-hide'></i>
                 </div>
             </div>
@@ -62,6 +38,43 @@
               password.type = "password";
           }
       });
+
+      let style = {
+        background: "red",
+        color: "white",
+        fontFamily : "Roboto",
+        borderRadius: "10px"
+      }
     </script>
+
+    @error('email')
+    <script>
+      Toastify({
+        text: "{{ $message }}",
+        style
+      }).showToast();
+    </script>
+    @enderror
+
+    @error('password')
+    <script>
+      Toastify({
+        text: "{{ $message }}",
+        style
+      }).showToast();
+    </script>
+    @enderror
+
+    @if (session()->has('message'))
+      <script>
+        Toastify({
+          text: "{{ session()->get('message') }}",
+          style : {
+            ...style,
+            background: "green"
+          }
+        }).showToast();
+      </script>
+    @endif
     
 @endsection

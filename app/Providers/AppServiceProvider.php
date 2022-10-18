@@ -24,5 +24,12 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+        Blade::directive('balance', function ($expression) {
+            return "<?php echo Helper::balanceFormat($expression); ?>";
+        });
+
+        Blade::directive('amount', function ($expression) {
+            return "<?php echo Helper::amountFormat($expression); ?>";
+        });
     }
 }

@@ -1,16 +1,18 @@
-*{
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap");
+
+* {
     margin: 0;
     padding: 0;
 }
-.container{
-    background-image:linear-gradient(90deg,rgb(6, 8, 51),rgb(17, 19, 83));             
+.container {
+    background-image: linear-gradient(90deg, rgb(6, 8, 51), rgb(17, 19, 83));
     width: 100%;
     height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
 }
-form{
+form {
     width: 400px;
     height: 550px;
     padding: 10px;
@@ -22,15 +24,15 @@ form{
     align-items: center;
     background-color: white;
     /* background-image:linear-gradient(90deg,rgb(5, 7, 44),rgb(19, 22, 92)); */
-    font-family: 'Roboto', sans-serif;
+    font-family: "Roboto", sans-serif;
     color: black;
     box-shadow: 0 0 9px 7px #0c1374;
 }
-img{
+img {
     width: 110px;
     height: 110px;
 }
-h1{
+h1 {
     color: black;
     margin-top: 0;
 }
@@ -44,11 +46,11 @@ h1{
     gap: 35px;
 }
 
-.user i{
+.user i {
     font-size: 30px;
 }
 
-.user .check{
+.user .check {
     width: 100%;
     padding-left: 15px;
     box-sizing: border-box;
@@ -56,7 +58,7 @@ h1{
     gap: 15px;
 }
 
-.check input{
+.check input {
     width: 17px;
     height: 17px;
 }
@@ -68,7 +70,7 @@ h1{
     gap: 10px;
     position: relative;
 }
-input{
+input {
     width: 100%;
     height: 40px;
     padding: 10px;
@@ -80,46 +82,46 @@ input{
     border-bottom: 1px solid black;
     letter-spacing: 0.7px;
 }
-input:focus{
+input:focus {
     outline: none;
 }
-.password i.bx-show{
+.password i.bx-show {
     position: absolute;
     right: 0;
     cursor: pointer;
 }
-.password i.bx-hide{
+.password i.bx-hide {
     position: absolute;
     right: 0;
     cursor: pointer;
 }
-button{
+button {
     width: 50%;
     height: 50px;
     background-color: rgb(27, 26, 26);
     color: white;
     border: none;
-    font-family: 'Roboto', sans-serif;
+    font-family: "Roboto", sans-serif;
     border-radius: 5px;
     font-size: 17px;
     cursor: pointer;
-    transition: .4s;
+    transition: 0.4s;
 }
-button:hover{
+button:hover {
     background-color: #121875;
     box-shadow: 5px 5px 5px 0px #09117c;
 }
 
-P{
+P {
     margin-top: 15px;
 }
-p a{
+p a {
     text-decoration: none;
-    color: #0812A4;
+    color: #0812a4;
 }
 
-@media (max-width: 500px ){
-    form{
+@media (max-width: 500px) {
+    form {
         width: 95%;
     }
     .user{
@@ -128,10 +130,10 @@ p a{
     .user i{
         font-size: 30px;
     }
-    input{
+    input {
         width: 70%;
     }
-    button{
+    button {
         width: 60%;
     }
 }
