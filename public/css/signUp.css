@@ -11,7 +11,7 @@
     justify-content: center;
 }
 form {
-    width: 30%;
+    width: 400px;
     height: 500px;
     padding: 10px;
     box-sizing: border-box;
@@ -27,7 +27,7 @@ form {
     font-family: "Roboto", sans-serif;
 }
 h1 {
-    color: rgb(17, 19, 83);
+    color: black;
     margin-top: 0;
 }
 .user {
@@ -42,6 +42,7 @@ h1 {
     display: flex;
     align-items: center;
     gap: 10px;
+    position: relative;
 }
 .user .check {
     width: 100%;
@@ -73,10 +74,20 @@ input {
 input:focus {
     outline: none;
 }
+.password i.bx-show{
+    position: absolute;
+    right: 0;
+    cursor: pointer;
+}
+.password i.bx-hide{
+    position: absolute;
+    right: 0;
+    cursor: pointer;
+}
 button {
     width: 50%;
     height: 50px;
-    background-color: rgb(6, 6, 44);
+    background-color: rgb(27, 26, 26);
     color: white;
     border: none;
     font-family: "Roboto", sans-serif;
@@ -86,12 +97,22 @@ button {
     transition: 0.4s;
 }
 button:hover {
-    box-shadow: 0 0 7px 5px #101894;
+    background-color: #121875;
+    box-shadow: 5px 5px 5px 0px #09117c;
+}
+
+.question {
+    margin-top: 15px;
+}
+
+.click {
+    text-decoration: none;
+    color: #0812a4;
 }
 
 @media (max-width: 500px) {
     form {
-        width: 80%;
+        width: 95%;
     }
     input {
         width: 70%;

@@ -62,7 +62,8 @@
           </div>
           <div class="password">
               <i class='bx bxs-key' ></i>
-              <input type="password" placeholder="Password">
+              <input type="password" id="password" placeholder="Password">
+              <i class='bx bx-hide'></i>
           </div>
           <div class="balance">
               <i class='bx bx-wallet bx-flip-horizontal'></i>
@@ -70,11 +71,30 @@
           </div>
           <div class="check">
               <input type="checkbox">
-              <p>I Agree</p>
+              <p>I Accept This Requirements</p>
           </div>
       </div>
       <button type="submit">Create Account</button>
+      <div class="question">
+        <p>Already have an account ? <a href="/login" class="click">Click Here!</a></p>
+      </div>
   </form>
 </div>
+@section('js')
+    <script>
+      const showPW = document.querySelector('.bx-hide');
+      const password = document.getElementById('password');
+      showPW.addEventListener('click', function(){
+          if(showPW.className == 'bx bx-hide'){
+              showPW.setAttribute('class', 'bx bx-show');
+              password.type = "text";
+          } else{
+              showPW.setAttribute('class', 'bx bx-hide');
+              password.type = "password";
+          }
+      });
+    </script>
+    
+@endsection
 
 @endsection

@@ -29,12 +29,12 @@
     </form> --> --}}
     <div class="container">
         <form action="" method="POST">
-          @csrf
             {{-- <img src="p.png" alt="logo"> --}}
+            @csrf
             <img src="{{ asset("img/logo1.png") }}" alt="" />
             <h1>Sign In</h1>
             <div class="user">
-                <div class="username">
+                <div class="email">
                     <i class='bx bx-envelope bx-flip-horizontal'></i>
                     <input type="email" placeholder="Email" name="email">
                 </div>
@@ -45,6 +45,7 @@
                 </div>
             </div>
             <button type="submit">Sign In</button>
+            <p>Not registered yet ? <a href="/register">Click here</a></p>
         </form>
     </div>
 @endsection
