@@ -39,6 +39,7 @@ h1 {
     align-items: center;
     justify-content: center;
     gap: 30px;
+    width: 80%;
 }
 .user div {
     width: 100%;
@@ -57,6 +58,7 @@ h1 {
 .check input {
     width: 17px;
     height: 17px;
+    cursor: pointer;
 }
 .user i {
     font-size: 30px;
@@ -117,7 +119,7 @@ button:hover {
     form {
         width: 95%;
     }
-    .user{
+    .user {
         width: 90%;
     }
     input {

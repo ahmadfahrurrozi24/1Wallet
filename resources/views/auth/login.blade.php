@@ -26,6 +26,7 @@
     </div>
 @endsection
 @section('js')
+
     <script>
       const showPW = document.querySelector('.bx-hide');
       const password = document.getElementById('password');
