@@ -50,6 +50,7 @@
     </div>
 @endsection
 @section('js')
+
     <script>
       const showPW = document.querySelector('.bx-hide');
       const password = document.getElementById('password');
@@ -62,6 +63,46 @@
               password.type = "password";
           }
       });
+      
+      let style = {
+        
+        background: "linear-gradient(to right, #d1001f, #1520A6",
+        fontFamily: "Roboto",
+        borderRadius: "10px",
+      }
     </script>
-    
+ 
+ @error('password')
+     <script>
+      Toastify({
+      text: "{{ $message }}",
+       style
+      }).showToast();
+     </script>
+ @enderror
+
+    @error('email')
+        <script>
+         Toastify({
+         text: "{{ $message }}",
+          style
+         }).showToast();
+        </script>
+    @enderror
+
+    @if (session()->has('message'))
+    <script>
+      Toastify({
+      text: "{{ $message }}",
+       style:{
+        background: "linear-gradient(to right, #1520A6, #2832C2",
+        fontFamily: "Roboto",
+        borderRadius: "10px",
+       }
+      }).showToast();
+     </script>
+    @endif
+
+
+
 @endsection
