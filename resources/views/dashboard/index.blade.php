@@ -1,41 +1,41 @@
 @extends('dashboard.layout.template')
 @section('content')
-<div class="wrapper">
-    <div class="dashboard-information">
-        <div class="wallet box-dashboard">
-            <div class="box-head">
-                <p>My Wallet</p>
-                <h3>Money Availabe</h3>
+    <div class="wrapper">
+        <div class="dashboard-information">
+            <div class="wallet box-dashboard">
+                <div class="box-head">
+                    <p>My Wallet</p>
+                    <h3>Money Availabe</h3>
+                </div>
+                <div class="box-balance">
+                    <h1>@balance(auth()->user()->current_balance)</h1>
+                </div>
             </div>
-            <div class="box-balance">
-                <h1>{{ Helper::balanceFormat(auth()->user()->current_balance) }}</h1>
+
+            <!-- Money Expense -->
+            <div class="expense box-dashboard">
+                <div class="box-head">
+                    <p>My Expense</p>
+                    <h3>This Month</h3>
+                </div>
+                <div class="box-balance">
+                    <h1>@amount($recordTotal['totalExpenseMonth'])</h1>
+                </div>
             </div>
-        </div>
-    
-        <!-- Money Expense -->
-        <div class="expense box-dashboard">
-            <div class="box-head">
-                <p>My Expense</p>
-                <h3>This Month</h3>
-            </div>
-            <div class="box-balance">
-                <h1>{{ Helper::amountFormat($recordTotal["totalExpenseMonth"]) }}</h1>
-            </div>
-        </div>
-    
-        <!-- Money Income -->
-        <div class="income box-dashboard">
-            <div class="box-head">
-                <p>My Income</p>
-                <h3>This Month</h3>
-            </div>
-            <div class="box-balance">
-                <h1>{{ Helper::amountFormat($recordTotal["totalIncomeMonth"]) }}</h1>
+
+            <!-- Money Income -->
+            <div class="income box-dashboard">
+                <div class="box-head">
+                    <p>My Income</p>
+                    <h3>This Month</h3>
+                </div>
+                <div class="box-balance">
+                    <h1>@amount($recordTotal['totalIncomeMonth'])</h1>
+                </div>
             </div>
         </div>
     </div>
-</div>
-    
+
 
     {{-- <h1>Index Dashboard</h1>
 	<h2>Hello, {{ auth()->user()->name }}</h2>

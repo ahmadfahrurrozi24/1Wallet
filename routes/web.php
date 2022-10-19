@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\RecordController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -28,11 +29,12 @@ Route::middleware("auth")->group(function () {
 
     Route::prefix('/dashboard')->group(function () {
         Route::get("/", [DashboardController::class, "index"]);
-        Route::get("/history", function (){
-            return view("dashboard.history" , [
-                "title" =>"history"
-            ]);
-        });
+        Route::get("/history", [DashboardController::class, "history"]);
+        Route::get("/newrecord", [DashboardController::class, "newRecord"]);
+
+        Route::resource('record', RecordController::class)->except([
+            "index", "create"
+        ]);
     });
 
     Route::get('/', function () {

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Helper\Helper;
 use App\Http\Requests\UserRequest;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -83,7 +84,7 @@ class UserController extends Controller
         $data["role_id"] = 2;
         $data["password"] = Hash::make($request->password);
 
-        $balance = join("", explode(".", str_replace(",00", "", $data["balance"])));
+        $balance = Helper::storeNumberFormat($data["balance"]);
 
         $data["current_balance"] = $balance;
         $data["first_balance"] = $balance;
