@@ -41,7 +41,8 @@
       });
 
       let style = {
-        background: "red",
+        backgroundImage: `linear-gradient(to right,#d1001f,#1520A6`,
+    
         color: "white",
         fontFamily : "Roboto",
         borderRadius: "10px"
