@@ -58,6 +58,7 @@ h1 {
 .check input {
     width: 17px;
     height: 17px;
+    cursor: pointer;
 }
 .user i {
     font-size: 30px;
