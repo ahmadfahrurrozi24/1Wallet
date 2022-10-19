@@ -94,9 +94,9 @@ body {
 }
 
 /* Css Tabel Transaksi */
-.tabelTransaksi {
-    /* margin-top: 78px;
-    margin-right: 557px; */
+/* .tabelTransaksi {
+    margin-top: 78px;
+    margin-right: 557px;
 }
 .tabelTransaksi body {
     background-color: #3e94ec;
@@ -122,16 +122,16 @@ body {
     font-family: "Roboto", helvetica, arial, sans-serif;
     text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.1);
     text-transform: uppercase;
-}
+} */
 
 /* Style Tabel */
 
-.table-fill {
+/* .table-fill {
     background: white;
     border-radius: 12px;
     border-collapse: collapse;
     height: 320px;
-    /* margin: auto; */
+    margin: auto;a
     max-width: 600px;
     padding: 5px;
     width: 100%;
@@ -142,8 +142,8 @@ body {
 .tabelTransaksi th {
     color: #d5dde5;
     background: rgb(21, 23, 99);
-    /* border-bottom: 4px solid #9ea7af;
-      border-right: 1px solid #343a45; */
+    border-bottom: 4px solid #9ea7af;a
+      border-right: 1px solid #343a45;a
     font-size: 23px;
     font-weight: 100;
     padding: 24px;
@@ -237,10 +237,10 @@ body {
 
 .tabelTransaksi td.text-right {
     text-align: right;
-}
+} */
 
 /* Alert */
-.alert{
+.alert {
     width: 50%;
     height: 50px;
     margin: auto;
@@ -251,8 +251,90 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-family: 'Roboto', sans-serif;
+    font-family: "Roboto", sans-serif;
 }
+
+/* Transaction History */
+.accordion {
+    width: 800px;
+}
+.accordion .contentbx {
+    position: relative;
+    margin: 10px 20px;
+}
+
+.accordion .contentbx .label {
+    position: relative;
+    padding: 10px;
+    background-image: linear-gradient(
+        to right,
+        rgb(9, 11, 69),
+        rgb(21, 23, 99)
+    );
+    color: white;
+    cursor: pointer;
+}
+
+.accordion .contentbx .label::before {
+    content: "+";
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+    font-size: 1.5em;
+}
+
+.accordion .contentbx.active .label::before {
+    content: "-";
+}
+
+.accordion .contentbx .categories {
+    position: relative;
+    background: #3e94ec;
+    height: 0;
+    overflow: hidden;
+    transition: 0.8s;
+    overflow-y: auto;
+}
+
+.accordion .contentbx.active .categories {
+    height: auto;
+    padding: 10px;
+}
+
+.categories {
+    display: flex;
+    gap: 20%;
+    list-style: none;
+}
+
+/* .categories ul {
+    border-radius: 10px;
+    border: 2px solid black;
+    width: 100%;
+} */
+
+.categories li {
+    margin-left: 20px;
+}
+
+.time li {
+    list-style: none;
+    margin-right: 10px;
+}
+
+.note li {
+    list-style: none;
+}
+
+.amount li {
+    list-style: none;
+}
+
+/* .line {
+    border-left: 2px solid rgb(0, 0, 0);
+    height: 100%;
+} */
 
 @media screen and (max-width: 515px) {
     .sidebar {
@@ -281,5 +363,9 @@ body {
 
     .sidebar .logo_content .logo {
         justify-content: space-between;
+    }
+
+    .table-fill {
+        width: 20px;
     }
 }

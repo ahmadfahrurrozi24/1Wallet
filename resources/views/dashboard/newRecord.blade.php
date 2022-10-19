@@ -18,9 +18,23 @@
             <button type="submit">submit</button>
         </form>
     </div> --}}
+   
     {{-- <div class="wrapper">
-        <div class="container">
-            <h2>Categories</h2>
+        <div class="accordion">
+            <div class="contentbx">
+                <div class="label">Select Categories</div>
+                <div class="categories">
+                    <ul>
+                        <li>Entertainment</li>
+                    </ul> --}}
+                    {{-- <select name="cars" id="cars">
+                        <option value="volvo">Volvo</option>
+                        <option value="saab">Saab</option>
+                        <option value="mercedes">Mercedes</option>
+                        <option value="audi">Audi</option>
+                      </select>
+                </div> --}}
+            {{-- </div>
         </div>
     </div> --}}
 @endsection
@@ -33,4 +47,14 @@
         decimalCharacter    : ',',
     });
     </script> 
+
+    <script>
+        const accordion = document.getElementsByClassName('contentbx');
+        
+        for (i = 0; i<accordion.length; i++){
+            accordion[i].addEventListener('click', function(){
+                this.classList.toggle('active')
+            }) 
+        }
+    </script>
 @endsection
