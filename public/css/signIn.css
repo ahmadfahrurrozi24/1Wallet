@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap");
+
 * {
     margin: 0;
     padding: 0;
@@ -36,7 +37,8 @@ h1 {
     margin-top: 0;
 }
 .user {
-    height: 50%;
+    width: 70%;
+    height: 40%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -62,6 +64,7 @@ h1 {
 }
 
 .user div {
+    width: 100%;
     display: flex;
     align-items: center;
     gap: 10px;
@@ -74,7 +77,7 @@ input {
     box-sizing: border-box;
     border: none;
     font-family: "Roboto", sans-serif;
-    font-size: 20px;
+    font-size: 15px;
     background-color: rgba(0, 0, 0, 0);
     border-bottom: 1px solid black;
     letter-spacing: 0.7px;
@@ -120,6 +123,9 @@ p a {
 @media (max-width: 500px) {
     form {
         width: 95%;
+    }
+    .user {
+        width: 90%;
     }
     .user i {
         font-size: 30px;

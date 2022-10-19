@@ -239,6 +239,21 @@ body {
     text-align: right;
 }
 
+/* Alert */
+.alert{
+    width: 50%;
+    height: 50px;
+    margin: auto;
+    background-color: lightblue;
+    border: 1px solid blue;
+    color: darkblue;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Roboto', sans-serif;
+}
+
 @media screen and (max-width: 515px) {
     .sidebar {
         transform: translateX(-240px);

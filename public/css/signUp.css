@@ -39,8 +39,10 @@ h1 {
     align-items: center;
     justify-content: center;
     gap: 30px;
+    width: 80%;
 }
 .user div {
+    width: 100%;
     display: flex;
     align-items: center;
     gap: 10px;
@@ -56,6 +58,7 @@ h1 {
 .check input {
     width: 17px;
     height: 17px;
+    cursor: pointer;
 }
 .user i {
     font-size: 30px;
@@ -115,6 +118,9 @@ button:hover {
 @media (max-width: 500px) {
     form {
         width: 95%;
+    }
+    .user {
+        width: 90%;
     }
     input {
         width: 70%;
