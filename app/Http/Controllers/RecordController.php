@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Helper\Helper;
 use App\Http\Requests\StoreRecordRequest;
 use App\Models\Record;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class RecordController extends Controller
@@ -36,16 +37,17 @@ class RecordController extends Controller
      */
     public function store(StoreRecordRequest $request)
     {
-       $data = $request->all();
-       $data["amount"] = Helper::storeNumberFormat($data["amount"]);
-       $data["amount"] = Helper::newRecordCategoryCheck($data["category_id"], $data["amount"]);
-       $data["user_id"] = auth()->user()->id;
+        $data = $request->all();
+        $data["amount"] = Helper::storeNumberFormat($data["amount"]);
+        $data["amount"] = Helper::newRecordCategoryCheck($data["category_id"], $data["amount"]);
+        $data["user_id"] = auth()->user()->id;
 
-       unset($data["_token"]);
+        unset($data["_token"]);
 
-       Record::create($data);
+        Record::create($data);
+        User::ReBalance();
 
-       return redirect()->to("/dashboard")->with("message", "New record succesfully created");
+        return redirect()->to("/dashboard")->with("message", "New record succesfully created");
     }
     /**
      * Display the specified resource.
@@ -75,7 +77,7 @@ class RecordController extends Controller
      * @param  \App\Models\Record  $record
      * @return \Illuminate\Http\Response
      */
-    public function update( $request, Record $record)
+    public function update($request, Record $record)
     {
         //
     }

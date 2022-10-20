@@ -33,4 +33,15 @@ class User extends Authenticatable
     {
         return $this->belongsTo(Role::class, "role_id");
     }
+
+    public function scopeReBalance()
+    {
+        $totalRecord = Record::MyLastTransaction()->get()->sum("amount");
+        $firstBalance = auth()->user()->first_balance;
+        $currentBalance = $firstBalance + $totalRecord;
+
+        $this->find(auth()->user()->id)->update([
+            "current_balance" => $currentBalance
+        ]);
+    }
 }
