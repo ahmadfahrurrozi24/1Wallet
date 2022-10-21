@@ -337,6 +337,11 @@ body {
 } */
 
 /* Add Record */
+.container-addrecord {
+    display: flex;
+    gap: 20px;
+}
+
 .Record {
     margin: 16px;
 }
@@ -350,6 +355,7 @@ body {
     display: flex;
     width: 400px;
     flex-direction: column;
+    margin-bottom: 5px;
 }
 
 .select-box .option-container {
@@ -371,7 +377,6 @@ body {
     color: white;
     display: flex;
     align-items: center;
-    position: relative;
     order: 0;
 }
 
@@ -427,6 +432,71 @@ body {
 .select-box .option .radio {
     display: none;
 }
+
+/* Amount Section */
+.input-field {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.head-input {
+    display: flex;
+    gap: 10px;
+}
+.input-group {
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.input-group input,
+.input-group textarea {
+    padding: 10px;
+    border-radius: 12px;
+    height: 45px;
+    border: 2px solid #c4c4c4;
+    /* width: 100%; */
+    /* flex-grow: 1; */
+}
+
+.input-group input:focus,
+.input-group textarea:focus {
+    outline: none;
+    border: 2px solid rgb(81, 12, 219);
+}
+
+.input-group textarea {
+    height: 80px;
+    max-height: 90px;
+    resize: none;
+}
+
+.bottom-input button {
+    margin-top: 10px;
+    margin-left: 100px;
+    padding: 12px;
+    width: 70%;
+    background: rgb(81, 12, 219) !important;
+    color: #fff;
+    border-radius: 12px;
+    cursor: pointer;
+    border: none;
+}
+
+.input-field .input-record {
+    border: 2px solid #c4c4c4;
+    width: 100%;
+}
+
+/* .input-field div {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    width: 100%;
+} */
 
 @media screen and (max-width: 515px) {
     .sidebar {
