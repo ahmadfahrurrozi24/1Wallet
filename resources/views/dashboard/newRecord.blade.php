@@ -22,6 +22,7 @@
     <div class="wrapper">
         <h2 class="Record">Add Transaction</h2>
         <div class="container-addrecord">
+            {{-- Categories --}}
                 <div class="categories-select">
                     <div class="select-box ">
                         <div class="selected ">
@@ -108,6 +109,7 @@
                         </div>
                     </div>
                 </div>
+                {{-- Input --}}
                 <div class="input-field">
                     <div class="head-input">
                         <div class="input-group">

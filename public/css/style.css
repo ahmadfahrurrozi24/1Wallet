@@ -353,7 +353,7 @@ body {
 
 .select-box {
     display: flex;
-    width: 400px;
+    width: 350px;
     flex-direction: column;
     margin-bottom: 5px;
 }
@@ -529,5 +529,14 @@ body {
 
     .table-fill {
         width: 20px;
+    }
+
+    .container-addrecord {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .bottom-input button {
+        margin-left: 60px;
     }
 }
