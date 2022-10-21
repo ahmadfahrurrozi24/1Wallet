@@ -1,7 +1,7 @@
 @extends('dashboard.layout.template')
 @section('content')
 <div class="wrapper">
-    <!-- Histori Tabel Transaksi -->
+    {{-- <!-- Histori Tabel Transaksi -->
     <div class="tabelTransaksi">
       <div class="container">
         <table class="table-fill">
@@ -51,6 +51,56 @@
           </tbody>
         </table>
       </div>
-    </div>
+    </div> --}}
+
+    <div class="accordion">
+      <div class="contentbx">
+          <div class="label">Select Categories</div>
+          <div class="categories">
+              <ul>
+                  <li class="time">Time
+                    <ul>
+                      <li>15/8/1936</li>
+                    </ul>
+                  </li>
+              </ul>
+              
+              <ul>
+                <li class="amount">Amount
+                  <ul>
+                    <li>-Rp 12,000,000</li>
+                  </ul>
+                </li>
+              </ul>
+
+              <ul>
+                <li class="note">Note
+                  <ul>
+                    <li>Wehrmacht</li>
+                  </ul>
+                </li>
+              </ul>
+
+              {{-- <select name="cars" id="cars">
+                  <option value="volvo">Volvo</option>
+                  <option value="saab">Saab</option>
+                  <option value="mercedes">Mercedes</option>
+                  <option value="audi">Audi</option>
+                </select>
+          </div> --}}
+      </div>
   </div>
+
+  </div>
+@endsection
+@section('js')
+<script>
+  const accordion = document.getElementsByClassName('contentbx');
+  
+  for (i = 0; i<accordion.length; i++){
+      accordion[i].addEventListener('click', function(){
+          this.classList.toggle('active')
+      }) 
+  }
+</script>
 @endsection
