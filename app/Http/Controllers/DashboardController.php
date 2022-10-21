@@ -22,6 +22,7 @@ class DashboardController extends Controller
     {
         $data = [
             "title" => "History",
+            "records" => Record::MyLastTransaction()->get()
         ];
 
         return view("dashboard.history", $data);
