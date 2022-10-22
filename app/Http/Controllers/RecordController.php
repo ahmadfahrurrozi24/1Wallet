@@ -37,6 +37,7 @@ class RecordController extends Controller
      */
     public function store(StoreRecordRequest $request)
     {
+        dd($request->all());
         $data = $request->all();
         $data["amount"] = Helper::storeNumberFormat($data["amount"]);
         $data["amount"] = Helper::newRecordCategoryCheck($data["category_id"], $data["amount"]);
