@@ -1,5 +1,6 @@
 @extends('dashboard.layout.template')
 @section('content')
+    {{--
     <div class="wrapper">
         <form action="/dashboard/record" method="POST">
             @csrf
@@ -18,54 +19,45 @@
             <button type="submit">submit</button>
         </form>
     </div> --}}
-   
+
     <div class="wrapper">
-        <h2 class="Record">Add Transaction</h2>
-        <div class="container-addrecord">
-            {{-- Categories --}}
+        <h2 class="record-title">Add Transaction</h2>
+        <h4 class="record-title">Select Category</h4>
+        @error('category_id')
+            <p>{{ $message }}</p>
+        @enderror
+        @error('amount')
+            <p>{{ $message }}</p>
+        @enderror
+        <form action="/dashboard/record" method="POST">
+            @csrf
+            <input type="hidden" name="category_id" class="input-category" value="{{ old('category_id') }}">
+            <div class="container-addrecord">
                 <div class="categories-select">
-                    <div class="select-box ">
-                        <div class="selected ">
-                            <div class="selected-title">
-                                Select Categories  
+                    @foreach ($types as $key => $type)
+                        <div class="select-box">
+                            <div class="selected">
+                                <div class="selected-title">
+                                    {{ $type->name }}
+                                </div>
+                                <div class="arrow">
+                                    <i class='bx bx-chevron-down'></i>
+                                </div>
                             </div>
-                            <div class="arrow">
-                                <i class='bx bx-chevron-down'></i>
+                            <div class="option-container @if ($key == 0 && !old('category_id')) active @endif">
+                                @foreach ($type->category as $category)
+                                    <div class="option @if (old('category_id') == $category->id) option-selected @endif"
+                                        data-optionId="{{ $category->id }}">
+                                        <label>
+                                            <i class="{{ $category->icon }}"></i>
+                                            {{ $category->name }}
+                                        </label>
+                                    </div>
+                                @endforeach
                             </div>
                         </div>
-                        <div class="option-container active">
-                            <div class="option">
-                                <input class="radio" type="radio" name="radio" id="entertainment" name="Categories">
-                                <label for="entertainment">Entertainment</label>
-                            </div>
-        
-                            <div class="option">
-                                <input class="radio" type="radio" name="radio" id="food & bavarage" name="Categories">
-                                <label for="food & baverage">Food & Bavarage</label>
-                            </div>
-        
-                            <div class="option">
-                                <input class="radio" type="radio" name="radio" id="vacation" name="Categories">
-                                <label for="vacation">Vacation</label>
-                            </div>
-        
-                            <div class="option">
-                                <input class="radio" type="radio" name="radio" id="lifestyle" name="Categories">
-                                <label for="Lifestyle">Lifestyle</label>
-                            </div>
-        
-                            <div class="option">
-                                <input class="radio" type="radio" name="radio" id="mudifaka" name="Categories">
-                                <label for="mudifaka">Mudifaka</label>
-                            </div>
-                            <div class="option">
-                                <input class="radio" type="radio" name="radio" id="mudifaka" name="Categories">
-                                <label for="mudifaka">Mudifaka</label>
-                            </div>
-                            
-                        </div>
-                    </div>
-                    <div class="select-box">
+                    @endforeach
+                    {{-- <div class="select-box">
                         <div class="selected">
                             <div class="selected-title">
                                 Income
@@ -75,28 +67,28 @@
                             </div>
                         </div>
                         <div class="option-container ">
-        
-        
+    
+    
                             <div class="option">
                                 <input class="radio" type="radio" name="radio" id="entertainment" name="Categories">
                                 <label for="entertainment">Entertainment</label>
                             </div>
-        
+    
                             <div class="option">
                                 <input class="radio" type="radio" name="radio" id="food & bavarage" name="Categories">
                                 <label for="food & baverage">Food & Bavarage</label>
                             </div>
-        
+    
                             <div class="option">
                                 <input class="radio" type="radio" name="radio" id="vacation" name="Categories">
                                 <label for="vacation">Vacation</label>
                             </div>
-        
+    
                             <div class="option">
                                 <input class="radio" type="radio" name="radio" id="lifestyle" name="Categories">
                                 <label for="Lifestyle">Lifestyle</label>
                             </div>
-        
+    
                             <div class="option">
                                 <input class="radio" type="radio" name="radio" id="mudifaka" name="Categories">
                                 <label for="mudifaka">Mudifaka</label>
@@ -105,20 +97,20 @@
                                 <input class="radio" type="radio" name="radio" id="mudifaka" name="Categories">
                                 <label for="mudifaka">Mudifaka</label>
                             </div>
-                            
+    
                         </div>
-                    </div>
+                    </div> --}}
                 </div>
                 {{-- Input --}}
                 <div class="input-field">
                     <div class="head-input">
                         <div class="input-group">
                             <label for="amount">Amount</label>
-                            <input id="amount" type="text"  placeholder="Amount" name="amount">
+                            <input id="amount" type="text" autocomplete="off" placeholder="Amount" name="amount">
                         </div>
                         <div class="input-group">
                             <label for="date">Date</label>
-                            <input id="date"  type="date">
+                            <input id="date" name="date" type="date">
                         </div>
                     </div>
                     <div class="middle-input">
@@ -132,6 +124,7 @@
                     </div>
                 </div>
             </div>
+        </form>
     </div>
 @endsection
 @section('js')
@@ -140,16 +133,30 @@
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
     <script>
-    new AutoNumeric('#amount' , {
-        digitGroupSeparator : '.',
-        decimalCharacter    : ',',
-    });
-    </script> 
+        new AutoNumeric('#amount', {
+            digitGroupSeparator: '.',
+            decimalCharacter: ',',
+        });
+    </script>
 
-{{-- NewRecord Select --}}
+    {{-- NewRecord Select --}}
     <script>
         const selectBoxes = document.querySelectorAll(".select-box");
         const selectContainerBoxes = document.querySelectorAll(".option-container")
+        const selected = document.querySelectorAll(".selected")
+        const selectOption = document.querySelectorAll(".option")
+        const inputCategory = document.querySelector(".input-category")
+
+        let oldCategoryId = "{{ old('category_id') }}"
+
+        if (oldCategoryId != "") {
+            selectOption.forEach((elm) => {
+                if (elm.getAttribute("data-optionId") == oldCategoryId) {
+                    console.log(elm.parentElement.classList.add("active"));
+                }
+            });
+        }
+
 
         selectBoxes.forEach((elm) => {
             let selectedElm = elm.querySelector(".selected");
@@ -159,27 +166,24 @@
                 selectContainerBoxes.forEach((element) => {
                     element.classList.remove("active");
                 });
-                
+
                 selectContainerElm.classList.toggle("active");
             });
         });
-        // const selected = document.querySelector(".selected");
-        // const selectedTitle = document.querySelector(".selected-title");
-        // const optionContainer = document.querySelector(".option-container");
 
-        // const  optionList = document.querySelectorAll(".option");
+        selectOption.forEach(elm => {
+            elm.addEventListener("click", e => {
+                selectOption.forEach(element => {
+                    element.classList.remove("option-selected")
+                })
+                selected.forEach((element) => {
+                    element.classList.remove("is-option");
+                });
 
-        // selected.addEventListener("click", () => {
-        //     optionContainer.classList.toggle("active");
-        // });
-
-        // selectScript
-        // optionList.forEach(o => {
-        //     o.addEventListener("click", () =>{
-        //       selectedTitle.innerHTML = o.querySelector("label").innerHTML;
-        //       optionContainer.classList.remove("active");
-        //     });
-        // });
-
+                inputCategory.value = elm.getAttribute("data-optionId")
+                elm.parentElement.previousElementSibling.classList.add("is-option")
+                elm.classList.add("option-selected")
+            })
+        })
     </script>
 @endsection

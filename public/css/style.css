@@ -342,8 +342,8 @@ body {
     gap: 20px;
 }
 
-.Record {
-    margin: 16px;
+.record-title {
+    margin: 10px;
 }
 
 .container {
@@ -396,13 +396,18 @@ body {
 .select-box .option-container.active {
     max-height: 240px;
     opacity: 1;
-    overflow-y: scroll;
+    overflow: auto;
+    /* overflow-y: auto; */
 }
 
-.select-box .option-container.active + .selected::after {
+.select-box .selected.is-option {
+    background-color: #108538;
+}
+
+/* .select-box .option-container.active + .selected::after {
     transform: rotateX("180deg");
     top: -6px;
-}
+} */
 
 .select-box .option-container::-webkit-scrollbar {
     width: 8px;
@@ -419,10 +424,14 @@ body {
 .selected {
     padding: 12px 24px;
     cursor: pointer;
+    transition: background 0.5s;
 }
 
 .select-box .option:hover {
     background: rgb(43, 45, 141);
+}
+.select-box .option.option-selected {
+    background-color: rgb(43, 45, 141);
 }
 
 .select-box label {
