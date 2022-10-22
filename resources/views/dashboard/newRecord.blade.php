@@ -156,7 +156,9 @@
         if (oldCategoryId != "") {
             selectOption.forEach((elm) => {
                 if (elm.getAttribute("data-optionId") == oldCategoryId) {
-                    console.log(elm.parentElement.classList.add("active"));
+                    elm.parentElement.classList.add("active")
+                    elm.parentElement.previousElementSibling.classList.add("is-option")
+                    elm.lastElementChild.classList.add("checked")
                 }
             });
         }
