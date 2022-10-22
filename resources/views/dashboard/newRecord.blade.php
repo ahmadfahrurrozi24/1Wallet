@@ -22,7 +22,7 @@
 
     <div class="wrapper">
         <h2 class="record-title">Add Transaction</h2>
-        <h4 class="record-title">Select Category</h4>
+        {{-- <h4 class="record-title">Select Category</h4> --}}
         @error('category_id')
             <p>{{ $message }}</p>
         @enderror
