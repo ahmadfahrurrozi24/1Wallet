@@ -69,7 +69,6 @@
             <p>Inflow</p>
             <span>+Rp 100.000</span>
           </div>
-          <hr>
           <div class="outflow">
             <p>Outflow</p>
             <span>-Rp 20.000</span>

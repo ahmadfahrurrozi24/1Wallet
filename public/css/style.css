@@ -267,103 +267,68 @@ body {
     align-items: center;
     gap: 10px;
 }
+
 .headbox-history{
     width: 600px;
     height: auto;
     background-color:rgb(21, 23, 99);
 }
-/* .tabs{
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    padding: 10px;
-    gap: 10px;
-    box-sizing: border-box;
-}
-.tabs a{
-    width: 100px;
-    height: 40px;
-    padding: 10px;
-    box-sizing: border-box;
-    border-radius: 5px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-decoration: none;
-    color: white;
-    font-size: 20px;
-    background-color: rgb(7, 7, 54);
-    border: 1px solid white;
-    word-wrap: none;
-} */
+
 .headbox-history .tabs{
     width: 100%;
     margin: auto;
-    /* height: 70px; */
-    /* display: flex; */
-    /* gap: 10px; */
-    box-sizing: border-box;
     font-size: 15px;
-    /* background-color: crimson; */
     display: flex;
     justify-content: center;
     border-bottom: 1px solid white;
 }
+
 .headbox-history .tabs a{
     width: 120px;
     height: 50px;
+    text-decoration: none;
     display: flex;
     justify-content: center;
     align-items: center;
-    text-decoration: none;
     color: white;
-    /* padding: 10px; */
-    box-sizing: border-box;
-    /* background-color: darkgreen; */
 }
+
 .headbox-history .tabs a:active{
     background-color: rgb(12, 14, 82);
 }
+
 .headbox-history .transaction{
-    width: 100%;
+    width: 95%;
     height: 150px;
     margin: auto;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-    /* gap: 10px; */
-    /* padding: 0 20px; */
     color: white;
-    /* background-color: darkgreen; */
 }
+
 .transaction div{
     height: 30px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 20px;
-    /* background-color: brown; */
 }
-.transaction hr{
-    width: 95%;
-    margin: 0 auto;
-}
+
 .transaction .total{
     height: 50px;
     font-size: 20px;
     border-top: 1px solid white;
-    /* background-color: brown; */
-    /* display: flex; */
 }
+
 .accordion {
     width: 600px;
     display: flex;
     justify-content: center;
 }
+
 .accordion .contentbx {
     width: 100%;
     position: relative;
-    /* margin: 10px 10px; */
 }
 
 .accordion .contentbx .label {
@@ -371,10 +336,10 @@ body {
     padding: 10px;
     background-color:rgb(21, 23, 99);
     color: white;
-    cursor: pointer;
     display: flex;
-    gap: 10px;
     align-items: baseline;
+    gap: 10px;
+    cursor: pointer;
 }
 
 .accordion .contentbx .label span{
@@ -395,14 +360,13 @@ body {
 }
 
 .accordion .contentbx .history {
+    height: 0;
+    padding: 0 20px;
     position: relative;
     background-color: rgb(9, 11, 69);
-    height: 0;
-    /* overflow: hidden; */
     transition: all 0.5s;
     overflow-y: hidden;
     color: white;
-    padding: 0 20px;
 }
 
 .accordion .contentbx.active .history {
@@ -414,16 +378,14 @@ body {
     display: flex;
     flex-direction: column;
     gap: 10px;
-    list-style: none;
 }
 
 .detail{
-    /* background-color: darkgreen; */
-    border-bottom: 1px solid white;
     height: 110px;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
+    border-bottom: 1px solid white;
 }
 
 .detail h3{
@@ -431,17 +393,11 @@ body {
 }
 
 .biaya{
-    /* background-color: darkblue; */
-    /* padding-top: 10px; */
-    box-sizing: border-box;
-    /* height: 70px; */
     display: flex;
-    /* flex-direction: column; */
     justify-content: space-between;
 }
 
 .biaya p{
-    /* background-color: darkgreen; */
     width: 50%;
 }
 
@@ -449,23 +405,6 @@ body {
     font-size: 34px;
 }
 
-.time li {
-    list-style: none;
-    margin-right: 10px;
-}
-
-.note li {
-    list-style: none;
-}
-
-.amount li {
-    list-style: none;
-}
-
-/* .line {
-    border-left: 2px solid rgb(0, 0, 0);
-    height: 100%;
-} */
 
 /* Add Record */
 .container-addrecord {
