@@ -401,7 +401,7 @@ body {
 }
 
 .select-box .selected.is-option {
-    background-color: #108538;
+    background-color: rgb(81, 12, 219);
 }
 
 /* .select-box .option-container.active + .selected::after {
