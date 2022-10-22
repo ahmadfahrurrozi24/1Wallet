@@ -532,7 +532,7 @@ body {
 }
 
 .select-box .selected.is-option {
-    background-color: #108538;
+    background-color: rgb(81, 12, 219);
 }
 
 /* .select-box .option-container.active + .selected::after {
@@ -551,6 +551,23 @@ body {
     border-radius: 0 8px 8px 0;
 }
 
+.select-box .option {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.select-box .option .option-check {
+    font-size: 20px;
+    justify-content: center;
+    align-items: center;
+    display: none;
+}
+
+.select-box .option .option-check.checked {
+    display: flex;
+}
+
 .select-box .option,
 .selected {
     padding: 12px 24px;
@@ -562,7 +579,7 @@ body {
     background: rgb(43, 45, 141);
 }
 .select-box .option.option-selected {
-    background-color: rgb(43, 45, 141);
+    background-color: rgb(43 48 255);
 }
 
 .select-box label {

@@ -22,7 +22,7 @@
 
     <div class="wrapper">
         <h2 class="record-title">Add Transaction</h2>
-        <h4 class="record-title">Select Category</h4>
+        {{-- <h4 class="record-title">Select Category</h4> --}}
         @error('category_id')
             <p>{{ $message }}</p>
         @enderror
@@ -52,6 +52,9 @@
                                             <i class="{{ $category->icon }}"></i>
                                             {{ $category->name }}
                                         </label>
+                                        <div class="option-check">
+                                            <i class='bx bx-check-circle'></i>
+                                        </div>
                                     </div>
                                 @endforeach
                             </div>
@@ -146,13 +149,16 @@
         const selected = document.querySelectorAll(".selected")
         const selectOption = document.querySelectorAll(".option")
         const inputCategory = document.querySelector(".input-category")
+        const optionCheck = document.querySelectorAll(".option-check")
 
         let oldCategoryId = "{{ old('category_id') }}"
 
         if (oldCategoryId != "") {
             selectOption.forEach((elm) => {
                 if (elm.getAttribute("data-optionId") == oldCategoryId) {
-                    console.log(elm.parentElement.classList.add("active"));
+                    elm.parentElement.classList.add("active")
+                    elm.parentElement.previousElementSibling.classList.add("is-option")
+                    elm.lastElementChild.classList.add("checked")
                 }
             });
         }
@@ -179,9 +185,13 @@
                 selected.forEach((element) => {
                     element.classList.remove("is-option");
                 });
+                optionCheck.forEach((element) => {
+                    element.classList.remove("checked");
+                });
 
                 inputCategory.value = elm.getAttribute("data-optionId")
                 elm.parentElement.previousElementSibling.classList.add("is-option")
+                elm.lastElementChild.classList.add("checked")
                 elm.classList.add("option-selected")
             })
         })

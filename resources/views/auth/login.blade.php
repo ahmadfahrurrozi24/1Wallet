@@ -73,7 +73,7 @@
           text: "{{ session()->get('message') }}",
           style : {
             ...style,
-            background: "green"
+             backgroundImage: `linear-gradient(to right,#d1001f,#1520A6`,
           }
         }).showToast();
       </script>
