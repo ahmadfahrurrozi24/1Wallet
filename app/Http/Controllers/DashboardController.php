@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Category;
 use App\Models\Record;
+use App\Models\Type;
 
 class DashboardController extends Controller
 {
@@ -32,7 +32,7 @@ class DashboardController extends Controller
     {
         $data = [
             "title" => "Add Record",
-            "categories" => Category::all()
+            "types" => Type::with(["category"])->get()
         ];
 
         return view("dashboard.newRecord", $data);
