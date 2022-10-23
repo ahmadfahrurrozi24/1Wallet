@@ -37,12 +37,12 @@ class RecordController extends Controller
      */
     public function store(StoreRecordRequest $request)
     {
-        dd($request->all());
         $data = $request->all();
         $data["amount"] = Helper::storeNumberFormat($data["amount"]);
         $data["amount"] = Helper::newRecordCategoryCheck($data["category_id"], $data["amount"]);
         $data["user_id"] = auth()->user()->id;
 
+        unset($data["date"]);
         unset($data["_token"]);
 
         Record::create($data);
