@@ -53,33 +53,28 @@
       </div>
     </div> --}}
     <div class="wrapper-history">
-      <div class="headbox-history">
-        {{-- <div class="tabs">
-          <a href="">This Month</a>
-          <a href="">All</a>
-          <a href="">This Week</a>
-        </div> --}}
-        <div class="tabs">
-          <a href="#">THIS MONTH</a>
-          <a href="#">ALL</a>
-          <a href="#">THIS WEEK</a>
-        </div>
-        <div class="transaction">
-          <div class="inflow">
-            <p>Inflow</p>
-            <span>+Rp 100.000</span>
+        <div class="headbox-history">
+          <div class="tabs">
+            <a href="#">THIS MONTH</a>
+            <a href="#">ALL</a>
+            <a href="#">THIS WEEK</a>
           </div>
-          <div class="outflow">
-            <p>Outflow</p>
-            <span>-Rp 20.000</span>
-          </div>
-          <div class="total">
-            <p>Total</p>
-            <span>+Rp 80.000</span>
+          <div class="transaction">
+             <div class="inflow">
+               <p>Inflow</p>
+               <span>+Rp 100.000</span>
+             </div>
+             <div class="outflow">
+               <p>Outflow</p>
+               <span>-Rp 20.000</span>
+             </div>
+             <div class="total">
+               <p>Total</p>
+               <span>+Rp 80.000</span>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="accordion">
+        <div class="accordion">
         <div class="contentbx">
             <div class="label">
               <h1>21</h1>
@@ -104,8 +99,8 @@
                   </select> --}}
             </div>
          </div>
-      </div>
-      <div class="accordion">
+        </div>
+        <div class="accordion">
         <div class="contentbx">
             <div class="label">
               <h1>21</h1>
@@ -130,7 +125,7 @@
                   </select> --}}
             </div>
          </div>
-      </div>
+       </div>
     </div>
 
   </div>

@@ -115,6 +115,7 @@ body {
 /* Transaction History */
 .wrapper-history {
     width: 100%;
+    margin-top: 40px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -147,12 +148,12 @@ body {
     color: white;
 }
 
-.headbox-history .tabs a:active {
+.headbox-history .tabs a:focus{
     background-color: rgb(12, 14, 82);
 }
 
 .headbox-history .transaction {
-    width: 95%;
+    width: 90%;
     height: 150px;
     margin: auto;
     display: flex;
@@ -182,7 +183,6 @@ body {
 
 .accordion .contentbx {
     width: 100%;
-    position: relative;
 }
 
 .accordion .contentbx .label {
@@ -194,6 +194,7 @@ body {
     align-items: baseline;
     gap: 10px;
     cursor: pointer;
+    z-index: -1;
 }
 
 .accordion .contentbx .label span {
@@ -216,7 +217,6 @@ body {
 .accordion .contentbx .history {
     height: 0;
     padding: 0 20px;
-    position: relative;
     background-color: rgb(9, 11, 69);
     transition: all 0.5s;
     overflow-y: hidden;
@@ -458,6 +458,19 @@ body {
     width: 100%;
 } */
 
+@media screen and (max-width: 680px) {
+    .headbox-history{
+        width: 80%;
+    }
+    .accordion{
+        width: 80%;
+    }
+    .accordion .biaya{
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
 @media screen and (max-width: 515px) {
     .sidebar {
         transform: translateX(-240px);
@@ -500,4 +513,23 @@ body {
     .record-title {
         margin-top: 30px;
     }
+
+    /* history */
+    .headbox-history{
+        width: 100%;
+    }
+    .accordion{
+        width: 100%;
+    }
+    .accordion .biaya{
+        flex-direction: column;
+        gap: 10px;
+    }
+    .accordion .biaya h3{
+        font-size: 30px;
+    }
+    .accordion .contentbx.active .history {
+        padding: 0 15px 5px 15px;
+    }
+
 }
