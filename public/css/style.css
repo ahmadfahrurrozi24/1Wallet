@@ -324,7 +324,7 @@ body {
 }
 
 .select-box .option-container.active {
-    max-height: 240px;
+    max-height: 130px;
     opacity: 1;
     overflow: auto;
     /* overflow-y: auto; */
@@ -338,6 +338,14 @@ body {
     transform: rotateX("180deg");
     top: -6px;
 } */
+
+::-webkit-scrollbar {
+    width: 8px;
+    background: rgb(9, 11, 69);
+}
+::-webkit-scrollbar-thumb {
+    background: rgb(35, 38, 145);
+}
 
 .select-box .option-container::-webkit-scrollbar {
     width: 8px;
