@@ -1,7 +1,5 @@
 @extends('dashboard.layout.template')
 @section('content')
-    
-
     <div class="wrapper">
         <h2 class="record-title">Add Transaction</h2>
         <form action="/dashboard/record" method="POST">
@@ -35,9 +33,7 @@
                             </div>
                         </div>
                     @endforeach
-                    
                 </div>
-                {{-- Input --}}
                 <div class="input-field">
                     <div class="head-input">
                         <div class="input-group">
@@ -130,47 +126,44 @@
         })
     </script>
 
- <script>
-    let style = {
-        backgroundImage: `linear-gradient(to right,rgb(81, 12, 219),#FF2400`,
-    
-        color: "white",
-        fontFamily : "Roboto",
-        borderRadius: "10px"
-      }
- </script>
+    <script>
+        let style = {
+            backgroundImage: `linear-gradient(to right,rgb(81, 12, 219),#FF2400`,
+            color: "white",
+            fontFamily: "Roboto",
+            borderRadius: "10px"
+        }
+    </script>
+    @error('amount')
+        <script>
+            Toastify({
+                text: "{{ $message }}",
+                style,
+                gravity: "bottom",
+                position: "center"
+            }).showToast();
+        </script>
+    @enderror
 
-@error('amount')
-<script>
-  Toastify({
-    text: "{{ $message }}",
-    style,
-    gravity: "bottom",
-    position: "center"
-  }).showToast();
-</script>
-@enderror
+    @error('category_id')
+        <script>
+            Toastify({
+                text: "{{ $message }}",
+                style,
+                gravity: "bottom",
+                position: "center"
+            }).showToast();
+        </script>
+    @enderror
 
-@error('category_id')
-<script>
-  Toastify({
-    text: "{{ $message }}",
-    style,
-    gravity: "bottom",
-    position: "center"
-  }).showToast();
-</script>
-@enderror
-
-@error('note')
-<script>
-  Toastify({
-    text: "{{ $message }}",
-    style,
-    gravity: "bottom",
-    position: "center"
-  }).showToast();
-</script>
-@enderror
-
+    @error('note')
+        <script>
+            Toastify({
+                text: "{{ $message }}",
+                style,
+                gravity: "bottom",
+                position: "center"
+            }).showToast();
+        </script>
+    @enderror
 @endsection
