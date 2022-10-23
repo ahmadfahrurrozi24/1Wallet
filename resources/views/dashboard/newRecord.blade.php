@@ -1,34 +1,9 @@
 @extends('dashboard.layout.template')
 @section('content')
-    {{--
-    <div class="wrapper">
-        <form action="/dashboard/record" method="POST">
-            @csrf
-            <select name="category_id" id="category_id">
-                @foreach ($categories as $category)
-                    <option value="{{ $category->id }}">{{ $category->name }}</option>
-                @endforeach
-            </select>
-            @error('category_id')
-                <p>{{ $message }}</p>
-            @enderror
-            <input type="text" id="amount" name="amount" autocomplete="off">
-            @error('amount')
-                <p>{{ $message }}</p>
-            @enderror
-            <button type="submit">submit</button>
-        </form>
-    </div> --}}
+    
 
     <div class="wrapper">
         <h2 class="record-title">Add Transaction</h2>
-        {{-- <h4 class="record-title">Select Category</h4> --}}
-        @error('category_id')
-            <p>{{ $message }}</p>
-        @enderror
-        @error('amount')
-            <p>{{ $message }}</p>
-        @enderror
         <form action="/dashboard/record" method="POST">
             @csrf
             <input type="hidden" name="category_id" class="input-category" value="{{ old('category_id') }}">
@@ -60,49 +35,7 @@
                             </div>
                         </div>
                     @endforeach
-                    {{-- <div class="select-box">
-                        <div class="selected">
-                            <div class="selected-title">
-                                Income
-                            </div>
-                            <div class="arrow">
-                                <i class='bx bx-chevron-down'></i>
-                            </div>
-                        </div>
-                        <div class="option-container ">
-    
-    
-                            <div class="option">
-                                <input class="radio" type="radio" name="radio" id="entertainment" name="Categories">
-                                <label for="entertainment">Entertainment</label>
-                            </div>
-    
-                            <div class="option">
-                                <input class="radio" type="radio" name="radio" id="food & bavarage" name="Categories">
-                                <label for="food & baverage">Food & Bavarage</label>
-                            </div>
-    
-                            <div class="option">
-                                <input class="radio" type="radio" name="radio" id="vacation" name="Categories">
-                                <label for="vacation">Vacation</label>
-                            </div>
-    
-                            <div class="option">
-                                <input class="radio" type="radio" name="radio" id="lifestyle" name="Categories">
-                                <label for="Lifestyle">Lifestyle</label>
-                            </div>
-    
-                            <div class="option">
-                                <input class="radio" type="radio" name="radio" id="mudifaka" name="Categories">
-                                <label for="mudifaka">Mudifaka</label>
-                            </div>
-                            <div class="option">
-                                <input class="radio" type="radio" name="radio" id="mudifaka" name="Categories">
-                                <label for="mudifaka">Mudifaka</label>
-                            </div>
-    
-                        </div>
-                    </div> --}}
+                    
                 </div>
                 {{-- Input --}}
                 <div class="input-field">
@@ -196,4 +129,48 @@
             })
         })
     </script>
+
+ <script>
+    let style = {
+        backgroundImage: `linear-gradient(to right,rgb(81, 12, 219),#FF2400`,
+    
+        color: "white",
+        fontFamily : "Roboto",
+        borderRadius: "10px"
+      }
+ </script>
+
+@error('amount')
+<script>
+  Toastify({
+    text: "{{ $message }}",
+    style,
+    gravity: "bottom",
+    position: "center"
+  }).showToast();
+</script>
+@enderror
+
+@error('category_id')
+<script>
+  Toastify({
+    text: "{{ $message }}",
+    style,
+    gravity: "bottom",
+    position: "center"
+  }).showToast();
+</script>
+@enderror
+
+@error('note')
+<script>
+  Toastify({
+    text: "{{ $message }}",
+    style,
+    gravity: "bottom",
+    position: "center"
+  }).showToast();
+</script>
+@enderror
+
 @endsection

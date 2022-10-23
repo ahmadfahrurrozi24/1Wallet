@@ -71,10 +71,7 @@
       <script>
         Toastify({
           text: "{{ session()->get('message') }}",
-          style : {
-            ...style,
-             backgroundImage: `linear-gradient(to right,#d1001f,#1520A6`,
-          }
+          style 
         }).showToast();
       </script>
     @endif

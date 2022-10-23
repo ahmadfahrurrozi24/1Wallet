@@ -97,152 +97,6 @@ body {
     cursor: pointer;
 }
 
-/* Css Tabel Transaksi */
-/* .tabelTransaksi {
-    margin-top: 78px;
-    margin-right: 557px;
-}
-.tabelTransaksi body {
-    background-color: #3e94ec;
-    font-family: "Roboto", helvetica, arial, sans-serif;
-    font-size: 16px;
-    font-weight: 400;
-    text-rendering: optimizeLegibility;
-}
-
-.tabelTransaksi div.table-title {
-    display: block;
-    margin: auto;
-    max-width: 600px;
-    padding: 5px;
-    width: 100%;
-}
-
-.table-title h3 {
-    color: #fafafa;
-    font-size: 30px;
-    font-weight: 400;
-    font-style: normal;
-    font-family: "Roboto", helvetica, arial, sans-serif;
-    text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.1);
-    text-transform: uppercase;
-} */
-
-/* Style Tabel */
-
-/* .table-fill {
-    background: white;
-    border-radius: 12px;
-    border-collapse: collapse;
-    height: 320px;
-    margin: auto;a
-    max-width: 600px;
-    padding: 5px;
-    width: 100%;
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
-    animation: float 5s infinite;
-}
-
-.tabelTransaksi th {
-    color: #d5dde5;
-    background: rgb(21, 23, 99);
-    border-bottom: 4px solid #9ea7af;a
-      border-right: 1px solid #343a45;a
-    font-size: 23px;
-    font-weight: 100;
-    padding: 24px;
-    text-align: left;
-    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
-    vertical-align: middle;
-}
-
-.tabelTransaksi th:first-child {
-    border-top-left-radius: 12px;
-}
-
-.tabelTransaksi th:last-child {
-    border-top-right-radius: 12px;
-    border-right: none;
-}
-
-.tabelTransaksi tr {
-    border-top: 1px solid #c1c3d1;
-    border-bottom: 1px solid #c1c3d1;
-    color: #666b85;
-    font-size: 16px;
-    font-weight: normal;
-    text-shadow: 0 1px 1px rgba(256, 256, 256, 0.1);
-}
-
-.tabelTransaksi tr:hover td {
-    background: rgb(46, 48, 135);
-    color: #ffffff;
-    border-top: 1px solid rgb(46, 48, 135);
-}
-
-.tabelTransaksi tr:first-child {
-    border-top: none;
-}
-
-.tabelTransaksi tr:last-child {
-    border-bottom: none;
-}
-
-.tabelTransaksi tr:nth-child(odd) td {
-    background: #ebebeb;
-}
-
-.tabelTransaksi tr:nth-child(odd):hover td {
-    background: rgb(62, 64, 180);
-}
-
-.tabelTransaksi tr:last-child td:first-child {
-    border-bottom-left-radius: 12px;
-}
-
-.tabelTransaksi tr:last-child td:last-child {
-    border-bottom-right-radius: 12px;
-}
-
-.tabelTransaksi td {
-    background: #ffffff;
-    padding: 20px;
-    text-align: left;
-    vertical-align: middle;
-    font-weight: 300;
-    font-size: 18px;
-    text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.1);
-    border-right: 1px solid #c1c3d1;
-}
-
-.tabelTransaksi td:last-child {
-    border-right: 0px;
-}
-
-.tabelTransaksi th.text-left {
-    text-align: left;
-}
-
-.tabelTransaksi th.text-center {
-    text-align: center;
-}
-
-.tabelTransaksi th.text-right {
-    text-align: right;
-}
-
-.tabelTransaksi td.text-left {
-    text-align: left;
-}
-
-.tabelTransaksi td.text-center {
-    text-align: center;
-}
-
-.tabelTransaksi td.text-right {
-    text-align: right;
-} */
-
 /* Alert */
 .alert {
     width: 50%;
@@ -259,7 +113,7 @@ body {
 }
 
 /* Transaction History */
-.wrapper-history{
+.wrapper-history {
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -268,13 +122,13 @@ body {
     gap: 10px;
 }
 
-.headbox-history{
+.headbox-history {
     width: 600px;
     height: auto;
-    background-color:rgb(21, 23, 99);
+    background-color: rgb(21, 23, 99);
 }
 
-.headbox-history .tabs{
+.headbox-history .tabs {
     width: 100%;
     margin: auto;
     font-size: 15px;
@@ -283,7 +137,7 @@ body {
     border-bottom: 1px solid white;
 }
 
-.headbox-history .tabs a{
+.headbox-history .tabs a {
     width: 120px;
     height: 50px;
     text-decoration: none;
@@ -293,11 +147,11 @@ body {
     color: white;
 }
 
-.headbox-history .tabs a:active{
+.headbox-history .tabs a:active {
     background-color: rgb(12, 14, 82);
 }
 
-.headbox-history .transaction{
+.headbox-history .transaction {
     width: 95%;
     height: 150px;
     margin: auto;
@@ -307,14 +161,14 @@ body {
     color: white;
 }
 
-.transaction div{
+.transaction div {
     height: 30px;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.transaction .total{
+.transaction .total {
     height: 50px;
     font-size: 20px;
     border-top: 1px solid white;
@@ -334,7 +188,7 @@ body {
 .accordion .contentbx .label {
     position: relative;
     padding: 10px;
-    background-color:rgb(21, 23, 99);
+    background-color: rgb(21, 23, 99);
     color: white;
     display: flex;
     align-items: baseline;
@@ -342,7 +196,7 @@ body {
     cursor: pointer;
 }
 
-.accordion .contentbx .label span{
+.accordion .contentbx .label span {
     font-size: 20px;
 }
 
@@ -380,7 +234,7 @@ body {
     gap: 10px;
 }
 
-.detail{
+.detail {
     height: 110px;
     display: flex;
     flex-direction: column;
@@ -388,32 +242,38 @@ body {
     border-bottom: 1px solid white;
 }
 
-.detail h3{
+.detail h3 {
     font-size: 24px;
 }
 
-.biaya{
+.biaya {
     display: flex;
     justify-content: space-between;
 }
 
-.biaya p{
+.biaya p {
     width: 50%;
 }
 
-.biaya h3{
+.biaya h3 {
     font-size: 34px;
 }
 
-
 /* Add Record */
 .container-addrecord {
+    margin-top: 70px;
+    /* align-items: center; */
+    height: 100%;
+    justify-content: center;
     display: flex;
+    flex-wrap: wrap;
     gap: 20px;
 }
 
 .record-title {
-    margin: 10px;
+    margin-top: 40px;
+    text-align: center;
+    /* margin: 10px; */
 }
 
 .container {
@@ -531,7 +391,7 @@ body {
 
 /* Amount Section */
 .input-field {
-    width: 100%;
+    /* width: 100%; */
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -570,9 +430,13 @@ body {
     resize: none;
 }
 
+.bottom-input {
+    text-align: center;
+}
+
 .bottom-input button {
-    margin-top: 10px;
-    margin-left: 100px;
+    /* margin-top: 10px;
+    margin-left: 100px; */
     padding: 12px;
     width: 70%;
     background: rgb(81, 12, 219) !important;
@@ -628,11 +492,12 @@ body {
     }
 
     .container-addrecord {
-        display: flex;
-        flex-wrap: wrap;
+        /* display: flex;
+        flex-wrap: wrap; */
+        margin-top: 20px;
     }
 
-    .bottom-input button {
-        margin-left: 60px;
+    .record-title {
+        margin-top: 30px;
     }
 }
