@@ -52,44 +52,86 @@
         </table>
       </div>
     </div> --}}
-
-    <div class="accordion">
-      <div class="contentbx">
-          <div class="label">Select Categories</div>
-          <div class="categories">
-              <ul>
-                  <li class="time">Time
-                    <ul>
-                      <li>15/8/1936</li>
-                    </ul>
-                  </li>
-              </ul>
-              
-              <ul>
-                <li class="amount">Amount
-                  <ul>
-                    <li>-Rp 12,000,000</li>
-                  </ul>
-                </li>
-              </ul>
-
-              <ul>
-                <li class="note">Note
-                  <ul>
-                    <li>Wehrmacht</li>
-                  </ul>
-                </li>
-              </ul>
-
-              {{-- <select name="cars" id="cars">
-                  <option value="volvo">Volvo</option>
-                  <option value="saab">Saab</option>
-                  <option value="mercedes">Mercedes</option>
-                  <option value="audi">Audi</option>
-                </select>
-          </div> --}}
+    <div class="wrapper-history">
+      <div class="headbox-history">
+        {{-- <div class="tabs">
+          <a href="">This Month</a>
+          <a href="">All</a>
+          <a href="">This Week</a>
+        </div> --}}
+        <div class="tabs">
+          <a href="#">THIS MONTH</a>
+          <a href="#">ALL</a>
+          <a href="#">THIS WEEK</a>
+        </div>
+        <div class="transaction">
+          <div class="inflow">
+            <p>Inflow</p>
+            <span>+Rp 100.000</span>
+          </div>
+          <div class="outflow">
+            <p>Outflow</p>
+            <span>-Rp 20.000</span>
+          </div>
+          <div class="total">
+            <p>Total</p>
+            <span>+Rp 80.000</span>
+          </div>
+        </div>
       </div>
-  </div>
+      <div class="accordion">
+        <div class="contentbx">
+            <div class="label">
+              <h1>21</h1>
+              <span>Food & Beverage</span>
+            </div>
+            <div class="history">
+                <div class="detail">
+                  <h3>Food & Beverage</h3>
+                  <p>Dimas walet</p>
+                  <p>Friday, 21/10/2022</p>
+                </div>
+                <div class="biaya">
+                  <p>Beli Nasi</p>
+                  <h3>-Rp 100.000</h3>
+                </div>
+  
+                {{-- <select name="cars" id="cars">
+                    <option value="volvo">Volvo</option>
+                    <option value="saab">Saab</option>
+                    <option value="mercedes">Mercedes</option>
+                    <option value="audi">Audi</option>
+                  </select> --}}
+            </div>
+         </div>
+      </div>
+      <div class="accordion">
+        <div class="contentbx">
+            <div class="label">
+              <h1>21</h1>
+              <span>Food & Beverage</span>
+            </div>
+            <div class="history">
+                <div class="detail">
+                  <h3>Food & Beverage</h3>
+                  <p>Dimas walet</p>
+                  <p>Friday, 21/10/2022</p>
+                </div>
+                <div class="biaya">
+                  <p>Beli Nasi</p>
+                  <h3>-Rp 100.000</h3>
+                </div>
+  
+                {{-- <select name="cars" id="cars">
+                    <option value="volvo">Volvo</option>
+                    <option value="saab">Saab</option>
+                    <option value="mercedes">Mercedes</option>
+                    <option value="audi">Audi</option>
+                  </select> --}}
+            </div>
+         </div>
+      </div>
+    </div>
 
   </div>
 @endsection

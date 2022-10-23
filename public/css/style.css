@@ -28,6 +28,10 @@ body {
 }
 
 .wrapper {
+    /* background-color: brown; */
+    /* display: flex; */
+    /* justify-content: center; */
+    margin-top: 20px;
     margin: 10px;
 }
 
@@ -255,24 +259,91 @@ body {
 }
 
 /* Transaction History */
-.accordion {
-    width: 800px;
+.wrapper-history{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
 }
+
+.headbox-history{
+    width: 600px;
+    height: auto;
+    background-color:rgb(21, 23, 99);
+}
+
+.headbox-history .tabs{
+    width: 100%;
+    margin: auto;
+    font-size: 15px;
+    display: flex;
+    justify-content: center;
+    border-bottom: 1px solid white;
+}
+
+.headbox-history .tabs a{
+    width: 120px;
+    height: 50px;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+.headbox-history .tabs a:active{
+    background-color: rgb(12, 14, 82);
+}
+
+.headbox-history .transaction{
+    width: 95%;
+    height: 150px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    color: white;
+}
+
+.transaction div{
+    height: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.transaction .total{
+    height: 50px;
+    font-size: 20px;
+    border-top: 1px solid white;
+}
+
+.accordion {
+    width: 600px;
+    display: flex;
+    justify-content: center;
+}
+
 .accordion .contentbx {
+    width: 100%;
     position: relative;
-    margin: 10px 20px;
 }
 
 .accordion .contentbx .label {
     position: relative;
     padding: 10px;
-    background-image: linear-gradient(
-        to right,
-        rgb(9, 11, 69),
-        rgb(21, 23, 99)
-    );
+    background-color:rgb(21, 23, 99);
     color: white;
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
     cursor: pointer;
+}
+
+.accordion .contentbx .label span{
+    font-size: 20px;
 }
 
 .accordion .contentbx .label::before {
@@ -288,53 +359,52 @@ body {
     content: "-";
 }
 
-.accordion .contentbx .categories {
-    position: relative;
-    background: #3e94ec;
+.accordion .contentbx .history {
     height: 0;
-    overflow: hidden;
-    transition: 0.8s;
-    overflow-y: auto;
+    padding: 0 20px;
+    position: relative;
+    background-color: rgb(9, 11, 69);
+    transition: all 0.5s;
+    overflow-y: hidden;
+    color: white;
 }
 
-.accordion .contentbx.active .categories {
-    height: auto;
-    padding: 10px;
+.accordion .contentbx.active .history {
+    height: 200px;
+    padding: 10px 20px;
 }
 
-.categories {
+.history {
     display: flex;
-    gap: 20%;
-    list-style: none;
+    flex-direction: column;
+    gap: 10px;
 }
 
-/* .categories ul {
-    border-radius: 10px;
-    border: 2px solid black;
-    width: 100%;
-} */
-
-.categories li {
-    margin-left: 20px;
+.detail{
+    height: 110px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    border-bottom: 1px solid white;
 }
 
-.time li {
-    list-style: none;
-    margin-right: 10px;
+.detail h3{
+    font-size: 24px;
 }
 
-.note li {
-    list-style: none;
+.biaya{
+    display: flex;
+    justify-content: space-between;
 }
 
-.amount li {
-    list-style: none;
+.biaya p{
+    width: 50%;
 }
 
-/* .line {
-    border-left: 2px solid rgb(0, 0, 0);
-    height: 100%;
-} */
+.biaya h3{
+    font-size: 34px;
+}
+
 
 /* Add Record */
 .container-addrecord {
