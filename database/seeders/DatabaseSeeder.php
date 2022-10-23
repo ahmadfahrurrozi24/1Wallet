@@ -44,20 +44,44 @@ class DatabaseSeeder extends Seeder
 
         \App\Models\Category::create([
             "type_id" => 1,
-            "name" => "food & Beverage",
-            "icon" => "fa-solid fa-martini-glass"
+            "name" => "Food & Beverage",
+            "icon" => "bx bx-bowl-rice"
         ]);
 
         \App\Models\Category::create([
             "type_id" => 2,
             "name" => "Salary",
-            "icon" => "fa-solid fa-sack-dollar"
+            "icon" => "bx bx-money"
+        ]);
+        \App\Models\Category::create([
+            "type_id" => 1,
+            "name" => "Water Bill",
+            "icon" => "bx bx-water"
+        ]);
+
+        \App\Models\Category::create([
+            "type_id" => 2,
+            "name" => "Income Transfer",
+            "icon" => "bx bx-transfer"
+        ]);
+
+        \App\Models\Category::create([
+            "type_id" => 1,
+            "name" => "Transportation",
+            "icon" => "bx bx-car"
+        ]);
+
+        \App\Models\Category::create([
+            "type_id" => 2,
+            "name" => "Other Income",
+            "icon" => "bx bx-package"
         ]);
 
         \App\Models\Record::create([
             "user_id" => 1,
             "category_id" => 1,
-            "amount" => -20000
+            "amount" => -20000,
+            "note" => "beli makan"
         ]);
 
         \App\Models\Record::factory(100)->create();

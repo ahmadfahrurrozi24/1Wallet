@@ -10,6 +10,8 @@
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <link rel="stylesheet" href="{{ asset("css/style.css") }}">
   <link rel="stylesheet" href="{{ asset("css/sidebar.css") }}">
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+
 </head>
 <body>
   @include('dashboard.layout.sidebar')
@@ -17,6 +19,8 @@
     @include('dashboard.layout.header')
     @yield('content')
   </div>
+
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
 
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>

@@ -21,11 +21,18 @@ class StoreRecordRequest extends FormRequest
      *
      * @return array<string, mixed>
      */
+    public function messages()
+    {
+        return [
+            "category_id.required" => "Category must be selected."
+        ];
+    }
+
     public function rules()
     {
         return [
             "category_id" => "required|numeric",
-            "amount" => "required"
+            "amount" => "required",
         ];
     }
 }

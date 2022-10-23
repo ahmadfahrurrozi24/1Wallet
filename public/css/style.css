@@ -16,7 +16,7 @@ body {
 
 .dashboard-content {
     position: absolute;
-    height: 100%;
+    /* height: 100%; */
     width: calc(100% - 78px);
     left: 78px;
     transition: all 0.5s ease;
@@ -28,6 +28,10 @@ body {
 }
 
 .wrapper {
+    /* background-color: brown; */
+    /* display: flex; */
+    /* justify-content: center; */
+    margin-top: 20px;
     margin: 10px;
 }
 
@@ -93,154 +97,8 @@ body {
     cursor: pointer;
 }
 
-/* Css Tabel Transaksi */
-.tabelTransaksi {
-    /* margin-top: 78px;
-    margin-right: 557px; */
-}
-.tabelTransaksi body {
-    background-color: #3e94ec;
-    font-family: "Roboto", helvetica, arial, sans-serif;
-    font-size: 16px;
-    font-weight: 400;
-    text-rendering: optimizeLegibility;
-}
-
-.tabelTransaksi div.table-title {
-    display: block;
-    margin: auto;
-    max-width: 600px;
-    padding: 5px;
-    width: 100%;
-}
-
-.table-title h3 {
-    color: #fafafa;
-    font-size: 30px;
-    font-weight: 400;
-    font-style: normal;
-    font-family: "Roboto", helvetica, arial, sans-serif;
-    text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.1);
-    text-transform: uppercase;
-}
-
-/* Style Tabel */
-
-.table-fill {
-    background: white;
-    border-radius: 12px;
-    border-collapse: collapse;
-    height: 320px;
-    /* margin: auto; */
-    max-width: 600px;
-    padding: 5px;
-    width: 100%;
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
-    animation: float 5s infinite;
-}
-
-.tabelTransaksi th {
-    color: #d5dde5;
-    background: rgb(21, 23, 99);
-    /* border-bottom: 4px solid #9ea7af;
-      border-right: 1px solid #343a45; */
-    font-size: 23px;
-    font-weight: 100;
-    padding: 24px;
-    text-align: left;
-    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
-    vertical-align: middle;
-}
-
-.tabelTransaksi th:first-child {
-    border-top-left-radius: 12px;
-}
-
-.tabelTransaksi th:last-child {
-    border-top-right-radius: 12px;
-    border-right: none;
-}
-
-.tabelTransaksi tr {
-    border-top: 1px solid #c1c3d1;
-    border-bottom: 1px solid #c1c3d1;
-    color: #666b85;
-    font-size: 16px;
-    font-weight: normal;
-    text-shadow: 0 1px 1px rgba(256, 256, 256, 0.1);
-}
-
-.tabelTransaksi tr:hover td {
-    background: rgb(46, 48, 135);
-    color: #ffffff;
-    border-top: 1px solid rgb(46, 48, 135);
-}
-
-.tabelTransaksi tr:first-child {
-    border-top: none;
-}
-
-.tabelTransaksi tr:last-child {
-    border-bottom: none;
-}
-
-.tabelTransaksi tr:nth-child(odd) td {
-    background: #ebebeb;
-}
-
-.tabelTransaksi tr:nth-child(odd):hover td {
-    background: rgb(62, 64, 180);
-}
-
-.tabelTransaksi tr:last-child td:first-child {
-    border-bottom-left-radius: 12px;
-}
-
-.tabelTransaksi tr:last-child td:last-child {
-    border-bottom-right-radius: 12px;
-}
-
-.tabelTransaksi td {
-    background: #ffffff;
-    padding: 20px;
-    text-align: left;
-    vertical-align: middle;
-    font-weight: 300;
-    font-size: 18px;
-    text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.1);
-    border-right: 1px solid #c1c3d1;
-}
-
-.tabelTransaksi td:last-child {
-    border-right: 0px;
-}
-
-.tabelTransaksi th.text-left {
-    text-align: left;
-}
-
-.tabelTransaksi th.text-center {
-    text-align: center;
-}
-
-.tabelTransaksi th.text-right {
-    text-align: right;
-}
-
-.tabelTransaksi td.text-left {
-    text-align: left;
-}
-
-.tabelTransaksi td.text-center {
-    text-align: center;
-}
-
-.tabelTransaksi td.text-right {
-    text-align: right;
-}
-
 /* Alert */
-.alert{
+.alert {
     width: 50%;
     height: 50px;
     margin: auto;
@@ -251,8 +109,362 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-family: 'Roboto', sans-serif;
+    font-family: "Roboto", sans-serif;
 }
+
+/* Transaction History */
+.wrapper-history {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.headbox-history {
+    width: 600px;
+    height: auto;
+    background-color: rgb(21, 23, 99);
+}
+
+.headbox-history .tabs {
+    width: 100%;
+    margin: auto;
+    font-size: 15px;
+    display: flex;
+    justify-content: center;
+    border-bottom: 1px solid white;
+}
+
+.headbox-history .tabs a {
+    width: 120px;
+    height: 50px;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+.headbox-history .tabs a:active {
+    background-color: rgb(12, 14, 82);
+}
+
+.headbox-history .transaction {
+    width: 95%;
+    height: 150px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    color: white;
+}
+
+.transaction div {
+    height: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.transaction .total {
+    height: 50px;
+    font-size: 20px;
+    border-top: 1px solid white;
+}
+
+.accordion {
+    width: 600px;
+    display: flex;
+    justify-content: center;
+}
+
+.accordion .contentbx {
+    width: 100%;
+    position: relative;
+}
+
+.accordion .contentbx .label {
+    position: relative;
+    padding: 10px;
+    background-color: rgb(21, 23, 99);
+    color: white;
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    cursor: pointer;
+}
+
+.accordion .contentbx .label span {
+    font-size: 20px;
+}
+
+.accordion .contentbx .label::before {
+    content: "+";
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+    font-size: 1.5em;
+}
+
+.accordion .contentbx.active .label::before {
+    content: "-";
+}
+
+.accordion .contentbx .history {
+    height: 0;
+    padding: 0 20px;
+    position: relative;
+    background-color: rgb(9, 11, 69);
+    transition: all 0.5s;
+    overflow-y: hidden;
+    color: white;
+}
+
+.accordion .contentbx.active .history {
+    height: 200px;
+    padding: 10px 20px;
+}
+
+.history {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.detail {
+    height: 110px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    border-bottom: 1px solid white;
+}
+
+.detail h3 {
+    font-size: 24px;
+}
+
+.biaya {
+    display: flex;
+    justify-content: space-between;
+}
+
+.biaya p {
+    width: 50%;
+}
+
+.biaya h3 {
+    font-size: 34px;
+}
+
+/* Add Record */
+.container-addrecord {
+    margin-top: 70px;
+    /* align-items: center; */
+    height: 100%;
+    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.record-title {
+    margin-top: 40px;
+    text-align: center;
+    /* margin: 10px; */
+}
+
+.container {
+    margin-top: 100px;
+    padding: 32px;
+}
+
+.select-box {
+    display: flex;
+    width: 350px;
+    flex-direction: column;
+    margin-bottom: 5px;
+}
+
+.select-box .option-container {
+    background: rgb(21, 23, 99);
+    color: white;
+    max-height: 0;
+    width: 100%;
+    opacity: 0;
+    transition: all 0.4s;
+    border-radius: 8px;
+    overflow: hidden;
+    order: 1;
+}
+
+.selected {
+    background: rgb(21, 23, 99);
+    border-radius: 12px;
+    margin-bottom: 6px;
+    color: white;
+    display: flex;
+    align-items: center;
+    order: 0;
+}
+
+.arrow {
+    font-size: 20px;
+}
+
+.selected .selected-title {
+    margin-right: auto;
+}
+
+.selected::after {
+    content: "";
+    transition: all 0.8s;
+}
+
+.select-box .option-container.active {
+    max-height: 130px;
+    opacity: 1;
+    overflow: auto;
+    /* overflow-y: auto; */
+}
+
+.select-box .selected.is-option {
+    background-color: rgb(81, 12, 219);
+}
+
+/* .select-box .option-container.active + .selected::after {
+    transform: rotateX("180deg");
+    top: -6px;
+} */
+
+::-webkit-scrollbar {
+    width: 8px;
+    background: rgb(9, 11, 69);
+}
+::-webkit-scrollbar-thumb {
+    background: rgb(35, 38, 145);
+}
+
+.select-box .option-container::-webkit-scrollbar {
+    width: 8px;
+    background: rgb(9, 11, 69);
+    border-radius: 0 8px 8px 0;
+}
+
+.select-box .option-container::-webkit-scrollbar-thumb {
+    background: rgb(35, 38, 145);
+    border-radius: 0 8px 8px 0;
+}
+
+.select-box .option {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.select-box .option .option-check {
+    font-size: 20px;
+    justify-content: center;
+    align-items: center;
+    display: none;
+}
+
+.select-box .option .option-check.checked {
+    display: flex;
+}
+
+.select-box .option,
+.selected {
+    padding: 12px 24px;
+    cursor: pointer;
+    transition: background 0.5s;
+}
+
+.select-box .option:hover {
+    background: rgb(43, 45, 141);
+}
+.select-box .option.option-selected {
+    background-color: rgb(43 48 255);
+}
+
+.select-box label {
+    cursor: pointer;
+}
+
+.select-box .option .radio {
+    display: none;
+}
+
+/* Amount Section */
+.input-field {
+    /* width: 100%; */
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.head-input {
+    display: flex;
+    gap: 10px;
+}
+.input-group {
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.input-group input,
+.input-group textarea {
+    padding: 10px;
+    border-radius: 12px;
+    height: 45px;
+    border: 2px solid #c4c4c4;
+    /* width: 100%; */
+    /* flex-grow: 1; */
+}
+
+.input-group input:focus,
+.input-group textarea:focus {
+    outline: none;
+    border: 2px solid rgb(81, 12, 219);
+}
+
+.input-group textarea {
+    height: 80px;
+    max-height: 90px;
+    resize: none;
+}
+
+.bottom-input {
+    text-align: center;
+}
+
+.bottom-input button {
+    /* margin-top: 10px;
+    margin-left: 100px; */
+    padding: 12px;
+    width: 70%;
+    background: rgb(81, 12, 219) !important;
+    color: #fff;
+    border-radius: 12px;
+    cursor: pointer;
+    border: none;
+}
+
+.input-field .input-record {
+    border: 2px solid #c4c4c4;
+    width: 100%;
+}
+
+/* .input-field div {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    width: 100%;
+} */
 
 @media screen and (max-width: 515px) {
     .sidebar {
@@ -281,5 +493,19 @@ body {
 
     .sidebar .logo_content .logo {
         justify-content: space-between;
+    }
+
+    .table-fill {
+        width: 20px;
+    }
+
+    .container-addrecord {
+        /* display: flex;
+        flex-wrap: wrap; */
+        margin-top: 20px;
+    }
+
+    .record-title {
+        margin-top: 30px;
     }
 }

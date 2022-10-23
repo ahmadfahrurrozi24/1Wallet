@@ -1,5 +1,6 @@
 <?php
 
+use Carbon\Carbon;
 use Illuminate\Support\Facades\Facade;
 
 return [
@@ -210,7 +211,8 @@ return [
 
     'aliases' => Facade::defaultAliases()->merge([
         // 'ExampleClass' => App\Example\ExampleClass::class,
-        'Helper' => \App\Helper\Helper::class
+        'Helper' => \App\Helper\Helper::class,
+        "Carbon" => Carbon::class
     ])->toArray(),
 
 ];

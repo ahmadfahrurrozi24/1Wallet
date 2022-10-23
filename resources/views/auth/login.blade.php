@@ -71,10 +71,7 @@
       <script>
         Toastify({
           text: "{{ session()->get('message') }}",
-          style : {
-            ...style,
-            background: "green"
-          }
+          style 
         }).showToast();
       </script>
     @endif

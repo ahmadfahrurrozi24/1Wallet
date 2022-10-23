@@ -108,6 +108,8 @@ class UserController extends Controller
 
         if (Auth::attempt($credential)) {
             $request->session()->regenerate();
+
+            User::Rebalance();
             return redirect()->intended();
         }
 
