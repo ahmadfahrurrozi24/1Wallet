@@ -80,7 +80,8 @@ class DatabaseSeeder extends Seeder
         \App\Models\Record::create([
             "user_id" => 1,
             "category_id" => 1,
-            "amount" => -20000
+            "amount" => -20000,
+            "note" => "beli makan"
         ]);
 
         \App\Models\Record::factory(100)->create();
