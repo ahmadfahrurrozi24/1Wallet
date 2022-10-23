@@ -1,7 +1,7 @@
 @extends('dashboard.layout.template')
 @section('content')
-<div class="wrapper">
-    {{-- <!-- Histori Tabel Transaksi -->
+    <div class="wrapper">
+        {{-- <!-- Histori Tabel Transaksi -->
     <div class="tabelTransaksi">
       <div class="container">
         <table class="table-fill">
@@ -52,34 +52,59 @@
         </table>
       </div>
     </div> --}}
-    <div class="wrapper-history">
-      <div class="headbox-history">
-        {{-- <div class="tabs">
+        <div class="wrapper-history">
+            <div class="headbox-history">
+                {{-- <div class="tabs">
           <a href="">This Month</a>
           <a href="">All</a>
           <a href="">This Week</a>
         </div> --}}
-        <div class="tabs">
-          <a href="#">THIS MONTH</a>
-          <a href="#">ALL</a>
-          <a href="#">THIS WEEK</a>
-        </div>
-        <div class="transaction">
-          <div class="inflow">
-            <p>Inflow</p>
-            <span>+Rp 100.000</span>
-          </div>
-          <div class="outflow">
-            <p>Outflow</p>
-            <span>-Rp 20.000</span>
-          </div>
-          <div class="total">
-            <p>Total</p>
-            <span>+Rp 80.000</span>
-          </div>
-        </div>
-      </div>
-      <div class="accordion">
+                <div class="tabs">
+                    <a href="#">THIS MONTH</a>
+                    <a href="#">ALL</a>
+                    <a href="#">THIS WEEK</a>
+                </div>
+                <div class="transaction">
+                    <div class="inflow">
+                        <p>Inflow</p>
+                        <span>+Rp 100.000</span>
+                    </div>
+                    <div class="outflow">
+                        <p>Outflow</p>
+                        <span>-Rp 20.000</span>
+                    </div>
+                    <div class="total">
+                        <p>Total</p>
+                        <span>+Rp 80.000</span>
+                    </div>
+                </div>
+            </div>
+            @foreach ($records as $record)
+                <div class="accordion">
+                    <div class="contentbx">
+                        <div class="label">
+                            <h1>{{ Carbon::create($record->created_at)->day }}</h1>
+                            <span>{{ $record->category->name }}</span>
+                        </div>
+                        <div class="history">
+                            <div class="detail">
+                                <h3>{{ $record->category->name }}</h3>
+                                <p>{{ auth()->user()->name . "'s wallet" }}</p>
+                                <p>{{ Carbon::create($record->created_at)->toFormattedDateString() }}</p>
+                            </div>
+                            <div class="biaya">
+                                <p>
+                                    @if ($record->note)
+                                        {{ $record->note }}
+                                    @endif
+                                </p>
+                                <h3>@amount($record->amount)</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            @endforeach
+            {{-- <div class="accordion">
         <div class="contentbx">
             <div class="label">
               <h1>21</h1>
@@ -95,54 +120,21 @@
                   <p>Beli Nasi</p>
                   <h3>-Rp 100.000</h3>
                 </div>
-  
-                {{-- <select name="cars" id="cars">
-                    <option value="volvo">Volvo</option>
-                    <option value="saab">Saab</option>
-                    <option value="mercedes">Mercedes</option>
-                    <option value="audi">Audi</option>
-                  </select> --}}
             </div>
          </div>
-      </div>
-      <div class="accordion">
-        <div class="contentbx">
-            <div class="label">
-              <h1>21</h1>
-              <span>Food & Beverage</span>
-            </div>
-            <div class="history">
-                <div class="detail">
-                  <h3>Food & Beverage</h3>
-                  <p>Dimas walet</p>
-                  <p>Friday, 21/10/2022</p>
-                </div>
-                <div class="biaya">
-                  <p>Beli Nasi</p>
-                  <h3>-Rp 100.000</h3>
-                </div>
-  
-                {{-- <select name="cars" id="cars">
-                    <option value="volvo">Volvo</option>
-                    <option value="saab">Saab</option>
-                    <option value="mercedes">Mercedes</option>
-                    <option value="audi">Audi</option>
-                  </select> --}}
-            </div>
-         </div>
-      </div>
-    </div>
+      </div> --}}
+        </div>
 
-  </div>
+    </div>
 @endsection
 @section('js')
-<script>
-  const accordion = document.getElementsByClassName('contentbx');
-  
-  for (i = 0; i<accordion.length; i++){
-      accordion[i].addEventListener('click', function(){
-          this.classList.toggle('active')
-      }) 
-  }
-</script>
+    <script>
+        const accordion = document.getElementsByClassName('contentbx');
+
+        for (i = 0; i < accordion.length; i++) {
+            accordion[i].addEventListener('click', function() {
+                this.classList.toggle('active')
+            })
+        }
+    </script>
 @endsection
