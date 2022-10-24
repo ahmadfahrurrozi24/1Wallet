@@ -148,7 +148,7 @@ body {
     color: white;
 }
 
-.headbox-history .tabs a:focus{
+.headbox-history .tabs a:focus {
     background-color: rgb(12, 14, 82);
 }
 
@@ -467,13 +467,13 @@ body {
 } */
 
 @media screen and (max-width: 680px) {
-    .headbox-history{
+    .headbox-history {
         width: 80%;
     }
-    .accordion{
+    .accordion {
         width: 80%;
     }
-    .accordion .biaya{
+    .accordion .biaya {
         flex-direction: column;
         gap: 10px;
     }
@@ -523,21 +523,22 @@ body {
     }
 
     /* history */
-    .headbox-history{
+    .headbox-history {
         width: 100%;
     }
-    .accordion{
+    .accordion {
         width: 100%;
     }
-    .accordion .biaya{
+    .accordion .biaya {
         flex-direction: column;
         gap: 10px;
     }
-    .accordion .biaya h3{
+    .accordion .biaya h3 {
         font-size: 30px;
     }
     .accordion .contentbx.active .history {
         padding: 0 15px 5px 15px;
     }
 
+    /* comment */
 }
