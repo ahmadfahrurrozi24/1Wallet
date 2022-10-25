@@ -293,6 +293,12 @@ body {
 .page-item.active .page-link {
     background-color: rgb(43 48 255);
 }
+
+.page-item.disabled .page-link {
+    pointer-events: none;
+    opacity: 0.5;
+}
+
 /* Add Record */
 .container-addrecord {
     margin-top: 70px;
