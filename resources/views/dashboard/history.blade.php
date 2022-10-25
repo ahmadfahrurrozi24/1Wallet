@@ -124,7 +124,7 @@
          </div>
       </div> --}}
         </div>
-
+        {{ $records->links() }}
     </div>
 @endsection
 @section('js')
