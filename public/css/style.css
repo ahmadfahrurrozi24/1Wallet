@@ -259,6 +259,40 @@ body {
     font-size: 34px;
 }
 
+/* Pagination History */
+.pagination {
+    /* width: 5%; */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 15px;
+    font-size: 23px;
+    text-decoration: none;
+}
+
+.pagination li {
+    list-style: none;
+}
+
+.page-link {
+    color: white;
+    border-radius: 9px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background: rgb(21, 23, 99);
+    text-decoration: none;
+}
+
+.page-link:hover {
+    background: rgb(35, 38, 145);
+}
+.page-item.active .page-link {
+    background-color: rgb(43 48 255);
+}
 /* Add Record */
 .container-addrecord {
     margin-top: 70px;
