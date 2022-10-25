@@ -60,9 +60,9 @@
           <a href="">This Week</a>
         </div> --}}
                 <div class="tabs">
-                    <a href="#">THIS MONTH</a>
-                    <a href="#">ALL</a>
-                    <a href="#">THIS WEEK</a>
+                    <a href="/dashboard/history?time=month">THIS MONTH</a>
+                    <a href="/dashboard/history">ALL</a>
+                    <a href="/dashboard/history?time=week">THIS WEEK</a>
                 </div>
                 <div class="transaction">
                     <div class="inflow">
