@@ -265,9 +265,9 @@ body {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 15px;
+    gap: 5px;
     margin-top: 15px;
-    font-size: 23px;
+    font-size: 20px;
     text-decoration: none;
 }
 
@@ -281,8 +281,8 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 40px;
-    height: 40px;
+    width: 35px;
+    height: 35px;
     background: rgb(21, 23, 99);
     text-decoration: none;
 }
