@@ -125,6 +125,7 @@ body {
 
 .headbox-history {
     width: 600px;
+    border-radius: 12px;
     height: auto;
     background-color: rgb(21, 23, 99);
 }
@@ -183,44 +184,62 @@ body {
 
 .accordion .contentbx {
     width: 100%;
+    cursor: pointer;
+    position: relative;
+    transition: .4s;
 }
 
 .accordion .contentbx .label {
     position: relative;
-    padding: 10px;
-    background-color: rgb(21, 23, 99);
+    padding: 15px;
+    /* background-color: rgb(21, 23, 99); */
+    background-color: rgb(34, 36, 173);
     color: white;
     display: flex;
-    align-items: baseline;
+    justify-content: space-between;
+    align-items: center;
     gap: 10px;
     cursor: pointer;
     z-index: -1;
+    border-radius: 12px;
+    transition: 0.4s 0.4s;
 }
 
-.accordion .contentbx .label span {
+.accordion .contentbx .label .left-label{
+    display: flex;
+    align-items: center;
+    gap: 5px;
     font-size: 20px;
 }
 
-.accordion .contentbx .label::before {
-    content: "+";
-    position: absolute;
-    top: 50%;
-    right: 20px;
-    transform: translateY(-50%);
-    font-size: 1.5em;
+.accordion .contentbx .label .right-label {
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    /* margin-right: 25px; */
 }
 
-.accordion .contentbx.active .label::before {
-    content: "-";
+.accordion .contentbx .label.expense-label{
+    /* background-color: rgb(43 48 255); */
+    /* background-color: rgb(51, 57, 243); */
+    background-color: rgb(21, 23, 99); 
+}
+
+.accordion .contentbx.active .label{
+    border-radius: 12px 12px 0 0;
+    transition: none;
 }
 
 .accordion .contentbx .history {
     height: 0;
     padding: 0 20px;
     background-color: rgb(9, 11, 69);
+    /* background-color: rgb(34, 36, 173); */
     transition: all 0.5s;
     overflow-y: hidden;
     color: white;
+    border-radius: 0 0 12px 12px;
 }
 
 .accordion .contentbx.active .history {
