@@ -149,7 +149,7 @@ body {
     color: white;
 }
 
-.headbox-history .tabs a:focus{
+.headbox-history .tabs a:focus {
     background-color: rgb(12, 14, 82);
 }
 
@@ -276,6 +276,46 @@ body {
 
 .biaya h3 {
     font-size: 34px;
+}
+
+/* Pagination History */
+.pagination {
+    /* width: 5%; */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 5px;
+    margin-top: 15px;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+.pagination li {
+    list-style: none;
+}
+
+.page-link {
+    color: white;
+    border-radius: 9px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 35px;
+    height: 35px;
+    background: rgb(21, 23, 99);
+    text-decoration: none;
+}
+
+.page-link:hover {
+    background: rgb(35, 38, 145);
+}
+.page-item.active .page-link {
+    background-color: rgb(43 48 255);
+}
+
+.page-item.disabled .page-link {
+    pointer-events: none;
+    opacity: 0.5;
 }
 
 /* Add Record */
@@ -486,13 +526,13 @@ body {
 } */
 
 @media screen and (max-width: 680px) {
-    .headbox-history{
+    .headbox-history {
         width: 80%;
     }
-    .accordion{
+    .accordion {
         width: 80%;
     }
-    .accordion .biaya{
+    .accordion .biaya {
         flex-direction: column;
         gap: 10px;
     }
@@ -542,21 +582,22 @@ body {
     }
 
     /* history */
-    .headbox-history{
+    .headbox-history {
         width: 100%;
     }
-    .accordion{
+    .accordion {
         width: 100%;
     }
-    .accordion .biaya{
+    .accordion .biaya {
         flex-direction: column;
         gap: 10px;
     }
-    .accordion .biaya h3{
+    .accordion .biaya h3 {
         font-size: 30px;
     }
     .accordion .contentbx.active .history {
         padding: 0 15px 5px 15px;
     }
 
+    /* comment */
 }

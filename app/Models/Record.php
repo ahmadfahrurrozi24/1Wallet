@@ -77,4 +77,20 @@ class Record extends Model
     {
         return $this->where("user_id", auth()->user()->id)->latest();
     }
+
+    public function ScopeFilter($query,array $fillters){
+        $query->when(
+            $fillters["time"] ?? false,
+            function ($query, $t) {
+                if ($t == "week") {
+                    $query->WhereBetween("created_at",[Carbon::now()->startOfWeek(),
+                    Carbon::now()->endOfWeek()]);
+                } elseif ($t == "mouth") {
+                    $query->WhereBetween("created_at",[Carbon::now()->startOfMonth(),
+                    Carbon::now()->endOfMonth()]);
+                }
+            }
+        );
+    }
 }
+     
