@@ -33,7 +33,7 @@ class Record extends Model
     public function scopeMyTotal()
     {
         $expenseWeek = $this->where("user_id", auth()->user()->id)
-            ->whereBetween("created_at", [Carbon::now()->startOfWeek(), Carbon::now()->endOfWeek()])
+            ->whereBetween("date", [Carbon::now()->startOfWeek(), Carbon::now()->endOfWeek()])
             ->whereHas("category", function ($q) {
                 $q->whereHas("type", function ($q) {
                     $q->where("name", "EXPENSE");
@@ -41,7 +41,7 @@ class Record extends Model
             })->oldest()->get();
 
         $expenseMonth = $this->where("user_id", auth()->user()->id)
-            ->whereBetween("created_at", [Carbon::now()->startOfMonth(), Carbon::now()->endOfMonth()])
+            ->whereBetween("date", [Carbon::now()->startOfMonth(), Carbon::now()->endOfMonth()])
             ->whereHas("category", function ($q) {
                 $q->whereHas("type", function ($q) {
                     $q->where("name", "EXPENSE");
@@ -49,7 +49,7 @@ class Record extends Model
             })->oldest()->get();
 
         $incomeWeek = $this->where("user_id", auth()->user()->id)
-            ->whereBetween("created_at", [Carbon::now()->startOfWeek(), Carbon::now()->endOfWeek()])
+            ->whereBetween("date", [Carbon::now()->startOfWeek(), Carbon::now()->endOfWeek()])
             ->whereHas("category", function ($q) {
                 $q->whereHas("type", function ($q) {
                     $q->where("name", "INCOME");
@@ -57,7 +57,7 @@ class Record extends Model
             })->oldest()->get();
 
         $incomeMonth = $this->where("user_id", auth()->user()->id)
-            ->whereBetween("created_at", [Carbon::now()->startOfMonth(), Carbon::now()->endOfMonth()])
+            ->whereBetween("date", [Carbon::now()->startOfMonth(), Carbon::now()->endOfMonth()])
             ->whereHas("category", function ($q) {
                 $q->whereHas("type", function ($q) {
                     $q->where("name", "INCOME");
@@ -78,19 +78,23 @@ class Record extends Model
         return $this->where("user_id", auth()->user()->id)->latest();
     }
 
-    public function ScopeFilter($query,array $fillters){
+    public function scopeFilter($query, array $fillters)
+    {
         $query->when(
             $fillters["time"] ?? false,
             function ($query, $t) {
                 if ($t == "week") {
-                    $query->WhereBetween("created_at",[Carbon::now()->startOfWeek(),
-                    Carbon::now()->endOfWeek()]);
+                    $query->WhereBetween("date", [
+                        Carbon::now()->startOfWeek(),
+                        Carbon::now()->endOfWeek()
+                    ]);
                 } elseif ($t == "mouth") {
-                    $query->WhereBetween("created_at",[Carbon::now()->startOfMonth(),
-                    Carbon::now()->endOfMonth()]);
+                    $query->WhereBetween("date", [
+                        Carbon::now()->startOfMonth(),
+                        Carbon::now()->endOfMonth()
+                    ]);
                 }
             }
         );
     }
 }
-     

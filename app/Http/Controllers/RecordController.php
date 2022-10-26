@@ -41,8 +41,8 @@ class RecordController extends Controller
         $data["amount"] = Helper::storeNumberFormat($data["amount"]);
         $data["amount"] = Helper::newRecordCategoryCheck($data["category_id"], $data["amount"]);
         $data["user_id"] = auth()->user()->id;
+        $data["date"] ?? $data["date"] = now();
 
-        unset($data["date"]);
         unset($data["_token"]);
 
         Record::create($data);
