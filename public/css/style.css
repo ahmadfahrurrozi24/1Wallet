@@ -216,7 +216,7 @@ body {
     font-size: 20px;
     display: flex;
     align-items: center;
-    gap: 15px;
+    gap: 10px;
     /* margin-right: 25px; */
 }
 
@@ -538,6 +538,9 @@ body {
         flex-direction: column;
         gap: 10px;
     }
+    .accordion .biaya p {
+        width: 100%;
+    }
 }
 
 @media screen and (max-width: 515px) {
@@ -594,11 +597,14 @@ body {
         flex-direction: column;
         gap: 10px;
     }
+    .accordion .biaya p {
+        width: 100%;
+    }
     .accordion .biaya h3 {
         font-size: 30px;
     }
     .accordion .contentbx.active .history {
-        padding: 0 15px 5px 15px;
+        padding: 0 15px 13px 15px;
     }
 
     /* comment */
