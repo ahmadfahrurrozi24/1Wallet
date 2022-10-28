@@ -185,7 +185,6 @@ body {
 .accordion .contentbx {
     width: 100%;
     cursor: pointer;
-    position: relative;
     transition: .4s;
 }
 
@@ -317,7 +316,7 @@ body {
 
 .page-item.disabled .page-link {
     pointer-events: none;
-    opacity: 0.5;
+    background: rgba(21, 24, 99, 0.5);
 }
 
 /* Add Record */
