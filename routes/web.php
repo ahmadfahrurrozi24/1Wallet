@@ -31,6 +31,7 @@ Route::middleware("auth")->group(function () {
         Route::get("/", [DashboardController::class, "index"]);
         Route::get("/history", [DashboardController::class, "history"]);
         Route::get("/newrecord", [DashboardController::class, "newRecord"]);
+        Route::get("/insight", [DashboardController::class, "insight"]);
 
         Route::resource('record', RecordController::class)->except([
             "index", "create"

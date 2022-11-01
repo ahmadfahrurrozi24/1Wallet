@@ -37,4 +37,13 @@ class DashboardController extends Controller
 
         return view("dashboard.newRecord", $data);
     }
+    
+    public function insight()
+    {
+        $data = [
+            "title" => "Insight",
+        ];
+    
+        return view("dashboard.insight", $data);
+    }
 }

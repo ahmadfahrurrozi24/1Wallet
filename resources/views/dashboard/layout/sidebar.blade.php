@@ -31,7 +31,7 @@
       </a>
     </li>
     <li>
-      <a href="">
+      <a href="/dashboard/insight">
         <i class="bx bx-line-chart"></i>
         <span class="name">Insight</span>
       </a>

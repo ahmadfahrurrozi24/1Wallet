@@ -14,6 +14,7 @@ body {
     /* overflow: hidden; */
 }
 
+/* slide navbar */
 .dashboard-content {
     position: absolute;
     /* height: 100%; */
@@ -35,6 +36,7 @@ body {
     margin: 10px;
 }
 
+/* Money Tabel  */
 .dashboard-information {
     display: flex;
     justify-content: center;
@@ -60,6 +62,8 @@ body {
     gap: 20px;
     color: white;
 }
+
+/* hamburger menu */
 
 .box-balance {
     font-size: 80%;
@@ -185,7 +189,7 @@ body {
 .accordion .contentbx {
     width: 100%;
     cursor: pointer;
-    transition: .4s;
+    transition: 0.4s;
 }
 
 .accordion .contentbx .label {
@@ -204,7 +208,7 @@ body {
     transition: 0.4s 0.4s;
 }
 
-.accordion .contentbx .label .left-label{
+.accordion .contentbx .label .left-label {
     display: flex;
     align-items: center;
     gap: 5px;
@@ -219,13 +223,13 @@ body {
     /* margin-right: 25px; */
 }
 
-.accordion .contentbx .label.expense-label{
+.accordion .contentbx .label.expense-label {
     /* background-color: rgb(43 48 255); */
     /* background-color: rgb(51, 57, 243); */
-    background-color: rgb(21, 23, 99); 
+    background-color: rgb(21, 23, 99);
 }
 
-.accordion .contentbx.active .label{
+.accordion .contentbx.active .label {
     border-radius: 12px 12px 0 0;
     transition: none;
 }
@@ -525,6 +529,43 @@ body {
     gap: 5px;
     width: 100%;
 } */
+
+/* Money Tabel Insight  */
+.dashboard-insight {
+    display: flex;
+    justify-content: center;
+    gap: 40%;
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+.box-insight {
+    /* width: 380px; */
+    flex-grow: 1;
+    border-radius: 10px;
+    background-image: linear-gradient(
+        to right,
+        rgb(9, 11, 69),
+        rgb(21, 23, 99),
+        rgb(40, 41, 131)
+    );
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 30px;
+    color: white;
+}
+
+/* Line Chart */
+.line-chart {
+    margin-top: 60px;
+}
+
+/* Pie Chart */
+.pie-chart {
+    margin-top: 85px;
+}
 
 @media screen and (max-width: 860px) {
     .headbox-history {
