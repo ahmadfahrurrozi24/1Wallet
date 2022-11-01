@@ -19,7 +19,6 @@ use Illuminate\Support\Facades\Route;
 Route::middleware("isLogin")->group(function () {
     Route::get('/login', [UserController::class, "login"])->name("login");
     Route::get('/register', [UserController::class, "register"])->name("register");
-
     Route::post('/login', [UserController::class, "signIn"]);
     Route::post('/register', [UserController::class, "signUp"]);
 });
@@ -36,6 +35,10 @@ Route::middleware("auth")->group(function () {
         Route::resource('record', RecordController::class)->except([
             "index", "create"
         ]);
+        
+
+        Route::get("/profile", [DashboardController::class, "profile"]);
+        Route::put("/profile", [UserController::class, "update"]);
     });
 
     Route::get('/', function () {

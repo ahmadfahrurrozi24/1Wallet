@@ -22,7 +22,8 @@ class DashboardController extends Controller
     {
         $data = [
             "title" => "History",
-            "records" => Record::MyLastTransaction()->filter(request(["time"]))->latest()->paginate(10)
+            "records" => Record::MyLastTransaction()->filter(request(["t"]))->latest()->paginate(10),
+            "addition" => Record::HistoryAddition()
         ];
 
         return view("dashboard.history", $data);
@@ -37,13 +38,22 @@ class DashboardController extends Controller
 
         return view("dashboard.newRecord", $data);
     }
-    
+
     public function insight()
     {
         $data = [
             "title" => "Insight",
         ];
-    
+
         return view("dashboard.insight", $data);
+    }
+
+    public function profile()
+    {
+        $data = [
+            "title" => "User Profile"
+        ];
+
+        return view("dashboard.profile", $data);
     }
 }

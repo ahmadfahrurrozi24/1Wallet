@@ -81,7 +81,8 @@ class DatabaseSeeder extends Seeder
             "user_id" => 1,
             "category_id" => 1,
             "amount" => -20000,
-            "note" => "beli makan"
+            "note" => "beli makan",
+            "date" => now()
         ]);
 
         \App\Models\Record::factory(100)->create();

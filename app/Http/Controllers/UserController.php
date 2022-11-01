@@ -57,9 +57,19 @@ class UserController extends Controller
      * @param  \App\Models\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, User $user)
+    public function update(Request $request)
     {
-        //
+        $request->validate([
+            "name" => "required"
+        ]);
+
+        $data =  $request->all();
+
+        unset($data["_token"]);
+        unset($data["email"]);
+        
+        User::find(auth()->id())->update($data);
+        return redirect()->back()->with("message", "Profile has been updated");
     }
 
     public function login()

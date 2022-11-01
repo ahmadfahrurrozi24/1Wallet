@@ -153,6 +153,10 @@ body {
     color: white;
 }
 
+.headbox-history .tabs a.active {
+    background-color: rgb(12, 14, 82);
+}
+
 .headbox-history .tabs a:focus {
     background-color: rgb(12, 14, 82);
 }
@@ -189,6 +193,7 @@ body {
 .accordion .contentbx {
     width: 100%;
     cursor: pointer;
+    position: relative;
     transition: 0.4s;
 }
 
