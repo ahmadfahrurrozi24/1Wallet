@@ -81,14 +81,14 @@ class Record extends Model
     public function scopeFilter($query, array $fillters)
     {
         $query->when(
-            $fillters["time"] ?? false,
+            $fillters["t"] ?? false,
             function ($query, $t) {
                 if ($t == "week") {
                     $query->WhereBetween("date", [
                         Carbon::now()->startOfWeek(),
                         Carbon::now()->endOfWeek()
                     ]);
-                } elseif ($t == "mouth") {
+                } elseif ($t == "month") {
                     $query->WhereBetween("date", [
                         Carbon::now()->startOfMonth(),
                         Carbon::now()->endOfMonth()
@@ -96,5 +96,31 @@ class Record extends Model
                 }
             }
         );
+    }
+
+    public function scopeHistoryAddition()
+    {
+        $inflow = $this->scopeMyLastTransaction()->filter(request(["t"]))
+            ->whereHas("category", function ($q) {
+                $q->whereHas("type", function ($q) {
+                    $q->where("name", "INCOME");
+                });
+            })->sum("amount");
+        $outflow = $this->scopeMyLastTransaction()->filter(request(["t"]))
+            ->whereHas("category", function ($q) {
+                $q->whereHas("type", function ($q) {
+                    $q->where("name", "EXPENSE");
+                });
+            })->sum("amount");
+
+        $total = $inflow + $outflow;
+        if (!request("t")) $total += auth()->user()->first_balance;
+
+
+        return [
+            "inflow" => $inflow,
+            "outflow" => $outflow,
+            "total" => $total
+        ];
     }
 }
