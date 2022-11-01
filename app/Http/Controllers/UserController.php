@@ -59,7 +59,17 @@ class UserController extends Controller
      */
     public function update(Request $request)
     {
-        dd($request->all());
+        $request->validate([
+            "name" => "required"
+        ]);
+
+        $data =  $request->all();
+
+        unset($data["_token"]);
+        unset($data["email"]);
+        
+        User::find(auth()->id())->update($data);
+        return redirect()->back()->with("message", "Profile has been updated");
     }
 
     public function login()
