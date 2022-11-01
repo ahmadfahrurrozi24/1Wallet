@@ -35,12 +35,13 @@ Route::middleware("auth")->group(function () {
         Route::resource('record', RecordController::class)->except([
             "index", "create"
         ]);
-        
+
 
         Route::get("/profile", [DashboardController::class, "profile"]);
         Route::put("/profile", [UserController::class, "update"]);
     });
 
+    Route::get("/imgprofile/{path}", [UserController::class, "profileImageShow"]);
     Route::get('/', function () {
         return view('welcome');
     })->name("home");
