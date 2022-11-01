@@ -37,4 +37,12 @@ class DashboardController extends Controller
 
         return view("dashboard.newRecord", $data);
     }
+
+    public function profile(){
+        $data = [
+            "title" => "User Profile"
+        ];
+
+        return view("dashboard.profile", $data);
+    }
 }

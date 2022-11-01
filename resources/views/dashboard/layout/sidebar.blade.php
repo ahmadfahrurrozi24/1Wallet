@@ -38,6 +38,12 @@
     </li>
     <hr />
     <li>
+      <a href="/dashboard/profile">
+        <i class="bx bx-user"></i>
+        <span class="name">Profile</span>
+      </a>
+    </li>
+    <li>
       <form action="/logout" method="POST">
         @csrf
         <button type="submit">
