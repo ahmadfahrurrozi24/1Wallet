@@ -81,14 +81,14 @@ class Record extends Model
     public function scopeFilter($query, array $fillters)
     {
         $query->when(
-            $fillters["time"] ?? false,
+            $fillters["t"] ?? false,
             function ($query, $t) {
                 if ($t == "week") {
                     $query->WhereBetween("date", [
                         Carbon::now()->startOfWeek(),
                         Carbon::now()->endOfWeek()
                     ]);
-                } elseif ($t == "mouth") {
+                } elseif ($t == "month") {
                     $query->WhereBetween("date", [
                         Carbon::now()->startOfMonth(),
                         Carbon::now()->endOfMonth()
