@@ -22,7 +22,8 @@ class DashboardController extends Controller
     {
         $data = [
             "title" => "History",
-            "records" => Record::MyLastTransaction()->filter(request(["t"]))->latest()->paginate(10)
+            "records" => Record::MyLastTransaction()->filter(request(["t"]))->latest()->paginate(10),
+            "addition" => Record::HistoryAddition()
         ];
 
         return view("dashboard.history", $data);

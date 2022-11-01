@@ -97,4 +97,30 @@ class Record extends Model
             }
         );
     }
+
+    public function scopeHistoryAddition()
+    {
+        $inflow = $this->scopeMyLastTransaction()->filter(request(["t"]))
+            ->whereHas("category", function ($q) {
+                $q->whereHas("type", function ($q) {
+                    $q->where("name", "INCOME");
+                });
+            })->sum("amount");
+        $outflow = $this->scopeMyLastTransaction()->filter(request(["t"]))
+            ->whereHas("category", function ($q) {
+                $q->whereHas("type", function ($q) {
+                    $q->where("name", "EXPENSE");
+                });
+            })->sum("amount");
+
+        $total = $inflow + $outflow;
+        if (!request("t")) $total += auth()->user()->first_balance;
+
+
+        return [
+            "inflow" => $inflow,
+            "outflow" => $outflow,
+            "total" => $total
+        ];
+    }
 }

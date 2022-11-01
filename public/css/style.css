@@ -149,6 +149,10 @@ body {
     color: white;
 }
 
+.headbox-history .tabs a.active {
+    background-color: rgb(12, 14, 82);
+}
+
 .headbox-history .tabs a:focus {
     background-color: rgb(12, 14, 82);
 }
@@ -186,7 +190,7 @@ body {
     width: 100%;
     cursor: pointer;
     position: relative;
-    transition: .4s;
+    transition: 0.4s;
 }
 
 .accordion .contentbx .label {
@@ -205,7 +209,7 @@ body {
     transition: 0.4s 0.4s;
 }
 
-.accordion .contentbx .label .left-label{
+.accordion .contentbx .label .left-label {
     display: flex;
     align-items: center;
     gap: 5px;
@@ -220,13 +224,13 @@ body {
     /* margin-right: 25px; */
 }
 
-.accordion .contentbx .label.expense-label{
+.accordion .contentbx .label.expense-label {
     /* background-color: rgb(43 48 255); */
     /* background-color: rgb(51, 57, 243); */
-    background-color: rgb(21, 23, 99); 
+    background-color: rgb(21, 23, 99);
 }
 
-.accordion .contentbx.active .label{
+.accordion .contentbx.active .label {
     border-radius: 12px 12px 0 0;
     transition: none;
 }

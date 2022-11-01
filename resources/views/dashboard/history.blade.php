@@ -60,22 +60,23 @@
           <a href="">This Week</a>
         </div> --}}
                 <div class="tabs">
-                    <a href="/dashboard/history?t=month">THIS MONTH</a>
-                    <a href="/dashboard/history">ALL</a>
-                    <a href="/dashboard/history?t=week">THIS WEEK</a>
+                    <a href="/dashboard/history?t=month" class="@if (request('t') == 'month') active @endif">THIS
+                        MONTH</a>
+                    <a href="/dashboard/history" class="@if (!request('t')) active @endif">ALL</a>
+                    <a href="/dashboard/history?t=week" class="@if (request('t') == 'week') active @endif">THIS WEEK</a>
                 </div>
                 <div class="transaction">
                     <div class="inflow">
                         <p>Inflow</p>
-                        <span>+Rp 100.000</span>
+                        <span>@amount($addition['inflow'])</span>
                     </div>
                     <div class="outflow">
                         <p>Outflow</p>
-                        <span>-Rp 20.000</span>
+                        <span>@amount($addition['outflow'])</span>
                     </div>
                     <div class="total">
                         <p>Total</p>
-                        <span>+Rp 80.000</span>
+                        <span>@amount($addition['total'])</span>
                     </div>
                 </div>
             </div>
