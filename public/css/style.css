@@ -132,6 +132,7 @@ body {
     border-radius: 12px;
     height: auto;
     background-color: rgb(21, 23, 99);
+    overflow: hidden;
 }
 
 .headbox-history .tabs {
@@ -154,10 +155,6 @@ body {
 }
 
 .headbox-history .tabs a.active {
-    background-color: rgb(12, 14, 82);
-}
-
-.headbox-history .tabs a:focus {
     background-color: rgb(12, 14, 82);
 }
 
@@ -193,7 +190,6 @@ body {
 .accordion .contentbx {
     width: 100%;
     cursor: pointer;
-    position: relative;
     transition: 0.4s;
 }
 
