@@ -557,7 +557,7 @@ body {
     padding: 20px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    /* justify-content: center; */
     gap: 30px;
     color: white;
 }
@@ -566,14 +566,14 @@ body {
 .line-chart {
     margin-left: 15%;
     width: 800px;
-    margin-top: 60px;
+    margin-top: 70px;
 }
 
 /* Pie Chart */
 .piechart- {
     font-size: 15px;
     text-align: center;
-    margin-top: 60px;
+    margin-top: 70px;
     width: 400px;
 }
 
