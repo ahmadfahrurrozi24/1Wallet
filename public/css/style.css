@@ -539,7 +539,7 @@ body {
 .dashboard-insight {
     display: flex;
     justify-content: center;
-    gap: 40%;
+    gap: 30%;
     width: 100%;
     flex-wrap: wrap;
 }
@@ -564,12 +564,24 @@ body {
 
 /* Line Chart */
 .line-chart {
+    margin-left: 15%;
+    width: 800px;
     margin-top: 60px;
 }
 
 /* Pie Chart */
-.pie-chart {
-    margin-top: 85px;
+.piechart- {
+    font-size: 15px;
+    text-align: center;
+    margin-top: 60px;
+    width: 400px;
+}
+
+.pieWrap {
+    justify-content: center;
+    gap: 15%;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 @media screen and (max-width: 860px) {
@@ -650,6 +662,21 @@ body {
     }
     .accordion .contentbx.active .history {
         padding: 0 15px 13px 15px;
+    }
+
+    /* Tabel Insight */
+    .dashboard-insight {
+        gap: 20px;
+    }
+
+    /* pieChart */
+    .piechart- {
+        width: 270px;
+    }
+
+    .line-chart {
+        margin-left: 1px;
+        width: 350px;
     }
 
     /* comment */

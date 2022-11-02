@@ -27,10 +27,25 @@
 </div>
 
 <div>
-    <canvas class="line-chart" id="myChart" width="300" height="100"></canvas>
+    {{-- lineChart --}}
+    <div class="line-chart">
+    <canvas id="myChart"></canvas>
+    </div>
 
-    <canvas id="pieChart" width="200" height="50"></canvas>
-  </div>
+  <div class="pieWrap">
+    {{-- Expense Pie Chart --}}
+    <div class="piechart-">
+        <h3>Expense</h3>
+        <canvas id="ExpenseChart"></canvas>
+    </div>
+
+    {{-- Income Pie Chart --}}
+    <div class="piechart-">
+        <h3>Income</h3>
+        <canvas id="IncomeChart"></canvas>
+    </div>
+   </div>
+</div>
 
   
   
@@ -64,6 +79,8 @@ const myChart = new Chart(ctx, {
             borderWidth: 3
         }]
     },
+    responsive: true,
+    maintainAspectRatio: false,
     options: {
         scales: {
             y: {
@@ -73,15 +90,16 @@ const myChart = new Chart(ctx, {
     }
 });
 
-// pie-Chart
-const ctxpie = document.getElementById('pieChart').getContext('2d');
-const pieChart = new Chart(ctxpie, {
+// pie-Chart Expense
+const ctxExpense = document.getElementById('ExpenseChart').getContext('2d');
+const ExpenseChart = new Chart(ctxExpense, {
     type: 'pie',
     data: {
         labels: ['Water BIll', 'Food & Baverage', 'Transport'],
         datasets: [{
             label: '# of Votes',
             data: [35, 45, 20],
+            color: "white",
             backgroundColor: [
                 'rgba(255, 99, 132, 1)',
                 'rgba(54, 162, 235, 1)',
@@ -95,10 +113,37 @@ const pieChart = new Chart(ctxpie, {
             borderWidth: 1
         }]
     },
-    options: {
-        scales: {
-        } 
+    responsive: true,
+    maintainAspectRatio: false,
+    plugins:[ChartDataLabels]
+});
+
+
+// pie-Chart Income
+const ctxIncome = document.getElementById('IncomeChart').getContext('2d');
+const IncomeChart = new Chart(ctxIncome, {
+    type: 'pie',
+    data: {
+        labels: ['Water BIll', 'Food & Baverage', 'Transport'],
+        datasets: [{
+            label: '# of Votes',
+            data: [45, 20, 35],
+            color: "white",
+            backgroundColor: [
+                'rgba(255, 99, 132, 1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+            ],
+            borderColor: [
+                'rgba(255, 99, 132, 1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+            ],
+            borderWidth: 1
+        }]
     },
+    responsive: true,
+    maintainAspectRatio: false,
     plugins:[ChartDataLabels]
 });
 
