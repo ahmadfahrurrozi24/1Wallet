@@ -6,7 +6,7 @@
         /* background-color: black; */
         /* } */
         .user-profile {
-            width: 35%;
+            width: 450px;
             margin: auto;
             /* height: 100%; */
             background-color: white;
@@ -30,8 +30,8 @@
             background-size: cover;
             background-position: top center;
             border-radius: 50%;
+            border-radius: 50%;
         }
-
 
         .user-detail {
             width: 100%;
