@@ -19,6 +19,7 @@ return new class extends Migration
             $table->foreignId("category_id");
             $table->decimal("amount", 12, 2);
             $table->text("note")->nullable();
+            $table->date("date");
             $table->timestamps();
         });
     }

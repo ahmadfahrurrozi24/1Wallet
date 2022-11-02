@@ -7,7 +7,11 @@ use App\Http\Requests\UserRequest;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\File as FacadesFile;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Response as FacadesResponse;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Validation\Rules\File;
 
 class UserController extends Controller
 {
@@ -57,9 +61,31 @@ class UserController extends Controller
      * @param  \App\Models\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, User $user)
+    public function update(Request $request)
     {
-        //
+        $request->validate([
+            "name" => "required",
+            "imgProfile" => File::image()->max(2048)
+        ]);
+
+        $data = $request->all();
+
+        if ($request->file("imgProfile")) {
+            if (auth()->user()->profile_image) {
+                Storage::delete("profileImg/" . auth()->user()->profile_image);
+            }
+
+            $imgHashName = $request->file("imgProfile")->hashName();
+            $request->file("imgProfile")->storeAs("profileImg", $imgHashName);
+            $data["profile_image"] = $imgHashName;
+        }
+
+
+        unset($data["_token"]);
+        unset($data["email"]);
+
+        User::find(auth()->id())->update($data);
+        return redirect()->back()->with("message", "Profile has been updated");
     }
 
     public function login()
@@ -120,5 +146,22 @@ class UserController extends Controller
     {
         auth()->logout();
         return redirect()->to("/login");
+    }
+
+    public function profileImageShow($path)
+    {
+        $path = storage_path('app/profileImg/' . $path);
+
+        if (!FacadesFile::exists($path)) {
+            abort(404);
+        }
+
+        $file = FacadesFile::get($path);
+        $type = FacadesFile::mimeType($path);
+
+        $response = FacadesResponse::make($file, 200);
+        $response->header("Content-Type", $type);
+
+        return $response;
     }
 }

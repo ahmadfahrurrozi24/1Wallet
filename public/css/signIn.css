@@ -109,7 +109,7 @@ button {
 }
 button:hover {
     background-color: #121875;
-    box-shadow: 5px 5px 5px 0px #09117c;
+    box-shadow: 5px 5px 5px -2px #09117c;
 }
 
 P {

@@ -29,7 +29,8 @@ class RecordFactory extends Factory
             "user_id" => fake()->numberBetween(1, 11),
             "category_id" => $category_id,
             "amount" => $amount,
-            "note" => fake()->text(50)
+            "note" => fake()->text(50),
+            "date" => now()
         ];
     }
 }
