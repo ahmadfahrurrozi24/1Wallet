@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\ServiceProvider;
 
@@ -31,5 +32,11 @@ class AppServiceProvider extends ServiceProvider
         Blade::directive('amount', function ($expression) {
             return "<?php echo Helper::amountFormat($expression); ?>";
         });
+
+        Blade::directive('avatar', function ($expression) {
+            return "<?php echo $expression ? '/imgprofile/' . $expression : asset('img/user-placeholder.jpg'); ?>";
+        });
+
+        Paginator::useBootstrap();
     }
 }

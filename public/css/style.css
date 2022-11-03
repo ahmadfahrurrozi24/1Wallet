@@ -14,6 +14,7 @@ body {
     /* overflow: hidden; */
 }
 
+/* slide navbar */
 .dashboard-content {
     position: absolute;
     /* height: 100%; */
@@ -35,6 +36,7 @@ body {
     margin: 10px;
 }
 
+/* Money Tabel  */
 .dashboard-information {
     display: flex;
     justify-content: center;
@@ -60,6 +62,8 @@ body {
     gap: 20px;
     color: white;
 }
+
+/* hamburger menu */
 
 .box-balance {
     font-size: 80%;
@@ -115,6 +119,7 @@ body {
 /* Transaction History */
 .wrapper-history {
     width: 100%;
+    margin-top: 40px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -124,8 +129,10 @@ body {
 
 .headbox-history {
     width: 600px;
+    border-radius: 12px;
     height: auto;
     background-color: rgb(21, 23, 99);
+    overflow: hidden;
 }
 
 .headbox-history .tabs {
@@ -147,12 +154,12 @@ body {
     color: white;
 }
 
-.headbox-history .tabs a:active {
+.headbox-history .tabs a.active {
     background-color: rgb(12, 14, 82);
 }
 
 .headbox-history .transaction {
-    width: 95%;
+    width: 90%;
     height: 150px;
     margin: auto;
     display: flex;
@@ -182,45 +189,63 @@ body {
 
 .accordion .contentbx {
     width: 100%;
-    position: relative;
+    cursor: pointer;
+    transition: 0.4s;
 }
 
 .accordion .contentbx .label {
     position: relative;
-    padding: 10px;
-    background-color: rgb(21, 23, 99);
+    padding: 15px;
+    /* background-color: rgb(21, 23, 99); */
+    background-color: rgb(34, 36, 173);
     color: white;
     display: flex;
-    align-items: baseline;
+    justify-content: space-between;
+    align-items: center;
     gap: 10px;
     cursor: pointer;
+    z-index: -1;
+    border-radius: 12px;
+    transition: 0.4s 0.4s;
 }
 
-.accordion .contentbx .label span {
+.accordion .contentbx .label .left-label {
+    display: flex;
+    align-items: center;
+    gap: 5px;
     font-size: 20px;
 }
 
-.accordion .contentbx .label::before {
-    content: "+";
-    position: absolute;
-    top: 50%;
-    right: 20px;
-    transform: translateY(-50%);
-    font-size: 1.5em;
+.accordion .contentbx .label .right-label {
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    /* margin-right: 25px; */
 }
 
-.accordion .contentbx.active .label::before {
-    content: "-";
+.accordion .contentbx .label.expense-label {
+    /* background-color: rgb(43 48 255); */
+    /* background-color: rgb(51, 57, 243); */
+    background-color: rgb(21, 23, 99);
+}
+
+.accordion .contentbx.active .label {
+    border-radius: 12px 12px 0 0;
+    transition: none;
 }
 
 .accordion .contentbx .history {
     height: 0;
     padding: 0 20px;
-    position: relative;
     background-color: rgb(9, 11, 69);
+    /* background-color: rgb(34, 36, 173); */
     transition: all 0.5s;
     overflow-y: hidden;
     color: white;
+    border-radius: 0 0 12px 12px;
+    z-index: -1;
+    position: relative;
 }
 
 .accordion .contentbx.active .history {
@@ -257,6 +282,46 @@ body {
 
 .biaya h3 {
     font-size: 34px;
+}
+
+/* Pagination History */
+.pagination {
+    /* width: 5%; */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 5px;
+    margin-top: 15px;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+.pagination li {
+    list-style: none;
+}
+
+.page-link {
+    color: white;
+    border-radius: 9px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 35px;
+    height: 35px;
+    background: rgb(21, 23, 99);
+    text-decoration: none;
+}
+
+.page-link:hover {
+    background: rgb(35, 38, 145);
+}
+.page-item.active .page-link {
+    background-color: rgb(43 48 255);
+}
+
+.page-item.disabled .page-link {
+    pointer-events: none;
+    background: rgba(21, 24, 99, 0.5);
 }
 
 /* Add Record */
@@ -466,6 +531,71 @@ body {
     width: 100%;
 } */
 
+/* Money Tabel Insight  */
+.dashboard-insight {
+    display: flex;
+    justify-content: center;
+    gap: 30%;
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+.box-insight {
+    /* width: 380px; */
+    flex-grow: 1;
+    border-radius: 10px;
+    background-image: linear-gradient(
+        to right,
+        rgb(9, 11, 69),
+        rgb(21, 23, 99),
+        rgb(40, 41, 131)
+    );
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    gap: 30px;
+    color: white;
+}
+
+/* Line Chart */
+.line-chart {
+    margin-left: 15%;
+    width: 800px;
+    margin-top: 70px;
+}
+
+/* Pie Chart */
+.piechart- {
+    font-size: 15px;
+    text-align: center;
+    margin-top: 70px;
+    width: 400px;
+}
+
+.pieWrap {
+    justify-content: center;
+    gap: 15%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+@media screen and (max-width: 860px) {
+    .headbox-history {
+        width: 80%;
+    }
+    .accordion {
+        width: 80%;
+    }
+    .accordion .biaya {
+        flex-direction: column;
+        gap: 10px;
+    }
+    .accordion .biaya p {
+        width: 100%;
+    }
+}
+
 @media screen and (max-width: 515px) {
     .sidebar {
         transform: translateX(-240px);
@@ -508,4 +638,42 @@ body {
     .record-title {
         margin-top: 30px;
     }
+
+    /* history */
+    .headbox-history {
+        width: 100%;
+    }
+    .accordion {
+        width: 100%;
+    }
+    .accordion .biaya {
+        flex-direction: column;
+        gap: 10px;
+    }
+    .accordion .biaya p {
+        width: 100%;
+    }
+    .accordion .biaya h3 {
+        font-size: 30px;
+    }
+    .accordion .contentbx.active .history {
+        padding: 0 15px 13px 15px;
+    }
+
+    /* Tabel Insight */
+    .dashboard-insight {
+        gap: 20px;
+    }
+
+    /* pieChart */
+    .piechart- {
+        width: 270px;
+    }
+
+    .line-chart {
+        margin-left: 1px;
+        width: 350px;
+    }
+
+    /* comment */
 }

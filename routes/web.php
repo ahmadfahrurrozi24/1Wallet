@@ -19,7 +19,6 @@ use Illuminate\Support\Facades\Route;
 Route::middleware("isLogin")->group(function () {
     Route::get('/login', [UserController::class, "login"])->name("login");
     Route::get('/register', [UserController::class, "register"])->name("register");
-
     Route::post('/login', [UserController::class, "signIn"]);
     Route::post('/register', [UserController::class, "signUp"]);
 });
@@ -31,12 +30,18 @@ Route::middleware("auth")->group(function () {
         Route::get("/", [DashboardController::class, "index"]);
         Route::get("/history", [DashboardController::class, "history"]);
         Route::get("/newrecord", [DashboardController::class, "newRecord"]);
+        Route::get("/insight", [DashboardController::class, "insight"]);
 
         Route::resource('record', RecordController::class)->except([
             "index", "create"
         ]);
+
+
+        Route::get("/profile", [DashboardController::class, "profile"]);
+        Route::put("/profile", [UserController::class, "update"]);
     });
 
+    Route::get("/imgprofile/{path}", [UserController::class, "profileImageShow"]);
     Route::get('/', function () {
         return view('welcome');
     })->name("home");

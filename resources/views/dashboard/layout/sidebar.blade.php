@@ -31,12 +31,18 @@
       </a>
     </li>
     <li>
-      <a href="">
+      <a href="/dashboard/insight">
         <i class="bx bx-line-chart"></i>
         <span class="name">Insight</span>
       </a>
     </li>
     <hr />
+    <li>
+      <a href="/dashboard/profile">
+        <i class="bx bx-user"></i>
+        <span class="name">Profile</span>
+      </a>
+    </li>
     <li>
       <form action="/logout" method="POST">
         @csrf
