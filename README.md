@@ -2,7 +2,7 @@
 
 
 
-## My Wallet · http://127.0.0.1:8000/dashboard/history   [![Open In Collab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Naereen/badges)
+## My Wallet · (http://127.0.0.1:8000/login)   [![Open In Collab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Naereen/badges)
 
 
 [![N|Solid](https://cldup.com/dTxpPi9lDf.thumb.png)](https://nodesource.com/products/nsolid)
