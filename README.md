@@ -2,15 +2,13 @@
 
 
 
-
-
 ## My Wallet · https://www.dana.id/   [![Open In Collab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Naereen/badges)
 
 
 [![N|Solid](https://cldup.com/dTxpPi9lDf.thumb.png)](https://nodesource.com/products/nsolid)
 
 
-# Wallet is a JavaScript expense for building user interfaces.
+# Wallet is a expense manager for building user interfaces.
 
   ·Declarative: Wallets make it easy to create interactive UIs. Design simple views for each state in your app, and Wallet will efficiently update and render the right   components as your data changes. Declarative views make your code more predictable, easier to understand, and easier to debug.
 
