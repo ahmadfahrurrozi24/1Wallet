@@ -20,16 +20,18 @@ You can find the Wallet documentation on the website.
 # Check out the Getting Started page for a quick overview.
 
 
-## Documentation
+## Documentation:
 You can find the React documentation on the website.
-
 Check out the Getting Started page for a quick overview.
-
 The documentation is divided into several sections:
 
 ·Tutorial
+
 ·Main Concepts
+
 ·Advanced Guides
+
 ·API Reference
+
 ·Where to Get Support
 ·Contributing Guide
