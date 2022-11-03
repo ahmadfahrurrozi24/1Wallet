@@ -17,7 +17,7 @@
   ·Learn Once, Write Anywhere: So you can develop new features in React without rewriting existing code. React can also render on the server using Node and run mobile apps using React Native.
 You can find the Wallet documentation on the website.
 
-#Check out the Getting Started page for a quick feature.
+# Check out the Getting Started page for a quick feature.
 
 ## Fitur 1Wallet
 
