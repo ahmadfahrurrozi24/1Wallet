@@ -1,4 +1,4 @@
-<img src="https://raw.githubusercontent.com/ahmadfahrurrozi24/1Wallet/tester/public/img/logo.png" width="110px">
+<img src="https://raw.githubusercontent.com/ahmadfahrurrozi24/1Wallet/tester/public/img/logo1.png" width="150px">
 
 # 1Wallet Expense Manager   [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)    [![made-for-VSCode](https://img.shields.io/badge/Made%20for-VSCode-1f425f.svg)](https://code.visualstudio.com/)    [![GitHub commits](https://badgen.net/github/commits/Naereen/Strapdown.js)](https://GitHub.com/ahmadfahrurrozi24/1Wallet/commit/)     [![GitHub](https://badgen.net/badge/icon/github?icon=github&label)](https://github.com/ahmadfahrurrozi24/1Wallet) 
 
@@ -42,22 +42,20 @@ You can find the Wallet documentation on the website.
  -Log Out
 
 
-## Documentation:
-You can find the React documentation on the website.
-Check out the Getting Started page for a quick overview.
-The documentation is divided into several sections:
+## Profit One-Wallet:
+Transactions made easier:
+Compared to using coins or paper currency, the transaction process using e-Wallet is relatively faster.
+You only need to scan the barcode that has been provided, without having to take out a wallet or physical money to make payments.
 
-·Tutorial
+.Examples such as Payment:
 
-·Main Concepts
+·Shopping
 
-·Advanced Guides
+·Food & Beverage
 
-·API Reference
+·Water Bill
 
-·Where to Get Support
-
-·Contributing Guide
+.Transportation
 
 
 
