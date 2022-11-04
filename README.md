@@ -54,6 +54,9 @@ The documentation is divided into several sections:
 ·Contributing Guide
 
 
+[![GitHub branches](https://badgen.net/github/branches/ahmad/1Wallet)](https://github.com/Naereen/Strapdown.js/)
+
+
 
 
 
