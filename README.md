@@ -5,7 +5,7 @@
 ## My Wallet · (http://127.0.0.1:8000/login)   [![Open In Collab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Naereen/badges)
 
 
-[![N|Solid](https://cldup.com/dTxpPi9lDf.thumb.png)](https://nodesource.com/products/nsolid)     [![GitHub branches](https://badgen.net/github/branches/ahmadfahrurrozi24/1Wallet)](https://github.com/ahmadfahrurrozi24/1Wallet/)
+[![N|Solid](https://cldup.com/dTxpPi9lDf.thumb.png)](https://nodesource.com/products/nsolid)             [![GitHub branches](https://badgen.net/github/branches/ahmadfahrurrozi24/1Wallet)](https://github.com/ahmadfahrurrozi24/1Wallet/)
 
 
 # _Wallet is a expense manager for building user interfaces_.
