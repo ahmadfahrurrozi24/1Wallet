@@ -1,4 +1,4 @@
-<img src="https://raw.githubusercontent.com/ahmadfahrurrozi24/1Wallet/tester/public/img/logo.png" width="50px">
+<img src="https:logo W.jpg" width="50px">
 
 # 1Wallet Expense Manager   [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)    [![made-for-VSCode](https://img.shields.io/badge/Made%20for-VSCode-1f425f.svg)](https://code.visualstudio.com/)    [![GitHub commits](https://badgen.net/github/commits/Naereen/Strapdown.js)](https://GitHub.com/ahmadfahrurrozi24/1Wallet/commit/)     [![GitHub](https://badgen.net/badge/icon/github?icon=github&label)](https://github.com/ahmadfahrurrozi24/1Wallet) 
 
@@ -24,8 +24,17 @@ You can find the Wallet documentation on the website.
 # Check out the Getting Started page for a quick feature.
 
 ## _Fitur 1Wallet_
-
-Dillinger uses a number of open source projects to work properly:
+ 
+ -Sign UP
+ -Sign IN
+ -Dasboard
+ -History
+ -Add Record
+ -Insight
+ -User Profile
+ -Log Out
+ 
+ Dillinger uses a number of open source projects to work properly:
 
 - [AngularJS] - HTML enhanced for web apps!
 - [Ace Editor] - awesome web-based text editor
