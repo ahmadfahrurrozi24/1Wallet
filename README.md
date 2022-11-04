@@ -7,7 +7,7 @@
 
 [![N|Solid](https://cldup.com/dTxpPi9lDf.thumb.png)](https://nodesource.com/products/nsolid)   
 
-[![GitHub branches](https://badgen.net/github/branches/ahmadfahrurrozi24/1Wallet)](https://github.com/ahmadfahrurrozi24/1Wallet/)
+[![GitHub Branches](https://badgen.net/github/branches/ahmadfahrurrozi24/1Wallet)](https://github.com/ahmadfahrurrozi24/1Wallet/)
 
 
 # _Wallet is a expense manager for building user interfaces_.
@@ -21,7 +21,7 @@ You can find the Wallet documentation on the website.
 
 # Check out the Getting Started page for a quick feature.
 
-## Fitur 1Wallet
+## _Fitur 1Wallet_
 
 Dillinger uses a number of open source projects to work properly:
 
