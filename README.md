@@ -42,7 +42,7 @@ You can find the Wallet documentation on the website.
  -Log Out
 
 
-## Profit One-Wallet:
+## _Profit One-Wallet:_
 Transactions made easier:
 Compared to using coins or paper currency, the transaction process using e-Wallet is relatively faster.
 You only need to scan the barcode that has been provided, without having to take out a wallet or physical money to make payments.
