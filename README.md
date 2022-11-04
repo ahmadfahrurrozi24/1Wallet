@@ -1,4 +1,4 @@
-<img src="https://upload.wikimedia.org/wikipedia/commons/6/69/How_to_use_icon.svg" width="50px">
+<img src="https://raw.githubusercontent.com/ahmadfahrurrozi24/1Wallet/tester/public/img/logo.png" width="150px">
 
 # 1Wallet Expense Manager   [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)    [![made-for-VSCode](https://img.shields.io/badge/Made%20for-VSCode-1f425f.svg)](https://code.visualstudio.com/)    [![GitHub commits](https://badgen.net/github/commits/Naereen/Strapdown.js)](https://GitHub.com/ahmadfahrurrozi24/1Wallet/commit/)     [![GitHub](https://badgen.net/badge/icon/github?icon=github&label)](https://github.com/ahmadfahrurrozi24/1Wallet) 
 
@@ -25,18 +25,21 @@ You can find the Wallet documentation on the website.
 
 ## _Fitur 1Wallet_
 
-Dillinger uses a number of open source projects to work properly:
-
-- [AngularJS] - HTML enhanced for web apps!
-- [Ace Editor] - awesome web-based text editor
-- [markdown-it] - Markdown parser done right. Fast and easy to extend.
-- [Twitter Bootstrap] - great UI boilerplate for modern web apps
-- [node.js] - evented I/O for the backend
-- [Express] - fast node.js network app framework [@tjholowaychuk]
-- [Gulp] - the streaming build system
-- [Breakdance](https://breakdance.github.io/breakdance/) - HTML
-to Markdown converter
-- [jQuery] - duh
+ -Sign UP
+ 
+ -Sign IN
+ 
+ -Dasboard
+ 
+ -History
+ 
+ -Add Record
+ 
+ -Insight
+ 
+ -User Profile
+ 
+ -Log Out
 
 
 
