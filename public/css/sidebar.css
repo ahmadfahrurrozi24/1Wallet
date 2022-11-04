@@ -107,6 +107,7 @@
 
 .sidebar ul li button {
     color: beige;
+    width: 100%;
     font-weight: 400;
     display: flex;
     align-items: center;
