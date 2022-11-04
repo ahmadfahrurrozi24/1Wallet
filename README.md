@@ -1,4 +1,4 @@
-<img src="https://upload.wikimedia.org/wikipedia/commons/6/69/How_to_use_icon.svg" width="50px">
+<img src="logo W.jpg" width="50px">
 
 # 1Wallet Expense Manager   [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)    [![made-for-VSCode](https://img.shields.io/badge/Made%20for-VSCode-1f425f.svg)](https://code.visualstudio.com/)    [![GitHub commits](https://badgen.net/github/commits/Naereen/Strapdown.js)](https://GitHub.com/ahmadfahrurrozi24/1Wallet/commit/)     [![GitHub](https://badgen.net/badge/icon/github?icon=github&label)](https://github.com/ahmadfahrurrozi24/1Wallet) 
 
