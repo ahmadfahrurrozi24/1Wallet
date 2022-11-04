@@ -27,10 +27,13 @@
 </div>
 
 <div>
+
     {{-- lineChart --}}
+ <div class="linechart1">
     <div class="line-chart">
-    <canvas id="myChart"></canvas>
+        <canvas id="myChart"></canvas>
     </div>
+ </div>
 
   <div class="pieWrap">
     {{-- Expense Pie Chart --}}
