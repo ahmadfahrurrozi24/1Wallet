@@ -42,6 +42,7 @@ body {
 
 /* Money Tabel  */
 .dashboard-information {
+    margin-top: 40px;
     display: flex;
     justify-content: center;
     gap: 20px;
@@ -540,6 +541,7 @@ body {
 
 /* Money Tabel Insight  */
 .dashboard-insight {
+    margin-top: 40px;
     display: flex;
     justify-content: center;
     gap: 30%;
@@ -566,9 +568,14 @@ body {
 }
 
 /* Line Chart */
+.linechart1 {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
 .line-chart {
-    margin-left: 15%;
-    width: 800px;
+    width: 700px;
     margin-top: 70px;
 }
 
@@ -600,6 +607,25 @@ body {
     }
     .accordion .biaya p {
         width: 100%;
+    }
+
+    .record-title {
+        margin-top: 70px;
+    }
+
+    /* Tabel Insight */
+    .dashboard-insight {
+        gap: 20px;
+    }
+
+    /* pieChart */
+    .piechart- {
+        width: 270px;
+    }
+
+    .line-chart {
+        margin-left: 1px;
+        width: 350px;
     }
 }
 
@@ -676,6 +702,8 @@ body {
     .accordion .contentbx.active .history {
         padding: 0 15px 13px 15px;
     }
+
+    /* Insight Responsive */
 
     /* Tabel Insight */
     .dashboard-insight {
