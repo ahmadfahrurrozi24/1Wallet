@@ -75,13 +75,8 @@ body {
 }
 
 .header {
-<<<<<<< HEAD
-    position: sticky;
-    width: 100%;
-=======
     position: fixed;
     width: calc(100% - 78px);
->>>>>>> 7735c44a694af6004628503d1a0af7c12abea15a
     height: 60px;
     background-image: linear-gradient(
         to right,
