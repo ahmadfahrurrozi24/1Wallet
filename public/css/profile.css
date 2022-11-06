@@ -8,12 +8,10 @@
     gap: 100px;
     font-family: "Roboto", sans-serif;
 }
-
 .box-image{
     height: 204px;
     position: relative;
 }
-
 .user-image {
     width: 100%;
     padding: 100px;
@@ -37,11 +35,9 @@
     bottom: 7px;
     cursor: pointer;
 }
-
 #file-profile{
     display: none;
 }
-
 .user-detail {
     width: 550px;
     padding: 20px;
@@ -76,26 +72,22 @@
     margin-left: -20px;
     font-size: 25px;
 }
-
 .user-detail .password {
     width: 100%;
     display: flex;
     flex-direction: column;
     gap: 10px;
 }
-
 .user-detail .password input {
     border: none;
     border-bottom:2px solid #c4c4c4;
 }
-
 .user-detail .password a {
     width: 152px;
     font-size: 17px;
     text-decoration: none;
     color: rgb(0, 47, 255);
 }
-
 .user-profile .submit {
     width: 100%;
     margin-top: 20px;
@@ -103,7 +95,6 @@
     justify-content: center;
     align-items: center;
 }
-
 .submit button {
     width: 200px;
     height: 50px;
