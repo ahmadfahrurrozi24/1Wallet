@@ -83,6 +83,7 @@ class UserController extends Controller
 
         unset($data["_token"]);
         unset($data["email"]);
+        unset($data["password"]);
 
         User::find(auth()->id())->update($data);
         return redirect()->back()->with("message", "Profile has been updated");
