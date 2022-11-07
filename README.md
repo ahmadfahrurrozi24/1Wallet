@@ -43,22 +43,24 @@ You can find the Wallet documentation on the website.
 
 
 
-## Documentation:
-You can find the React documentation on the website.
-Check out the Getting Started page for a quick overview.
-The documentation is divided into several sections:
+## Keuntungan 
+one-wallet:
 
-·Tutorial
+Transactions Made Easier:
+Compared to using coins or paper currency, the transaction process using e-Wallet is relatively faster.
+You only need to scan the barcode that has been provided, without having to take out a wallet or physical money to make payments.
 
-·Main Concepts
+·For example, such as payment:
 
-·Advanced Guides
+·Shopping
 
-·API Reference
+.Food & Beverage
 
-·Where to Get Support
+.Water Bill
 
-·Contributing Guide
+.Transportation
+
+
 
 
 
