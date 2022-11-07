@@ -41,8 +41,7 @@ You can find the Wallet documentation on the website.
  
  -Log Out
 
-## _Profit
-##_one-wallet_:
+## _Profit one-wallet_:
 
 Transactions Made Easier:
 Compared to using coins or paper currency, the transaction process using e-Wallet is relatively faster.
