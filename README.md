@@ -57,6 +57,28 @@ You only need to scan the barcode that has been provided, without having to take
 
 .Transportation
 
+# Examples
+
+## _We have several examples on the website. Here is the first one to get you started:_
+
+
+
+```sh
+import { createRoot } from 'react-dom/client';
+function HelloMessage({ name }) {
+  return <div>Hello {name}</div>;
+}
+const root = createRoot(document.getElementById('container'));
+root.render(<HelloMessage name="1Wallet" />);
+```
+
+
+
+[![forthebadge made-with-go](http://ForTheBadge.com/images/badges/made-with-go.svg)](http://127.0.0.1:8000/register)
+
+
+
+
 
 # _✨Thanks, see you next time everyone✨_
 
