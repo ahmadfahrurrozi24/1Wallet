@@ -41,10 +41,8 @@ You can find the Wallet documentation on the website.
  
  -Log Out
 
-
-
-## Keuntungan 
-one-wallet:
+## _Profit
+one-wallet_:
 
 Transactions Made Easier:
 Compared to using coins or paper currency, the transaction process using e-Wallet is relatively faster.
@@ -59,6 +57,12 @@ You only need to scan the barcode that has been provided, without having to take
 .Water Bill
 
 .Transportation
+
+# _✨Thanks, see you next time everyone✨_
+
+ [![saythanks](https://img.shields.io/badge/say-thanks-ff69b4.svg)](https://github.com/ahmadfahrurrozi24?tab=repositories/to/ahmadfahrurrozi24)
+
+
 
 
 
