@@ -32,8 +32,8 @@ body {
     /* background-color: brown; */
     /* display: flex; */
     /* justify-content: center; */
-    margin-top: 20px;
     margin: 10px;
+    margin-top: 70px;
 }
 
 /* Money Tabel  */
@@ -70,7 +70,8 @@ body {
 }
 
 .header {
-    width: 100%;
+    position: fixed;
+    width: calc(100% - 78px);
     height: 60px;
     background-image: linear-gradient(
         to right,
@@ -82,6 +83,7 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 0 20px;
+    transition: width 0.5s;
 }
 
 .header .header-left button {
@@ -119,7 +121,7 @@ body {
 /* Transaction History */
 .wrapper-history {
     width: 100%;
-    margin-top: 40px;
+    margin-top: 70px;
     display: flex;
     flex-direction: column;
     justify-content: center;

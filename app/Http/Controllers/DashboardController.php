@@ -2,8 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use App\Models\Record;
 use App\Models\Type;
+use App\Models\User;
+use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Event;
 
 class DashboardController extends Controller
 {
@@ -43,7 +48,25 @@ class DashboardController extends Controller
     {
         $data = [
             "title" => "Insight",
+            "recordTotal" => Record::MyTotal(),
+            "categoryChartData" => Category::CategoryChart()
         ];
+
+        // dump(Record::where("user_id", auth()->user()->id)
+        //     ->whereHas("category", function ($q) {
+        //         $q->where("id", 3)->whereHas("type", function ($q) {
+        //             $q->where("name", "EXPENSE");
+        //         });
+        //     })->get()->toArray());
+
+        DB::enableQueryLog();
+        Category::with("record")->whereHas("record", function ($q) {
+            $q->where("user_id", 1);
+        })->get();
+
+        dd(DB::getQueryLog());
+
+        // dd();
 
         return view("dashboard.insight", $data);
     }
