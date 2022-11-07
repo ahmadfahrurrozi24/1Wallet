@@ -15,14 +15,6 @@
     width: 240px;
 }
 
-.sidebar.active ~ .dashboard-content {
-    width: calc(100% - 240px);
-    left: 240px;
-}
-
-.sidebar.active ~ .dashboard-content .header {
-    width: calc(100% - 240px);
-}
 /* Logo Navbar */
 .logo_content {
     display: flex;
@@ -162,6 +154,14 @@
     opacity: 1;
     display: inherit;
     pointer-events: auto;
+}
+
+.sidebar ul li a i {
+    height: 50px;
+    min-width: 40px;
+    border-radius: 13px;
+    line-height: 50px;
+    text-align: center;
 }
 
 .sidebar ul li a i {
