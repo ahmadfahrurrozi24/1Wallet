@@ -1,6 +1,6 @@
 @extends('dashboard.layout.template')
 @section('css')
-    <link rel="stylesheet" href="{{ asset("css/profile.css") }}">
+    <link rel="stylesheet" href="{{ asset('css/profile.css') }}">
 @endsection
 
 @section('content')
@@ -33,28 +33,26 @@
                         <button type="submit">save</button>
                     </div>
                 </div>
+            </div>
         </form>
-    </div>
-    {{-- <img src="{{ auth()->user()->profile_image ? '/imgprofile/' . auth()->user()->profile_image : asset('img/user-placeholder.jpg') }}"
-            width="200" alt="">
-        <form action="" method="POST" enctype="multipart/form-data">
-            @method('put')
-            @csrf
-            <input type="file" name="imgProfile">
-            <input type="text" name="name" value="{{ auth()->user()->name }}">
-            <input type="email" name="email" value="{{ auth()->user()->email }}">
-            <button type="submit">submit</button>
-        </form> --}}
     </div>
 @endsection
 @section('js')
     <script>
         const boxName = document.querySelector('.user-name');
         const name = document.querySelector('.user-name input');
-        const nameEdit = document.querySelector('.bx-pencil');
-        boxName.addEventListener('click', function(){
+        const imgInp = document.getElementById("file-profile")
+        const imgPrev = document.querySelector(".user-image")
+
+        boxName.addEventListener('click', function() {
             name.select();
         });
 
+        imgInp.onchange = evt => {
+            const [file] = imgInp.files
+            if (file) {
+                imgPrev.style.backgroundImage = `url(${URL.createObjectURL(file)})`
+            }
+        }
     </script>
 @endsection
