@@ -1,0 +1,148 @@
+.user-profile {
+    width: 90%;
+    margin: auto;
+    padding: 40px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    gap: 100px;
+    font-family: "Roboto", sans-serif;
+}
+.box-image{
+    height: 204px;
+    position: relative;
+}
+.user-image {
+    width: 100%;
+    padding: 100px;
+    border-radius: 50%;
+    border: 2px solid #c4c4c4;
+    background-size: cover;
+    box-sizing: border-box;
+}
+.box-image .image-edit{
+    width: 50px;
+    height: 50px;
+    background-color: rgb(21, 23, 99);
+    color: #ece9e9;
+    font-size: 33px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    right: 7px;
+    bottom: 7px;
+    cursor: pointer;
+}
+#file-profile{
+    display: none;
+}
+.user-detail {
+    width: 550px;
+    padding: 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.user-detail input {
+    width: 100%;
+    height: 40px;
+    padding: 10px;
+    box-sizing: border-box;
+    border-bottom: 2px solid #c4c4c4;
+    border: none;
+    font-size: 16px;
+}
+.user-detail input:focus{
+    outline: none;
+}
+
+.user-detail input:disabled {
+    background-color: #ece9e9;
+    cursor: no-drop;
+}
+.user-detail .user-name{
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+.user-detail .user-name i{
+    margin-left: -20px;
+    font-size: 25px;
+}
+.user-detail .password {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.user-detail .password input {
+    border: none;
+    border-bottom:2px solid #c4c4c4;
+}
+.user-detail .password a {
+    width: 152px;
+    font-size: 17px;
+    text-decoration: none;
+    color: rgb(0, 47, 255);
+}
+.user-profile .submit {
+    width: 100%;
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.submit button {
+    width: 200px;
+    height: 50px;
+    border: none;
+    background: rgb(21, 23, 99);
+    border-radius: 7px;
+    color: white;
+    font-size: 17px;
+    font-family: sans-serif;
+    cursor: pointer;
+}
+
+
+
+@media screen and (max-width: 789px) {
+    .user-profile{
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        gap: 40px;
+        padding: 30px;
+    }
+    .box-image{
+        height: auto;
+    }
+    .box-image .image-edit{
+        width: 45px;
+        height: 45px;
+        right: 3px;
+        bottom: 3px;
+        font-size: 23px;
+        margin: auto;
+        justify-content: center;
+        align-items: center;
+    }
+    .box-image label{
+        margin: 0;
+        padding: 0;
+    }
+    .box-image label i{
+        margin: 0;
+        padding: 0;
+    }
+    .user-image{
+        margin: auto;
+        padding: 70px;
+    }
+    .user-detail{
+        width: 100%;
+    }
+}
