@@ -90,7 +90,6 @@ body {
     align-items: center;
     padding: 0 20px;
     transition: width 0.5s;
-    top: 0;
 }
 
 .header .header-left button {
