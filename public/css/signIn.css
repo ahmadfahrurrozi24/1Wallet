@@ -23,7 +23,6 @@ form {
     justify-content: center;
     align-items: center;
     background-color: white;
-    /* background-image:linear-gradient(90deg,rgb(5, 7, 44),rgb(19, 22, 92)); */
     font-family: "Roboto", sans-serif;
     color: black;
     box-shadow: 0 0 9px 7px #0c1374;
@@ -94,6 +93,13 @@ input:focus {
     position: absolute;
     right: 0;
     cursor: pointer;
+}
+.password .box-password{
+    border-bottom: 1px solid black;
+}
+.password .box-password input{
+    width: 88%;
+    border-bottom: none;
 }
 button {
     width: 50%;
