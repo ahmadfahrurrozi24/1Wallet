@@ -28,7 +28,7 @@
                         placeholder="Balance" autocomplete="off">
                 </div>
                 <div class="check">
-                    <input type="checkbox" name="agreement" value="off">
+                    <input type="checkbox" name="agreement">
                     <p>I Accept All Requirements</p>
                 </div>
             </div>
