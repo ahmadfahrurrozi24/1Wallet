@@ -67,12 +67,12 @@
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     {{-- line-chart --}}
     <script>
-        // let dynamicColors = function() {
-        //     var r = Math.floor(Math.random() * 255);
-        //     var g = Math.floor(Math.random() * 255);
-        //     var b = Math.floor(Math.random() * 255);
-        //     return "rgb(" + r + "," + g + "," + b + ")";
-        // };
+        let dynamicColors = function() {
+            var r = Math.floor(Math.random() * 255);
+            var g = Math.floor(Math.random() * 255);
+            var b = Math.floor(Math.random() * 255);
+            return "rgb(" + r + "," + g + "," + b + ")";
+        };
 
         // const ctx = document.getElementById('myChart');
         // const myChart = new Chart(ctx, {
@@ -106,84 +106,87 @@
         //     }
         // });
 
+        function getTotalData(objectData) {
+            let total = {};
+
+            // console.log(dataExpenseChart)
+            for (const [key, value] of Object.entries(objectData)) {
+                let sum = 0;
+                for (const data of value) {
+                    sum += parseInt(data)
+                }
+
+                if (sum < 0) sum *= -1
+
+                total = {
+                    ...total,
+                    [key]: sum
+                }
+            }
+
+            return total
+        }
+
         // pie-Chart Expense
         let categoryData = {!! $categoryChartData !!}
-        let labelExpenseChart = Object.keys(categoryData.expense);
-        let dataExpenseChart = categoryData.expense
-
-        let totalExpense = {};
-
-        // console.log(dataExpenseChart)
-        for (const [key, value] of Object.entries(dataExpenseChart)) {
-            let sum = 0;
-            for (const data of value) {
-                sum += parseInt(data)
-            }
-            totalExpense = {
-                ...totalExpense,
-                [key]: sum
+        let options = {
+            plugins: {
+                tooltip: {
+                    enabled: false
+                },
+                datalabels: {
+                    formatter: (value, ctx) => {
+                        let sum = 0;
+                        let dataArr = ctx.chart.data.datasets[0].data;
+                        dataArr.map(data => {
+                            sum += data;
+                        });
+                        let percentage = (value * 100 / sum).toFixed(2) + "%";
+                        return percentage;
+                    },
+                    color: '#fff',
+                }
             }
         }
 
-        console.log(totalExpense)
-        // let labelIncomeChart = Object.keys(pieChartData.income);
-        // let dataIncomeChart = Object.values(pieChartData.income)
-        // console.log(pieChartData)
-        // let options = {
-        //     plugins: {
-        //         tooltip: {
-        //             enabled: true
-        //         },
-        //         datalabels: {
-        //             formatter: (value, ctx) => {
-        //                 let sum = 0;
-        //                 let dataArr = ctx.chart.data.datasets[0].data;
-        //                 dataArr.map(data => {
-        //                     sum += data;
-        //                 });
-        //                 let percentage = (value * 100 / sum).toFixed(2) + "%";
-        //                 return percentage;
-        //             },
-        //             color: '#fff',
-        //         }
-        //     }
-        // }
-
-        // const ctxExpense = document.getElementById('ExpenseChart').getContext('2d');
-        // const expenseChartColor = Array.from({
-        //     length: labelExpenseChart.length
-        // }, () => dynamicColors())
-        // const ExpenseChart = new Chart(ctxExpense, {
-        //     type: 'pie',
-        //     data: {
-        //         labels: labelExpenseChart,
-        //         datasets: [{
-        //             data: dataExpenseChart,
-        //             backgroundColor: expenseChartColor,
-        //         }]
-        //     },
-        //     options,
-        //     responsive: true,
-        //     maintainAspectRatio: false,
-        //     plugins: [ChartDataLabels]
-        // });
+        const ctxExpense = document.getElementById('ExpenseChart').getContext('2d');
+        const expenseChartColor = Array.from({
+            length: Object.keys(getTotalData(categoryData.expense)).length
+        }, () => dynamicColors())
+        const ExpenseChart = new Chart(ctxExpense, {
+            type: 'pie',
+            data: {
+                labels: Object.keys(getTotalData(categoryData.expense)),
+                datasets: [{
+                    data: Object.values(getTotalData(categoryData.expense)),
+                    backgroundColor: expenseChartColor,
+                }]
+            },
+            options,
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: [ChartDataLabels]
+        });
 
 
-        // // pie-Chart Income
-        // const ctxIncome = document.getElementById('IncomeChart').getContext('2d');
-        // const IncomeChart = new Chart(ctxIncome, {
-        //     type: 'pie',
-        //     data: {
-        //         labels: labelIncomeChart,
-        //         datasets: [{
-        //             data: dataIncomeChart,
-        //             backgroundColor: expenseChartColor,
-        //         }]
-        //     },
-        //     options,
-        //     responsive: true,
-        //     maintainAspectRatio: false,
-        //     plugins: [ChartDataLabels]
-        // });
+        // pie-Chart Income
+        const ctxIncome = document.getElementById('IncomeChart').getContext('2d');
+        const incomeChartColor = Array.from({
+            length: Object.keys(getTotalData(categoryData.income)).length
+        }, () => dynamicColors())
+        const IncomeChart = new Chart(ctxIncome, {
+            type: 'pie',
+            data: {
+                labels: Object.keys(getTotalData(categoryData.income)),
+                datasets: [{
+                    data: Object.values(getTotalData(categoryData.income)),
+                    backgroundColor: incomeChartColor,
+                }]
+            },
+            options,
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: [ChartDataLabels]
+        });
     </script>
 @endsection
