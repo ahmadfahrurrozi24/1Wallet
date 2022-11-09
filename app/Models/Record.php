@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Carbon\Carbon;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -121,6 +122,42 @@ class Record extends Model
             "inflow" => $inflow,
             "outflow" => $outflow,
             "total" => $total
+        ];
+    }
+
+    public function scopeRecordMonth()
+    {
+        $expenseMonth = $this->where("user_id", auth()->user()->id)
+            ->whereBetween("date", [Carbon::now()->startOfMonth(), Carbon::now()->endOfMonth()])
+            ->whereHas("category", function ($q) {
+                $q->whereHas("type", function ($q) {
+                    $q->where("name", "EXPENSE");
+                });
+            })->oldest()->get()->toArray();
+
+        $incomeMonth = $this->where("user_id", auth()->user()->id)
+            ->whereBetween("date", [Carbon::now()->startOfMonth(), Carbon::now()->endOfMonth()])
+            ->whereHas("category", function ($q) {
+                $q->whereHas("type", function ($q) {
+                    $q->where("name", "INCOME");
+                });
+            })->oldest()->get();
+
+        // dump(Category::with(["record", "type"])->whereHas("record", function (Builder $q) {
+        //     $q->without("category")->where("user_id", auth()->id());
+        // })->whereHas("type", function ($q) {
+        //     $q->where("name", "INCOME");
+        // })->latest()->get()->toArray());
+        // foreach ($expenseMonth as $Em) {
+        // }
+
+
+        $expenseMonthCategoryCount = array_count_values($expenseMonth);
+        $incomeMonthCategoryCount = array_count_values($incomeMonth);
+
+        return [
+            "expense" => $expenseMonthCategoryCount,
+            "income" => $incomeMonthCategoryCount
         ];
     }
 }
