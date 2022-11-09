@@ -38,17 +38,18 @@
                     <div class="head-input">
                         <div class="input-group">
                             <label for="amount">Amount</label>
-                            <input id="amount" type="text" autocomplete="off" placeholder="Amount" name="amount">
+                            <input id="amount" value="{{ old('amount') }}" type="text" autocomplete="off"
+                                placeholder="Amount" name="amount">
                         </div>
                         <div class="input-group">
                             <label for="date">Date</label>
-                            <input id="date" name="date" type="date">
+                            <input id="date" value="{{ old('date', date('Y-m-d')) }}" name="date" type="date">
                         </div>
                     </div>
                     <div class="middle-input">
                         <div class="input-group">
                             <label for="note">Note</label>
-                            <textarea id="note" placeholder="Note" name="note"></textarea>
+                            <textarea id="note" placeholder="Note" name="note">{{ old('note') }}</textarea>
                         </div>
                     </div>
                     <div class="bottom-input">
@@ -68,6 +69,8 @@
         new AutoNumeric('#amount', {
             digitGroupSeparator: '.',
             decimalCharacter: ',',
+            maximumValue: 1000000000,
+            minimumValue: 0
         });
     </script>
 
