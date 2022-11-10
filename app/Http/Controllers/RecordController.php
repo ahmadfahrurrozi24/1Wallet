@@ -87,7 +87,19 @@ class RecordController extends Controller
      */
     public function update(StoreRecordRequest $request, Record $record)
     {
-        dd($request->all());
+        $data = $request->all();
+        $data["amount"] = Helper::storeNumberFormat($data["amount"]);
+        $data["amount"] = Helper::newRecordCategoryCheck($data["category_id"], $data["amount"]);
+        $data["user_id"] = auth()->user()->id;
+        $data["date"] ?? $data["date"] = now();
+
+        unset($data["_token"]);
+        unset($data["_method"]);
+
+        $record->update($data);
+        User::ReBalance();
+
+        return redirect()->to("/dashboard/history")->with("message", "Edit record succesfully");
     }
 
     /**
