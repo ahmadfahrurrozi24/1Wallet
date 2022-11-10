@@ -1,7 +1,7 @@
 @extends('dashboard.layout.template')
 @section('content')
     <div class="wrapper">
-        {{-- <h2 class="record-title">Add Record</h2> --}}
+        <h2 class="record-title">Edit Record</h2>
         <form action="/dashboard/record/{{ $record->id }}" method="POST">
             @csrf
             @method('put')
