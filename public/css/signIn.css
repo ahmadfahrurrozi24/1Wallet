@@ -131,13 +131,10 @@ p a {
         width: 95%;
     }
     .user {
-        width: 90%;
+        width: 80%;
     }
     .user i {
         font-size: 30px;
-    }
-    input {
-        width: 70%;
     }
     button {
         width: 60%;
