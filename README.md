@@ -27,11 +27,11 @@ You can find the Wallet documentation on the website.
  
  -Sign UP
  
- -Sign IN
+ -Sign IN           <img align="right" src="https://cdn.dribbble.com/users/1162077/screenshots/3848914/programmer.gif" width="340px">
  
- -Dasboard
+ -Dasboard 
  
- -History
+ -History  
  
  -Add Record
  
@@ -75,7 +75,6 @@ root.render(<HelloMessage name="1Wallet" />);
 
 
 [![forthebadge made-with-go](http://ForTheBadge.com/images/badges/made-with-go.svg)](http://127.0.0.1:8000/register)
-
 
 
 
