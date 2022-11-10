@@ -33,6 +33,13 @@
                     <h1>@amount($recordTotal['totalIncomeMonth'])</h1>
                 </div>
             </div>
+
+            {{-- lineChart --}}
+            <div class="linechart1">
+                <div class="line-chart">
+                    <canvas id="myChart"></canvas>
+                </div>
+            </div>
         </div>
     </div>
 
