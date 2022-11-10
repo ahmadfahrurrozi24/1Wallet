@@ -275,38 +275,45 @@ body {
     border-bottom: 1px solid white;
 }
 
-.detail .head-detail{
+.detail .head-detail {
     display: flex;
     justify-content: space-between;
     /* background-color: forestgreen; */
 }
-.head-detail i{
+.head-detail i {
     font-size: 20px;
 }
 .head-detail h3 {
     font-size: 24px;
 }
-.head-detail .delete-edit{
+.head-detail .delete-edit {
     display: flex;
     width: 70px;
     justify-content: space-between;
     /* background-color: aqua; */
 }
-.head-detail a{
+
+.head-detail button {
+    border: none;
+}
+
+.head-detail a,
+.head-detail button {
     width: 30px;
     height: 30px;
     text-decoration: none;
     border-radius: 5px;
-    background-color:rgb(196, 35, 35);
+    background-color: rgb(196, 35, 35);
     display: flex;
     justify-content: center;
     align-items: center;
     color: white;
+    cursor: pointer;
 }
-.head-detail a:nth-child(2){
+.head-detail a:nth-child(2) {
     background-color: rgb(30, 172, 30);
 }
-.head-detail a:hover{
+.head-detail a:hover {
     /* background-color: rgba(0, 0, 0, 0.87); */
     opacity: 0.9;
 }

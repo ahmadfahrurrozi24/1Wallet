@@ -108,7 +108,7 @@ class RecordController extends Controller
         $record->update($data);
         User::ReBalance();
 
-        return redirect()->to("/dashboard/history")->with("message", "Edit record succesfully");
+        return redirect()->back()->with("message", "Edit record succesfully");
     }
 
     /**
@@ -119,6 +119,11 @@ class RecordController extends Controller
      */
     public function destroy(Record $record)
     {
-        //
+        $this->authorize("delete", $record);
+
+        $record->delete();
+        User::ReBalance();
+
+        return redirect()->back()->with("message", "Record deleted succesfully");
     }
 }
