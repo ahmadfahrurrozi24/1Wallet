@@ -42,9 +42,10 @@ Route::middleware("auth")->group(function () {
     });
 
     Route::get("/imgprofile/{path}", [UserController::class, "profileImageShow"]);
-    Route::get('/', function () {
-        return view('welcome');
-    })->name("home");
-    // Route::middleware(["isAdmin"])->group(function () {
-    // });
+  // });
 });
+
+Route::get('/', function () {
+    return view('landingpage.landingPage');
+})->name("home");
+// Route::middleware(["isAdmin"])->group(function () {
