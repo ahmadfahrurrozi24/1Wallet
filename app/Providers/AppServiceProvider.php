@@ -33,6 +33,10 @@ class AppServiceProvider extends ServiceProvider
             return "<?php echo Helper::amountFormat($expression); ?>";
         });
 
+        Blade::directive('numamount', function ($expression) {
+            return "<?php echo Helper::onlyNumAmountFormat($expression); ?>";
+        });
+
         Blade::directive('avatar', function ($expression) {
             return "<?php echo $expression ? '/imgprofile/' . $expression : asset('img/user-placeholder.jpg'); ?>";
         });
