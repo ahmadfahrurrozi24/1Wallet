@@ -1,7 +1,7 @@
 @extends('dashboard.layout.template')
 @section('content')
     <div class="wrapper">
-        {{-- <h2 class="record-title">Add Record</h2> --}}
+        <h2 class="record-title">Add Record</h2>
         <form action="/dashboard/record" method="POST">
             @csrf
             <input type="hidden" name="category_id" class="input-category" value="{{ old('category_id') }}">
@@ -53,7 +53,7 @@
                         </div>
                     </div>
                     <div class="bottom-input">
-                        <button type="submit">Add Transaction</button>
+                        <button type="submit">Add Record</button>
                     </div>
                 </div>
             </div>

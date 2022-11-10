@@ -16,8 +16,10 @@
                 </div>
                 <div class="password">
                     <i class='bx bxs-key' ></i>
-                    <input type="password" id="password" placeholder="Password" name="password" value="{{ old("password") }}">
-                    <i class='bx bx-hide'></i>
+                    <div class="box-password">
+                      <input type="password" id="password" placeholder="Password" name="password" value="{{ old("password") }}">
+                      <i class='bx bx-hide'></i>
+                    </div>
                 </div>
             </div>
             <button type="submit">Sign In</button>
