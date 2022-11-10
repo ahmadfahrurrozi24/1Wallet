@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Helper\Helper;
 use App\Http\Requests\StoreRecordRequest;
 use App\Models\Record;
+use App\Models\Type;
 use App\Models\User;
 use Illuminate\Http\Request;
 
@@ -69,7 +70,13 @@ class RecordController extends Controller
      */
     public function edit(Record $record)
     {
-        //
+        $data = [
+            "title" => "Edit Record",
+            "types" => Type::with(["category"])->get(),
+            "record" => $record
+        ];
+
+        return view("dashboard.editRecord", $data);
     }
 
     /**
@@ -78,9 +85,9 @@ class RecordController extends Controller
      * @param  \App\Models\Record  $record
      * @return \Illuminate\Http\Response
      */
-    public function update($request, Record $record)
+    public function update(StoreRecordRequest $request, Record $record)
     {
-        //
+        dd($request->all());
     }
 
     /**
