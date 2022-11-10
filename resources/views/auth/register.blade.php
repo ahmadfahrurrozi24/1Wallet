@@ -18,9 +18,11 @@
                 </div>
                 <div class="password">
                     <i class='bx bxs-key'></i>
-                    <input type="password" id="password" value="{{ old('password') }}" name="password"
+                    <div class="box-password">
+                        <input type="password" id="password" value="{{ old('password') }}" name="password"
                         placeholder="Password">
-                    <i class='bx bx-hide'></i>
+                        <i class='bx bx-hide'></i>
+                    </div>
                 </div>
                 <div class="balance">
                     <i class='bx bx-wallet bx-flip-horizontal'></i>
