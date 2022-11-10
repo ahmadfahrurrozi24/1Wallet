@@ -34,16 +34,6 @@ class DashboardController extends Controller
         return view("dashboard.history", $data);
     }
 
-    public function newRecord()
-    {
-        $data = [
-            "title" => "Add Record",
-            "types" => Type::with(["category"])->get()
-        ];
-
-        return view("dashboard.newRecord", $data);
-    }
-
     public function insight()
     {
         $data = [

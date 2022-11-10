@@ -28,7 +28,12 @@ class RecordController extends Controller
      */
     public function create()
     {
-        //
+        $data = [
+            "title" => "Add Record",
+            "types" => Type::with(["category"])->get()
+        ];
+
+        return view("dashboard.newRecord", $data);
     }
 
     /**
