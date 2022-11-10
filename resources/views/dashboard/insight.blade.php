@@ -122,6 +122,9 @@
                     ...total,
                     [key]: sum
                 }
+
+                if (sum == 0) delete total[key]
+
             }
 
             return total

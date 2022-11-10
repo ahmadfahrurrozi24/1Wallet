@@ -108,7 +108,7 @@ class RecordController extends Controller
         $record->update($data);
         User::ReBalance();
 
-        return redirect()->back()->with("message", "Edit record succesfully");
+        return redirect()->to("/dashboard/history")->with("message", "Edit record succesfully");
     }
 
     /**
