@@ -75,6 +75,8 @@ class RecordController extends Controller
      */
     public function edit(Record $record)
     {
+        $this->authorize("update", $record);
+
         $data = [
             "title" => "Edit Record",
             "types" => Type::with(["category"])->get(),
@@ -92,6 +94,8 @@ class RecordController extends Controller
      */
     public function update(StoreRecordRequest $request, Record $record)
     {
+        $this->authorize("update", $record);
+
         $data = $request->all();
         $data["amount"] = Helper::storeNumberFormat($data["amount"]);
         $data["amount"] = Helper::newRecordCategoryCheck($data["category_id"], $data["amount"]);
