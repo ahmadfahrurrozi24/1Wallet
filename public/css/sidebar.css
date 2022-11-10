@@ -163,3 +163,11 @@
     line-height: 50px;
     text-align: center;
 }
+
+.sidebar ul li a i {
+    height: 50px;
+    min-width: 40px;
+    border-radius: 13px;
+    line-height: 50px;
+    text-align: center;
+}
