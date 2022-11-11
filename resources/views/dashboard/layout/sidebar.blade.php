@@ -1,4 +1,4 @@
-<div class="sidebar active">
+<div class="sidebar">
     <!-- Logo -->
     <div class="logo_content">
         <div class="logo">
