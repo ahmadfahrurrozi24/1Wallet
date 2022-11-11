@@ -24,6 +24,16 @@ class Helper
     return "+ Rp $amount";
   }
 
+  public static function onlyNumAmountFormat($amount)
+  {
+    if ($amount < 0) {
+      $amount = $amount * -1;
+      return $amount;
+    }
+
+    return $amount;
+  }
+
   public static function storeNumberFormat($amount)
   {
     return join("", explode(".", str_replace(",00", "", $amount)));
