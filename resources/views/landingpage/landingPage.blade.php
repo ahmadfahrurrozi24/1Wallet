@@ -9,13 +9,13 @@
         <h2>1-Wallet</h2>
 
         {{-- Navbar --}}
-        <div class="navbar">
-        <ul>
-            <li><a class="login" href="/login">Sign In</a></li>
-            <li><a href="/register">Sign Up</a></li>
-            <li><a href="#about">About Us</a></li>
-          </ul>
-        </div>
+        {{-- <div class="navbar">
+            <ul>
+                <li><a class="login" href="/login">Sign In</a></li>
+                <li><a href="/register">Sign Up</a></li>
+                <li><a href="#about">About Us</a></li>
+              </ul>
+        </div> --}}
        </div> 
     </div> 
 
@@ -23,13 +23,19 @@
     <div class="content">
         {{-- slogan --}}
         <div class="slogan" data-aos="fade-up"
-        data-aos-duration="2000">
+        data-aos-duration="1000">
             <h1>Simple way to manage money for</h1>
             <h1>Everyone anywhere and anytime</h1>
         </div>
 
+        {{-- Button --}}
+        <div class="button-wrapper">
+           <button class="button-33" role="button"><a class="button-link" href="/register">Get Started</a></button>
+           <button class="button-33" role="button"> <a class="button-link" href="/login"> Login Now</a></button>
+        </div>
+
         {{-- Img Transaction --}}
-    <div class="Content-Transaction" data-aos="fade-right" data-aos-duration="1500" >
+    <div class="Content-Transaction" data-aos="fade-right" data-aos-duration="1000" >
         <img class="img-transaction" src="{{ asset("img/transaction.png") }}">
         <div class="img-slogan">
         <h1>Easy way to</h1>
@@ -38,7 +44,7 @@
     </div>
 
     {{-- img History --}}
-    <div class="Content-History" data-aos="fade-left" data-aos-duration="1500">
+    <div class="Content-History" data-aos="fade-left" data-aos-duration="1000">
         <div class="img-slogan">
             <h1>Easy way to check</h1>
             <h1>Financial statement</h1>
@@ -48,7 +54,7 @@
     </div>
 
      {{-- Img Insight --}}
-     <div class="Content-Insight" data-aos="fade-right" data-aos-duration="1500" >
+     <div class="Content-Insight" data-aos="fade-right" data-aos-duration="1000" >
         <img class="img-Insight" src="{{ asset("img/insight.jpg") }}">
         <div class="img-slogan">
         <h1>Easy way to check</h1>
