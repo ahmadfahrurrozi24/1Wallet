@@ -27,7 +27,7 @@ You can find the Wallet documentation on the website.
 
  -Sign UP
  
- -Sign IN
+ -Sign IN            <img align="right" src="https://cdn.dribbble.com/users/1162077/screenshots/3848914/programmer.gif" width="330px">  
  
  -Dasboard
  
