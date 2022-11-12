@@ -27,13 +27,20 @@
     AOS.init();
     
     let btn = document.querySelectorAll(".hamburger-button");
-        let sidebar = document.querySelector(".sidebar");
+    let sidebar = document.querySelector(".sidebar");
 
-        btn.forEach(element => {
-            element.onclick = function () {
-                sidebar.classList.toggle("active");
-            };
-        });
+    btn.forEach(element => {
+        element.onclick = function () {
+            sidebar.classList.toggle("active");
+        };
+    });
+
+    sidebar.addEventListener("mouseover", (e) => {
+      e.target.classList.add("active")
+    });
+    sidebar.addEventListener("mouseleave", (e) => {
+      e.target.classList.remove("active")
+    });
 
   </script>
   @yield('js')
