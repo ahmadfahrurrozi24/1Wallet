@@ -63,14 +63,8 @@ You only need to scan the barcode that has been provided, without having to take
 
 
 
-```sh
-import { createRoot } from 'react-dom/client';
-function HelloMessage({ name }) {
-  return <div>Hello {name}</div>;
-}
-const root = createRoot(document.getElementById('container'));
-root.render(<HelloMessage name="1Wallet" />);
-```
+### I have updated src/main/resources/assets/src/js/apps/codingtest/expenses/expenses-controller.js and src/main/resources/assets/src/js/apps/codingtest/partials/expenses-content.html . There fore you may need to rebuild the client if using something other than development mode.
+
 
 
 
