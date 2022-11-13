@@ -42,7 +42,11 @@
                                 <div class="head-detail">
                                     <h3>{{ $record->category->name }}</h3>
                                     <div class="delete-edit">
-                                        <a href=""><i class='bx bx-trash'></i></a>
+                                        <form action="/dashboard/record/{{ $record->id }}" method="POST">
+                                            @csrf
+                                            @method('delete')
+                                            <button type="submit"><i class='bx bx-trash'></i></button>
+                                        </form>
                                         <a href="/dashboard/record/{{ $record->id }}/edit"><i
                                                 class='bx bx-pencil'></i></a>
                                     </div>

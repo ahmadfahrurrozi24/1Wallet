@@ -119,6 +119,11 @@ class RecordController extends Controller
      */
     public function destroy(Record $record)
     {
-        //
+        $this->authorize("delete", $record);
+
+        $record->delete();
+        User::ReBalance();
+
+        return redirect()->back()->with("message", "Record deleted succesfully");
     }
 }
