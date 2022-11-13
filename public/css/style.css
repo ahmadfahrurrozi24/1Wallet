@@ -303,7 +303,7 @@ body {
     height: 30px;
     text-decoration: none;
     border-radius: 5px;
-    background-color: rgb(196, 35, 35);
+    background-color: rgb(51, 39, 121);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -311,7 +311,8 @@ body {
     cursor: pointer;
 }
 .head-detail a:nth-child(2) {
-    background-color: rgb(30, 172, 30);
+    background-color: rgb(27, 30, 121);
+    /* background-color: rgb(30, 172, 30); */
 }
 .head-detail a:hover {
     /* background-color: rgba(0, 0, 0, 0.87); */
@@ -649,6 +650,17 @@ body {
 
     .record-title {
         margin-top: 90px;
+    }
+    .accordion .contentbx .label .left-label {
+        font-size: 30px;
+    }
+    .accordion .contentbx .label .left-label span {
+        display: none;
+    }
+    .accordion .contentbx .label .right-label {
+        width: 90%;
+        justify-content: space-between;
+        font-size: 23px;
     }
 
     /* Tabel Insight */
