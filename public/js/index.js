@@ -6,7 +6,7 @@ btn.forEach((element) => {
         sidebar.classList.toggle("active");
     };
 });
-console.log();
+
 sidebar.addEventListener("mouseover", (e) => {
     if (window.innerWidth > 518) sidebar.classList.add("active");
 });

@@ -1,5 +1,5 @@
 /* Profile Nav */
-.profile-nav{
+.profile-nav {
     width: 100%;
     height: 50px;
     margin-top: 50px;
@@ -8,7 +8,7 @@
     box-sizing: border-box;
     display: flex;
 }
-.profile-nav button{
+.profile-nav button {
     width: 150px;
     height: 50px;
     padding: 3px;
@@ -20,13 +20,13 @@
     font-size: 17px;
     cursor: pointer;
 }
-.profile-nav .nav-select{
+.profile-nav .nav-select {
     width: 150px;
     height: 5px;
     bottom: 0;
     position: absolute;
     background-color: rgb(21, 23, 99);
-    transition: .4s;
+    transition: 0.4s;
 }
 
 /* Profile Info */
@@ -135,7 +135,7 @@
 }
 
 /* Change Password */
-.change-password{
+.change-password {
     width: 500px;
     /* padding: 50px 140px; */
     margin: 50px auto;
@@ -148,15 +148,15 @@
     height: 40px;
     padding: 10px;
     box-sizing: border-box;
-    /* border-radius: 10px; */
+    border-radius: 15px;
     border: 2px solid #c4c4c4;
     font-size: 17px;
 }
-.box-password input:focus{
+.box-password input:focus {
     outline: none;
     border: 2px solid rgb(43 48 255);
 }
-.box-password{
+.box-password {
     display: flex;
     align-items: center;
 }
@@ -165,13 +165,13 @@
     color: #a0a0a0;
     font-size: 25px;
 }
-.submit{
+.submit {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
-.submit span{
+.submit span {
     width: 100%;
     height: 50px;
     display: flex;
@@ -179,9 +179,8 @@
     color: red;
 }
 
-
 @media screen and (max-width: 789px) {
-    .profile-nav{
+    .profile-nav {
         padding-left: 10px;
     }
 
@@ -224,9 +223,8 @@
         margin-top: 10px;
     }
 
-
     /* change password */
-    .change-password{
+    .change-password {
         width: 90%;
         padding: 0;
     }
