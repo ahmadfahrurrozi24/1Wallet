@@ -1,3 +1,35 @@
+/* Profile Nav */
+.profile-nav{
+    width: 100%;
+    height: 50px;
+    margin-top: 50px;
+    padding-left: 120px;
+    position: relative;
+    box-sizing: border-box;
+    display: flex;
+}
+.profile-nav button{
+    width: 150px;
+    height: 50px;
+    padding: 3px;
+    border: none;
+    box-sizing: border-box;
+    background-color: white;
+    color: rgb(21, 23, 99);
+    text-align: center;
+    font-size: 17px;
+    cursor: pointer;
+}
+.profile-nav .nav-select{
+    width: 150px;
+    height: 5px;
+    bottom: 0;
+    position: absolute;
+    background-color: rgb(21, 23, 99);
+    transition: .4s;
+}
+
+/* Profile Info */
 .user-profile {
     width: 90%;
     margin: auto;
@@ -15,25 +47,25 @@
 .user-image {
     width: 100%;
     padding: 100px;
+    box-sizing: border-box;
     border-radius: 50%;
     border: 2px solid #c4c4c4;
     background-size: cover;
-    box-sizing: border-box;
     background-position: center;
 }
 .box-image .image-edit {
     width: 50px;
     height: 50px;
+    right: 7px;
+    bottom: 7px;
+    position: absolute;
+    border-radius: 50%;
     background-color: rgb(21, 23, 99);
     color: #ece9e9;
-    font-size: 33px;
-    border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
-    position: absolute;
-    right: 7px;
-    bottom: 7px;
+    font-size: 33px;
     cursor: pointer;
 }
 #file-profile {
@@ -83,15 +115,9 @@
     border: none;
     border-bottom: 2px solid #c4c4c4;
 }
-.user-detail .password a {
-    width: 152px;
-    font-size: 17px;
-    text-decoration: none;
-    color: rgb(0, 47, 255);
-}
 .user-profile .submit {
     width: 100%;
-    margin-top: 20px;
+    margin-top: 50px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -108,13 +134,63 @@
     cursor: pointer;
 }
 
+/* Change Password */
+.change-password{
+    width: 500px;
+    /* padding: 50px 140px; */
+    margin: 50px auto;
+    display: none;
+    flex-direction: column;
+    gap: 25px;
+}
+.box-password input {
+    width: 500px;
+    height: 40px;
+    padding: 10px;
+    box-sizing: border-box;
+    /* border-radius: 10px; */
+    border: 2px solid #c4c4c4;
+    font-size: 17px;
+}
+.box-password input:focus{
+    outline: none;
+    border: 2px solid rgb(43 48 255);
+}
+.box-password{
+    display: flex;
+    align-items: center;
+}
+.box-password i {
+    margin-left: -30px;
+    color: #a0a0a0;
+    font-size: 25px;
+}
+.submit{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.submit span{
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    color: red;
+}
+
+
 @media screen and (max-width: 789px) {
+    .profile-nav{
+        padding-left: 10px;
+    }
+
     .user-profile {
         width: 100%;
+        padding: 30px;
         flex-direction: column;
         align-items: center;
         gap: 40px;
-        padding: 30px;
     }
     .box-image {
         height: auto;
@@ -124,10 +200,10 @@
         height: 45px;
         right: 3px;
         bottom: 3px;
-        font-size: 23px;
         margin: auto;
         justify-content: center;
         align-items: center;
+        font-size: 23px;
     }
     .box-image label {
         margin: 0;
@@ -143,5 +219,18 @@
     }
     .user-detail {
         width: 100%;
+    }
+    .user-profile .submit {
+        margin-top: 10px;
+    }
+
+
+    /* change password */
+    .change-password{
+        width: 90%;
+        padding: 0;
+    }
+    .submit span {
+        text-align: center;
     }
 }
