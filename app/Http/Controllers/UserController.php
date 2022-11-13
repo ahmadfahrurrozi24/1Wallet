@@ -137,7 +137,7 @@ class UserController extends Controller
             $request->session()->regenerate();
 
             User::Rebalance();
-            return redirect()->intended();
+            return redirect()->intended("/dashboard");
         }
 
         return back()->with("message", "Invalid email or password");
