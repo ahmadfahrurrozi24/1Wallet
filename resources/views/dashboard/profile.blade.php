@@ -37,25 +37,42 @@
                     </div>
                 </div>
             </div>
+        </form>
+        <form action="/dashboard/profile/changepassword" method="POST">
+            @csrf
             <div class="change-password">
                 {{-- <label for="currentPassword">Current password :</label> --}}
                 <div class="box-password">
-                    <input type="password" class="passwords" placeholder="Current password" name="currentPassword">
+                    <input type="password" class="passwords" placeholder="Current password" name="current-password">
                     <i class='bx bx-hide'></i>
                 </div>
                 {{-- <label for="newPassword">New password :</label> --}}
                 <div class="box-password">
-                    <input type="password" class="passwords" placeholder="New password" name="newPassword">
+                    <input type="password" class="passwords" placeholder="New password" name="password">
                     <i class='bx bx-hide'></i>
                 </div>
                 {{-- <label for="confirm">Confirm password :</label> --}}
                 <div class="box-password">
-                  <input type="password" class="passwords" placeholder="Confirm password" name="confirm">
-                  <i class='bx bx-hide'></i>
+                    <input type="password" class="passwords" placeholder="Confirm password" name="confirm-password">
+                    <i class='bx bx-hide'></i>
                 </div>
                 <div class="submit">
-                  <span id="notice"></span>
-                  <button type="button" class="save">Save</button>
+                    @error('current-password')
+                        <span id="notice">
+                            {{ $message }}
+                        </span>
+                    @enderror
+                    @error('password')
+                        <span id="notice">
+                            {{ $message }}
+                        </span>
+                    @enderror
+                    @error('confirm-password')
+                        <span id="notice">
+                            {{ $message }}
+                        </span>
+                    @enderror
+                    <button type="submit" class="save">Save</button>
                 </div>
             </div>
         </form>
@@ -91,12 +108,12 @@
         }
 
 
-        nav.addEventListener('click', function(e){
-            if(e.target.className == 'nav-change'){
+        nav.addEventListener('click', function(e) {
+            if (e.target.className == 'nav-change') {
                 e.target.nextElementSibling.style.marginLeft = '150px';
                 profileInfo.style.display = 'none';
                 changePassword.style.display = 'flex';
-            } else if(e.target.className == 'nav-info'){
+            } else if (e.target.className == 'nav-info') {
                 e.target.nextElementSibling.nextElementSibling.style.marginLeft = '0px';
                 profileInfo.style.display = 'flex';
                 changePassword.style.display = 'none';
@@ -104,24 +121,23 @@
         });
 
 
-        changePassword.addEventListener('click', function(i){
-            if(i.target.className == 'bx bx-hide'){
+        changePassword.addEventListener('click', function(i) {
+            if (i.target.className == 'bx bx-hide') {
                 i.target.previousElementSibling.type = 'text';
                 i.target.setAttribute('class', 'bx bx-show');
-            } else if(i.target.className == 'bx bx-show'){
+            } else if (i.target.className == 'bx bx-show') {
                 i.target.previousElementSibling.type = 'password';
                 i.target.setAttribute('class', 'bx bx-hide');
             }
         });
 
-        
-        save.addEventListener('click', function(){
-            if(password[1].value != password[2].value){
+
+        save.addEventListener('click', function() {
+            if (password[1].value != password[2].value) {
                 same.innerHTML = 'Password and Confirm password do not match';
-            } else{
+            } else {
                 same.innerHTML = '';
             }
         });
-
     </script>
 @endsection
