@@ -275,24 +275,30 @@ body {
     border-bottom: 1px solid white;
 }
 
-.detail .head-detail{
+.detail .head-detail {
     display: flex;
     justify-content: space-between;
     /* background-color: forestgreen; */
 }
-.head-detail i{
+.head-detail i {
     font-size: 20px;
 }
 .head-detail h3 {
     font-size: 24px;
 }
-.head-detail .delete-edit{
+.head-detail .delete-edit {
     display: flex;
     width: 70px;
     justify-content: space-between;
     /* background-color: aqua; */
 }
-.head-detail a{
+
+.head-detail button {
+    border: none;
+}
+
+.head-detail a,
+.head-detail button {
     width: 30px;
     height: 30px;
     text-decoration: none;
@@ -302,12 +308,13 @@ body {
     justify-content: center;
     align-items: center;
     color: white;
+    cursor: pointer;
 }
-.head-detail a:nth-child(2){
+.head-detail a:nth-child(2) {
     background-color: rgb(27, 30, 121);
     /* background-color: rgb(30, 172, 30); */
 }
-.head-detail a:hover{
+.head-detail a:hover {
     /* background-color: rgba(0, 0, 0, 0.87); */
     opacity: 0.9;
 }
@@ -647,7 +654,7 @@ body {
     .accordion .contentbx .label .left-label {
         font-size: 30px;
     }
-    .accordion .contentbx .label .left-label span{
+    .accordion .contentbx .label .left-label span {
         display: none;
     }
     .accordion .contentbx .label .right-label {
@@ -655,7 +662,6 @@ body {
         justify-content: space-between;
         font-size: 23px;
     }
-
 
     /* Tabel Insight */
     .dashboard-insight {
