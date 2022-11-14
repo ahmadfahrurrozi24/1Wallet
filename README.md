@@ -52,21 +52,17 @@ You only need to scan the barcode that has been provided, without having to take
 
 .Transportation
 
-# Examples
 
-## _We have several examples on the website. Here is the first one to get you started:_
+# _We have interesting features on the website._
+  
+  
+## _Here's an example:_
 
 
-```js
-import { create1Wallet } from 'wallet/client';
+### _Easy way to check Income and expense_               <img align="middle" src="https://media.discordapp.net/attachments/929041297094889522/1041569088679456818/IMG_20221114_111818.png?width=1025&height=467
+" width="300px">
+ 
 
-function HelloMessage({ name }) {
-  return <div>Hello {name}</div>;
-}
-
-const wallet = create1Wallet(document.getElementById('container'));
-wallet.render(<HelloMessage name="Word" />);
-```
 
 
 
