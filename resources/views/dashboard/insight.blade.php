@@ -74,37 +74,44 @@
             return "rgb(" + r + "," + g + "," + b + ")";
         };
 
-        // const ctx = document.getElementById('myChart');
-        // const myChart = new Chart(ctx, {
-        //     type: 'line',
-        //     data: {
-        //         labels: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
-        //         datasets: [{
-        //                 label: 'Expense',
-        //                 data: [12, 19, 3, 5, 2, 3, 69],
-        //                 backgroundColor: "#de0a26",
-        //                 borderColor: "#de0a26",
-        //                 borderWidth: 3
-        //             },
-        //             {
-        //                 label: 'Income',
-        //                 data: [16, 14, 25, 7, 6, 1, 57],
-        //                 backgroundColor: "#03ac13",
-        //                 borderColor: "#03ac13",
-        //                 borderWidth: 3
-        //             }
-        //         ]
-        //     },
-        //     responsive: true,
-        //     maintainAspectRatio: false,
-        //     options: {
-        //         scales: {
-        //             y: {
-        //                 beginAtZero: true
-        //             }
-        //         }
-        //     }
-        // });
+        const weekData = {!! $weekChartData !!}
+        let labelWeekExpense = Object.keys(weekData.expense)
+        let dataWeekExpense = Object.values(weekData.expense)
+        let labelWeekIncome = Object.keys(weekData.income)
+        let dataWeekIncome = Object.values(weekData.income)
+
+
+        const ctx = document.getElementById('myChart');
+        const myChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: labelWeekExpense,
+                datasets: [{
+                        label: 'Expense',
+                        data: dataWeekExpense,
+                        backgroundColor: "#de0a26",
+                        borderColor: "#de0a26",
+                        borderWidth: 3
+                    },
+                    {
+                        label: 'Income',
+                        data: dataWeekIncome,
+                        backgroundColor: "#03ac13",
+                        borderColor: "#03ac13",
+                        borderWidth: 3
+                    }
+                ]
+            },
+            responsive: true,
+            maintainAspectRatio: false,
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
 
         function getTotalData(objectData) {
             let total = {};

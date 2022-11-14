@@ -4,11 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Models\Category;
 use App\Models\Record;
-use App\Models\Type;
-use App\Models\User;
-use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Event;
 
 class DashboardController extends Controller
 {
@@ -17,7 +12,9 @@ class DashboardController extends Controller
         $data = [
             "title" => "Dashboard",
             "recordTotal" => Record::MyTotal(),
-            "lastRecord" => Record::MyLastTransaction()->take(5)->get()
+            "lastRecord" => Record::MyLastTransaction()->take(5)->get(),
+            "weekChartData" => Record::WeekRecordTotal()
+
         ];
 
         return view("dashboard.index", $data);
@@ -39,7 +36,8 @@ class DashboardController extends Controller
         $data = [
             "title" => "Insight",
             "recordTotal" => Record::MyTotal(),
-            "categoryChartData" => Category::CategoryChart()
+            "categoryChartData" => Category::CategoryChart(),
+            "weekChartData" => Record::WeekRecordTotal()
         ];
 
         return view("dashboard.insight", $data);
