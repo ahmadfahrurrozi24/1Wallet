@@ -1,10 +1,10 @@
 <img src="https://raw.githubusercontent.com/ahmadfahrurrozi24/1Wallet/tester/public/img/logo.png" width="150px">
 
-# 1Wallet Expense Manager   [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)    [![made-for-VSCode](https://img.shields.io/badge/Made%20for-VSCode-1f425f.svg)](https://code.visualstudio.com/)    [![GitHub commits](https://badgen.net/github/commits/Naereen/Strapdown.js)](https://GitHub.com/ahmadfahrurrozi24/1Wallet/commit/)     [![GitHub](https://badgen.net/badge/icon/github?icon=github&label)](https://github.com/ahmadfahrurrozi24/1Wallet) 
+# 1Wallet Expense Manager   [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)    [![made-for-VSCode](https://img.shields.io/badge/Made%20for-VSCode-1f425f.svg)](https://code.visualstudio.com/)    [![GitHub commits](https://badgen.net/github/commits/Naereen/Strapdown.js)](https://GitHub.com/ahmadfahrurrozi24/1Wallet/commit/)   
 
 
+## [My Wallet](http://127.0.0.1:8000/)     [![GitHub](https://badgen.net/badge/icon/github?icon=github&label)](https://github.com/ahmadfahrurrozi24/1Wallet) 
 
-## [My Wallet](http://127.0.0.1:8000/)   [![Open In Collab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Naereen/badges)
 
 
 [![N|Solid](https://cldup.com/dTxpPi9lDf.thumb.png)](https://nodesource.com/products/nsolid)   
@@ -25,21 +25,16 @@ You can find the Wallet documentation on the website.
 
 ## _Fitur 1Wallet_
  
- -Sign UP
+ -Dasboard                     <img align="right" src="https://cdn.dribbble.com/users/1162077/screenshots/3848914/programmer.gif" width="255px">
  
- -Sign IN           <img align="right" src="https://cdn.dribbble.com/users/1162077/screenshots/3848914/programmer.gif" width="330px">
- 
- -Dasboard 
- 
- -History  
+ -History                          
  
  -Add Record
  
  -Insight
  
  -User Profile
- 
- -Log Out
+
 
 
 ## _Profit One-Wallet:_
@@ -62,9 +57,16 @@ You only need to scan the barcode that has been provided, without having to take
 ## _We have several examples on the website. Here is the first one to get you started:_
 
 
+```js
+import { create1Wallet } from 'wallet/client';
 
-### I have updated src/main/resources/assets/src/js/apps/codingtest/expenses/expenses-controller.js and src/main/resources/assets/src/js/apps/codingtest/partials/expenses-content.html . There fore you may need to rebuild the client if using something other than development mode.
+function HelloMessage({ name }) {
+  return <div>Hello {name}</div>;
+}
 
+const wallet = create1Wallet(document.getElementById('container'));
+wallet.render(<HelloMessage name="Word" />);
+```
 
 
 
