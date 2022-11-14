@@ -59,8 +59,13 @@ You only need to scan the barcode that has been provided, without having to take
 ## _Here's an example:_
 
 
-### _Easy way to check Income and expense_               <img align="right" src="" width="300px">
+## _Easy way to check Income and expense_               <img align="middle" src="https://raw.githubusercontent.com/ahmadfahrurrozi24/1Wallet/main/public/img/history.png" width="360px">
  
+ 
+## _Easy way to check Income and expense_               <img align="middle" src="https://raw.githubusercontent.com/ahmadfahrurrozi24/1Wallet/main/public/img/history.png" width="360px">
+
+
+## _Easy way to check Income and expense_               <img align="middle" src="https://raw.githubusercontent.com/ahmadfahrurrozi24/1Wallet/main/public/img/history.png" width="360px">
 
 
 
