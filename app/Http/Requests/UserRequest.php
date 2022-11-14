@@ -2,7 +2,11 @@
 
 namespace App\Http\Requests;
 
+use App\Rules\IsNotNegative;
+use App\Rules\MaxNumberAmount;
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redirect;
 
 class UserRequest extends FormRequest
 {
@@ -27,7 +31,8 @@ class UserRequest extends FormRequest
             "name" => "required|max:15",
             "email" => "required|email|unique:users,email",
             "password" => "required|min:8|max:15",
-            "balance" => "required"
+            "agreement" => "accepted",
+            "balance" => ["required", new IsNotNegative, new MaxNumberAmount]
         ];
     }
 }

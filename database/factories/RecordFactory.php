@@ -16,10 +16,10 @@ class RecordFactory extends Factory
      */
     public function definition()
     {
-        $category_id = fake()->numberBetween(1, 2);
+        $category_id = fake()->numberBetween(1, 6);
         $amount = 0;
 
-        if ($category_id == 1) {
+        if ($category_id == 1 || $category_id == 3 || $category_id == 5) {
             $amount = fake()->numberBetween(-100000, -20000);
         } else {
             $amount = fake()->numberBetween(20000, 100000);
@@ -27,6 +27,7 @@ class RecordFactory extends Factory
 
         return [
             "user_id" => fake()->numberBetween(1, 11),
+            // "user_id" => 1,
             "category_id" => $category_id,
             "amount" => $amount,
             "note" => fake()->text(50),

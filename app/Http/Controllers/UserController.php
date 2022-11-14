@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Helper\Helper;
 use App\Http\Requests\UserRequest;
 use App\Models\User;
+use App\Rules\PasswordIsSame;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\File as FacadesFile;
@@ -137,7 +138,7 @@ class UserController extends Controller
             $request->session()->regenerate();
 
             User::Rebalance();
-            return redirect()->intended();
+            return redirect()->intended("/dashboard");
         }
 
         return back()->with("message", "Invalid email or password");
@@ -164,5 +165,22 @@ class UserController extends Controller
         $response->header("Content-Type", $type);
 
         return $response;
+    }
+
+    public function changePassword(Request $request)
+    {
+        $request->validate([
+            "current-password" => ["required", new PasswordIsSame],
+            "password" => "required|min:8|max:15",
+            "confirm-password" => "required|same:password"
+        ], [
+            "confirm-password.same" => "The confirm password and new password must match."
+        ]);
+        $data = $request->except(["current-password", "confirm-password"]);
+        $data["password"] = Hash::make($data["password"]);
+
+        User::find(auth()->id())->update($data);
+
+        return redirect()->back()->with("message", "Password successfully changed.");
     }
 }

@@ -1,10 +1,12 @@
 @extends('dashboard.layout.template')
 @section('content')
     <div class="wrapper">
-        <h2 class="record-title">Add Record</h2>
-        <form action="/dashboard/record" method="POST">
+        <h2 class="record-title">Edit Record</h2>
+        <form action="/dashboard/record/{{ $record->id }}" method="POST">
             @csrf
-            <input type="hidden" name="category_id" class="input-category" value="{{ old('category_id') }}">
+            @method('put')
+            <input type="hidden" name="category_id" class="input-category"
+                value="{{ old('category_id', $record->category->id) }}">
             <div class="container-addrecord">
                 <div class="categories-select">
                     @foreach ($types as $key => $type)
@@ -17,9 +19,9 @@
                                     <i class='bx bx-chevron-down'></i>
                                 </div>
                             </div>
-                            <div class="option-container @if ($key == 0 && !old('category_id')) active @endif">
+                            <div class="option-container @if ($key == 0 && !old('category_id', $record->category->id)) active @endif">
                                 @foreach ($type->category as $category)
-                                    <div class="option @if (old('category_id') == $category->id) option-selected @endif"
+                                    <div class="option @if (old('category_id', $record->category->id) == $category->id) option-selected @endif"
                                         data-optionId="{{ $category->id }}">
                                         <label>
                                             <i class="{{ $category->icon }}"></i>
@@ -38,22 +40,22 @@
                     <div class="head-input">
                         <div class="input-group">
                             <label for="amount">Amount</label>
-                            <input id="amount" value="{{ old('amount') }}" type="text" autocomplete="off"
-                                placeholder="Amount" name="amount">
+                            <input id="amount" value="{{ old('amount', Helper::onlyNumAmountFormat($record->amount)) }}"
+                                type="text" autocomplete="off" placeholder="Amount" name="amount">
                         </div>
                         <div class="input-group">
                             <label for="date">Date</label>
-                            <input id="date" value="{{ old('date', date('Y-m-d')) }}" name="date" type="date">
+                            <input id="date" value="{{ old('date', $record->date) }}" name="date" type="date">
                         </div>
                     </div>
                     <div class="middle-input">
                         <div class="input-group">
                             <label for="note">Note</label>
-                            <textarea id="note" placeholder="Note" name="note">{{ old('note') }}</textarea>
+                            <textarea id="note" placeholder="Note" name="note">{{ old('note', $record->note) }}</textarea>
                         </div>
                     </div>
                     <div class="bottom-input">
-                        <button type="submit">Add Record</button>
+                        <button type="submit">Edit Transaction</button>
                     </div>
                 </div>
             </div>
@@ -83,7 +85,7 @@
         const inputCategory = document.querySelector(".input-category")
         const optionCheck = document.querySelectorAll(".option-check")
 
-        let oldCategoryId = "{{ old('category_id') }}"
+        let oldCategoryId = {{ old('category_id', $record->category->id) }}
 
         if (oldCategoryId != "") {
             selectOption.forEach((elm) => {

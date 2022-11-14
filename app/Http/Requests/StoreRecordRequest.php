@@ -2,6 +2,9 @@
 
 namespace App\Http\Requests;
 
+use App\Rules\IsNotNegative;
+use App\Rules\MaxNumberAmount;
+use App\Rules\MinNumberAmount;
 use Illuminate\Foundation\Http\FormRequest;
 
 class StoreRecordRequest extends FormRequest
@@ -32,7 +35,7 @@ class StoreRecordRequest extends FormRequest
     {
         return [
             "category_id" => "required|numeric",
-            "amount" => "required",
+            "amount" => ["required", new IsNotNegative, new MaxNumberAmount, new MinNumberAmount],
         ];
     }
 }

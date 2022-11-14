@@ -29,22 +29,22 @@ Route::middleware("auth")->group(function () {
     Route::prefix('/dashboard')->group(function () {
         Route::get("/", [DashboardController::class, "index"]);
         Route::get("/history", [DashboardController::class, "history"]);
-        Route::get("/newrecord", [DashboardController::class, "newRecord"]);
         Route::get("/insight", [DashboardController::class, "insight"]);
 
         Route::resource('record', RecordController::class)->except([
-            "index", "create"
+            "index"
         ]);
-
 
         Route::get("/profile", [DashboardController::class, "profile"]);
         Route::put("/profile", [UserController::class, "update"]);
+        Route::post("/profile/changepassword", [UserController::class, "changePassword"]);
     });
 
     Route::get("/imgprofile/{path}", [UserController::class, "profileImageShow"]);
-    Route::get('/', function () {
-        return view('welcome');
-    })->name("home");
-    // Route::middleware(["isAdmin"])->group(function () {
     // });
 });
+
+Route::get('/', function () {
+    return view('landingpage.landingPage');
+})->name("home");
+// Route::middleware(["isAdmin"])->group(function () {
