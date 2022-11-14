@@ -6,10 +6,10 @@
             <div class="expense box-insight">
                 <div class="box-head">
                     <p>Expense</p>
-                    {{-- <h3>This Month</h3> --}}
+                    <h3>This Week</h3>
                 </div>
                 <div class="box-balance">
-                    <h1>IDR 100,000</h1>
+                    <h1>@amount($recordTotal['totalExpenseWeek'])</h1>
                 </div>
             </div>
 
@@ -17,10 +17,10 @@
             <div class="income box-insight">
                 <div class="box-head">
                     <p>Income</p>
-                    {{-- <h3>This Month</h3> --}}
+                    <h3>This Week</h3>
                 </div>
                 <div class="box-balance">
-                    <h1>IDR 12,000,000</h1>
+                    <h1>@amount($recordTotal['totalIncomeWeek'])</h1>
                 </div>
             </div>
         </div>

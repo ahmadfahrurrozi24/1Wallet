@@ -85,6 +85,6 @@ class DatabaseSeeder extends Seeder
             "date" => now()
         ]);
 
-        \App\Models\Record::factory(100)->create();
+        \App\Models\Record::factory(50)->create();
     }
 }

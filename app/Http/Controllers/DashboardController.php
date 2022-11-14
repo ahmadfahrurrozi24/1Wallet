@@ -37,6 +37,7 @@ class DashboardController extends Controller
             "title" => "Insight",
             "recordTotal" => Record::MyTotal(),
             "categoryChartData" => Category::CategoryChart(),
+            "recordTotal" => Record::MyTotal(),
             "weekChartData" => Record::WeekRecordTotal()
         ];
 

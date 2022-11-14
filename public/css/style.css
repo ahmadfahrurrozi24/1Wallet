@@ -583,7 +583,7 @@ body {
     margin-top: 40px;
     display: flex;
     justify-content: center;
-    gap: 30%;
+    gap: 10px;
     width: 100%;
     flex-wrap: wrap;
 }
