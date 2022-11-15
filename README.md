@@ -20,22 +20,22 @@ You can find the Wallet documentation on the website.
 # _Check out the Getting Started page for a quick feature._
 
 ## _Fitur 1Wallet_
-
--Sign UP
-
--Sign IN <img align="right" src="https://cdn.dribbble.com/users/1162077/screenshots/3848914/programmer.gif" width="330px">
-
--Dasboard
-
--History
-
--Add Record
-
--Insight
-
--User Profile
-
--Log Out
+ 
+ -Sign UP
+ 
+ -Sign IN           <img align="right" src="https://cdn.dribbble.com/users/1162077/screenshots/3848914/programmer.gif" width="330px">
+ 
+ -Dasboard 
+ 
+ -History  
+ 
+ -Add Record
+ 
+ -Insight
+ 
+ -User Profile
+ 
+ -Log Out
 
 ## _Profit One-Wallet:_
 
@@ -57,9 +57,17 @@ You only need to scan the barcode that has been provided, without having to take
 
 ## _We have several examples on the website. Here is the first one to get you started:_
 
+
+
 ### I have updated src/main/resources/assets/src/js/apps/codingtest/expenses/expenses-controller.js and src/main/resources/assets/src/js/apps/codingtest/partials/expenses-content.html . There fore you may need to rebuild the client if using something other than development mode.
 
+
+
+
 [![forthebadge made-with-go](http://ForTheBadge.com/images/badges/made-with-go.svg)](http://127.0.0.1:8000/register)
+
+
+
 
 # _✨Thanks, see you next time everyone✨_
 
