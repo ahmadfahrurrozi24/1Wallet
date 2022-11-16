@@ -22,12 +22,8 @@ You can find the Wallet documentation on the website.
 # _Check out the Getting Started page for a quick feature._
 
 ## _Fitur 1Wallet_
- 
- -Sign UP
- 
- -Sign IN           <img align="right" src="https://cdn.dribbble.com/users/1162077/screenshots/3848914/programmer.gif" width="330px">
- 
- -Dasboard 
+           
+ -Dasboard                       <img align="right" src="https://cdn.dribbble.com/users/1162077/screenshots/3848914/programmer.gif" width="260px">
  
  -History  
  
@@ -36,8 +32,6 @@ You can find the Wallet documentation on the website.
  -Insight
  
  -User Profile
- 
- -Log Out
 
 ## _Profit One-Wallet:_
 
@@ -58,6 +52,8 @@ You only need to scan the barcode that has been provided, without having to take
 # _We have interesting features on the website_
 
 ## _Here's an example of this feature:_
+
+
 
 
 
