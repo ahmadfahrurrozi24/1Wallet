@@ -55,9 +55,9 @@ You only need to scan the barcode that has been provided, without having to take
 
 
 
+## Easy way to Income and expense
 
-
-## 
+## Easy way to check Financial statement
 
 
 
