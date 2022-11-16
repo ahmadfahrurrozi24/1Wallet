@@ -76,7 +76,7 @@ class Record extends Model
 
     public function scopeMyLastTransaction()
     {
-        return $this->where("user_id", auth()->user()->id)->latest();
+        return $this->where("user_id", auth()->user()->id)->orderBy("date", "desc");
     }
 
     public function scopeFilter($query, array $fillters)
