@@ -174,7 +174,9 @@ class UserController extends Controller
             "password" => "required|min:8|max:15",
             "confirm-password" => "required|same:password"
         ], [
-            "confirm-password.same" => "The confirm password and new password must match."
+            "current-password.required" => "The current password field is required..",
+            "confirm-password.required" => "The confirm password field is required..",
+            "confirm-password.same" => "The confirm password must match."
         ]);
         $data = $request->except(["current-password", "confirm-password"]);
         $data["password"] = Hash::make($data["password"]);

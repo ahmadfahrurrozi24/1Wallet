@@ -1,3 +1,7 @@
+form .active{
+    display: flex;
+}
+
 /* Profile Nav */
 .profile-nav {
     width: 100%;
@@ -29,17 +33,30 @@
     transition: 0.4s;
 }
 
+.profile-nav .nav-info.dipilih ~ .nav-select{
+    margin-left: 0;
+}
+
+.profile-nav .nav-change.dipilih ~ .nav-select{
+    margin-left: 150px;
+}
+
 /* Profile Info */
 .user-profile {
     width: 90%;
     margin: auto;
     padding: 40px;
     box-sizing: border-box;
-    display: flex;
+    display: none;
     justify-content: center;
     gap: 100px;
     font-family: "Roboto", sans-serif;
 }
+
+.user-profile.active{
+    display: flex;
+}
+
 .box-image {
     height: 204px;
     position: relative;
@@ -139,7 +156,6 @@
 /* Change Password */
 .change-password {
     width: 500px;
-    /* padding: 50px 140px; */
     margin: auto;
     margin-top: 105px;
     display: none;
@@ -164,11 +180,12 @@
     align-items: center;
 }
 .box-password i {
-    margin-left: -40px;
-    padding-left: 10px;
+    margin-left: -35px;
+    padding-left: 5px;
     color: #a0a0a0;
     font-size: 25px;
     background-color: white;
+    cursor: pointer;
 }
 .change-password .submit {
     display: flex;
@@ -177,12 +194,12 @@
     align-items: center;
     margin-top: 10px;
 }
-.submit span {
-    width: 100%;
-    height: 50px;
-    display: flex;
-    justify-content: center;
+.box{
+    height: 60px;
+}
+small{
     color: red;
+    margin-left: 10px;
 }
 
 @media screen and (max-width: 789px) {
