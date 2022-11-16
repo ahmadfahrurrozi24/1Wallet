@@ -55,13 +55,13 @@ You only need to scan the barcode that has been provided, without having to take
 
 .Transportation
 
-# Examples
+# _We have interesting features on the website_
 
-## _We have several examples on the website. Here is the first one to get you started:_
+## _Here's an example of this feature:_
 
 
 
-### I have updated src/main/resources/assets/src/js/apps/codingtest/expenses/expenses-controller.js and src/main/resources/assets/src/js/apps/codingtest/partials/expenses-content.html . There fore you may need to rebuild the client if using something other than development mode.
+## 
 
 
 
