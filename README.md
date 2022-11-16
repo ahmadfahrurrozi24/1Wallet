@@ -55,9 +55,16 @@ You only need to scan the barcode that has been provided, without having to take
 
 
 
-## Easy way to Income and expense
+### _·Easy way to Income and expense_   
+<img align="lower" src="https://raw.githubusercontent.com/ahmadfahrurrozi24/1Wallet/tester/public/img/insight.jpg" width="370px">
 
-## Easy way to check Financial statement
+
+### _·Easy way to check Financial statement_    
+<img align="lower" src="https://raw.githubusercontent.com/ahmadfahrurrozi24/1Wallet/main/public/img/history.png" width="370px">
+
+
+### _·Easy way to Add transaction_     
+<img align="lower" src="https://raw.githubusercontent.com/ahmadfahrurrozi24/1Wallet/main/public/img/transaction.png" width="370px">
 
 
 
