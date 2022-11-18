@@ -44,6 +44,14 @@ Route::middleware("auth")->group(function () {
     // });
 });
 
+Route::get("/email/verify" , function(){
+    return view("auth.email-verify" , ["title" => "Succes"]);
+});
+
+Route::get("/email/success" , function(){
+    return view("auth.email-success" , ["title" => "Succes"]);
+});
+
 Route::get('/', function () {
     return view('landingpage.landingPage');
 })->name("home");
