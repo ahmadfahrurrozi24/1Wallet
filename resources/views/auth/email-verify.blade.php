@@ -30,7 +30,7 @@
             font-size: 21px;
         }
 
-        a {
+        button {
             width: 300px;
             height: 50px;
             border-radius: 10px;
@@ -42,9 +42,11 @@
             text-decoration: none;
             color: white;
             background-color: rgb(41, 126, 41);
+            border: none;
+            cursor: pointer;
         }
 
-        a:hover {
+        button:hover {
             background-color: rgb(34, 102, 34);
         }
     </style>
@@ -55,6 +57,24 @@
         <img src="{{ asset('img/caution.png') }}">
         <h1>Please verify your email</h1>
         <p>not received email yet?</p>
-        <a href="">Send email verification again</a>
+        <form action="{{ route('verification.send') }}" method="POST">
+            @csrf
+            <button type="submit">Send email verification again</button>
+        </form>
     </div>
+@endsection
+@section('js')
+    @if (session()->has('message'))
+        <script>
+            Toastify({
+                text: "{{ session()->get('message') }}",
+                style: {
+                    background: "#40db5a",
+                    color: "white",
+                    fontFamily: "Roboto",
+                    borderRadius: "10px",
+                }
+            }).showToast();
+        </script>
+    @endif
 @endsection
