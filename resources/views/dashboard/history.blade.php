@@ -29,7 +29,9 @@
                     <p>
                         <span>
                             {{ Carbon::create($key)->day }}
-                        </span> {{ Carbon::create($key)->shortEnglishMonth }} {{ Carbon::create($key)->year }}
+                        </span>
+                        {{ Carbon::create($key)->shortEnglishMonth }}
+                        {{ Carbon::create($key)->year }}
                     </p>
                 </div>
                 @foreach ($recordsData as $record)
