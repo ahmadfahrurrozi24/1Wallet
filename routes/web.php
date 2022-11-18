@@ -3,7 +3,12 @@
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\RecordController;
 use App\Http\Controllers\UserController;
+use App\Models\User;
+use Illuminate\Auth\Access\AuthorizationException;
+use Illuminate\Auth\Events\Verified;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Foundation\Auth\EmailVerificationRequest;
+use Illuminate\Http\Request;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,7 +31,7 @@ Route::middleware("isLogin")->group(function () {
 Route::middleware("auth")->group(function () {
     Route::post("/logout", [UserController::class, "logout"]);
 
-    Route::prefix('/dashboard')->group(function () {
+    Route::prefix('/dashboard')->middleware("verified")->group(function () {
         Route::get("/", [DashboardController::class, "index"]);
         Route::get("/history", [DashboardController::class, "history"]);
         Route::get("/insight", [DashboardController::class, "insight"]);
@@ -41,8 +46,20 @@ Route::middleware("auth")->group(function () {
     });
 
     Route::get("/imgprofile/{path}", [UserController::class, "profileImageShow"]);
-    // });
+
+    Route::get('/email/verify', function () {
+        if (auth()->user()->email_verified_at) return redirect()->to("/dashboard");
+        return view("auth.email-verify", ["title" => "Email Verify"]);
+    })->name('verification.notice');
+
+
+    Route::post('/email/verification-notification', function (Request $request) {
+        $request->user()->sendEmailVerificationNotification();
+        return back()->with('message', 'Verification link sent!');
+    })->middleware('throttle:6,1')->name('verification.send');
 });
+
+Route::get('/email/verify/{id}/{hash}', [UserController::class, "verifyUser"])->name('verification.verify');
 
 Route::get('/', function () {
     return view('landingpage.landingPage');
