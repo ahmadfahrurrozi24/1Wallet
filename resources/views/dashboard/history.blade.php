@@ -24,47 +24,56 @@
                     </div>
                 </div>
             </div>
-            @foreach ($records as $record)
-                <div class="accordion">
-                    <div class="contentbx">
-                        <div class="label" data-typeAmount={{ $record->category->type->name }}>
-                            <div class="left-label">
-                                <i class="{{ $record->category->icon }}"></i>
-                                <span>{{ $record->category->name }}</span>
-                            </div>
-                            <div class="right-label">
-                                <span>@amount($record->amount)</span>
-                                <i class='bx bx-chevron-down icon-arrow'></i>
-                            </div>
-                        </div>
-                        <div class="history">
-                            <div class="detail">
-                                <div class="head-detail">
-                                    <h3>{{ $record->category->name }}</h3>
-                                    <div class="delete-edit">
-                                        <form action="/dashboard/record/{{ $record->id }}" method="POST">
-                                            @csrf
-                                            @method('delete')
-                                            <button type="submit"><i class='bx bx-trash'></i></button>
-                                        </form>
-                                        <a href="/dashboard/record/{{ $record->id }}/edit"><i
-                                                class='bx bx-pencil'></i></a>
-                                    </div>
+            @foreach ($recordsByDate as $key => $recordsData)
+                <div class="history-date">
+                    <p>
+                        <span>
+                            {{ Carbon::create($key)->day }}
+                        </span> {{ Carbon::create($key)->shortEnglishMonth }} {{ Carbon::create($key)->year }}
+                    </p>
+                </div>
+                @foreach ($recordsData as $record)
+                    <div class="accordion">
+                        <div class="contentbx">
+                            <div class="label" data-typeAmount={{ $record->category->type->name }}>
+                                <div class="left-label">
+                                    <i class="{{ $record->category->icon }}"></i>
+                                    <span>{{ $record->category->name }}</span>
                                 </div>
-                                <p>{{ auth()->user()->name . "'s wallet" }}</p>
-                                <p>{{ Carbon::create($record->date)->toFormattedDateString() }}</p>
+                                <div class="right-label">
+                                    <span>@amount($record->amount)</span>
+                                    <i class='bx bx-chevron-down icon-arrow'></i>
+                                </div>
                             </div>
-                            <div class="biaya">
-                                <p>
-                                    @if ($record->note)
-                                        {{ $record->note }}
-                                    @endif
-                                </p>
-                                <h3>@amount($record->amount)</h3>
+                            <div class="history">
+                                <div class="detail">
+                                    <div class="head-detail">
+                                        <h3>{{ $record->category->name }}</h3>
+                                        <div class="delete-edit">
+                                            <form action="/dashboard/record/{{ $record->id }}" method="POST">
+                                                @csrf
+                                                @method('delete')
+                                                <button type="submit"><i class='bx bx-trash'></i></button>
+                                            </form>
+                                            <a href="/dashboard/record/{{ $record->id }}/edit"><i
+                                                    class='bx bx-pencil'></i></a>
+                                        </div>
+                                    </div>
+                                    <p>{{ auth()->user()->name . "'s wallet" }}</p>
+                                    <p>{{ Carbon::create($record->date)->toFormattedDateString() }}</p>
+                                </div>
+                                <div class="biaya">
+                                    <p>
+                                        @if ($record->note)
+                                            {{ $record->note }}
+                                        @endif
+                                    </p>
+                                    <h3>@amount($record->amount)</h3>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
+                @endforeach
             @endforeach
         </div>
         {{ $records->links() }}

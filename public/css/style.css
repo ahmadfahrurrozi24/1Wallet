@@ -189,6 +189,19 @@ body {
     border-top: 1px solid white;
 }
 
+.history-date {
+    width: 600px;
+}
+
+.history-date p {
+    font-weight: 500;
+}
+
+.history-date p span {
+    font-size: 25px;
+    font-weight: bolder;
+}
+
 .accordion {
     width: 600px;
     display: flex;
@@ -637,7 +650,8 @@ body {
     .headbox-history {
         width: 80%;
     }
-    .accordion {
+    .accordion,
+    .history-date {
         width: 80%;
     }
     .accordion .biaya {
@@ -734,7 +748,8 @@ body {
     .headbox-history {
         width: 100%;
     }
-    .accordion {
+    .accordion,
+    .history-date {
         width: 100%;
     }
     .accordion .biaya {
