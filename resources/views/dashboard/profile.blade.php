@@ -9,11 +9,11 @@
             @method('put')
             @csrf
             <div class="profile-nav">
-                <button class="nav-info" type="button">Profile info</button>
-                <button class="nav-change" type="button">Change password</button>
+                <button class="nav-info nav-button dipilih" data-nav="info" type="button">Profile info</button>
+                <button class="nav-change nav-button " data-nav="change" type="button">Change password</button>
                 <span class="nav-select"></span>
             </div>
-            <div class="user-profile">
+            <div class="user-profile active">
                 <div class="box-image">
                     <div class="user-image" style="background-image:url(@avatar(auth()->user()->profile_image))">
                     </div>
@@ -42,36 +42,36 @@
             @csrf
             <div class="change-password">
                 {{-- <label for="currentPassword">Current password :</label> --}}
-                <div class="box-password">
-                    <input type="password" class="passwords" placeholder="Current password" name="current-password">
-                    <i class='bx bx-hide'></i>
+                <div class="box">
+                    <div class="box-password">
+                        <input type="password" class="passwords" placeholder="Current password" name="current-password">
+                        <i class='bx bx-hide'></i>
+                    </div>
+                    @error('current-password')
+                        <small>{{ $message }}</small>
+                    @enderror
                 </div>
                 {{-- <label for="newPassword">New password :</label> --}}
-                <div class="box-password">
-                    <input type="password" class="passwords" placeholder="New password" name="password">
-                    <i class='bx bx-hide'></i>
+                <div class="box">
+                    <div class="box-password">
+                        <input type="password" class="passwords" placeholder="New password" name="password">
+                        <i class='bx bx-hide'></i>
+                    </div>
+                    @error('password')
+                        <small>{{ $message }}</small>
+                    @enderror
                 </div>
                 {{-- <label for="confirm">Confirm password :</label> --}}
-                <div class="box-password">
-                    <input type="password" class="passwords" placeholder="Confirm password" name="confirm-password">
-                    <i class='bx bx-hide'></i>
+                <div class="box">
+                    <div class="box-password">
+                        <input type="password" class="passwords" placeholder="Confirm password" name="confirm-password">
+                        <i class='bx bx-hide'></i>
+                    </div>
+                    @error('confirm-password')
+                        <small>{{ $message }}</small>
+                    @enderror
                 </div>
                 <div class="submit">
-                    @error('current-password')
-                        <span id="notice">
-                            {{ $message }}
-                        </span>
-                    @enderror
-                    @error('password')
-                        <span id="notice">
-                            {{ $message }}
-                        </span>
-                    @enderror
-                    @error('confirm-password')
-                        <span id="notice">
-                            {{ $message }}
-                        </span>
-                    @enderror
                     <button type="submit" class="save">Save</button>
                 </div>
             </div>
@@ -80,6 +80,7 @@
 @endsection
 @section('js')
     <script>
+        const navButton = document.querySelectorAll(".nav-button")
         const nav = document.querySelector('.profile-nav');
         const info = document.querySelector('.nav-info');
         const change = document.querySelector('.nav-change');
@@ -106,21 +107,32 @@
                 imgPrev.style.backgroundImage = `url(${URL.createObjectURL(file)})`
             }
         }
+        navButton.forEach(elm => {
+            elm.addEventListener("click" , e => {
+                navButton.forEach(el => el.classList.remove("dipilih"))
+                e.target.classList.add("dipilih")
 
+                changeDisplay()
+            })
+        })
 
-        nav.addEventListener('click', function(e) {
-            if (e.target.className == 'nav-change') {
-                e.target.nextElementSibling.style.marginLeft = '150px';
-                profileInfo.style.display = 'none';
-                changePassword.style.display = 'flex';
-            } else if (e.target.className == 'nav-info') {
-                e.target.nextElementSibling.nextElementSibling.style.marginLeft = '0px';
-                profileInfo.style.display = 'flex';
-                changePassword.style.display = 'none';
-            }
-        });
+        changeDisplay()
 
-
+        function changeDisplay(){
+            navButton.forEach(elm => {
+                if(elm.classList.contains("dipilih")){
+                    let selected = elm.dataset.nav
+                    if(selected == "info"){
+                        profileInfo.classList.add("active")
+                        changePassword.classList.remove("active")
+                    }else if(selected == "change"){
+                        changePassword.classList.add("active")
+                        profileInfo.classList.remove("active")
+                    }
+                }
+            })
+        }
+        
         changePassword.addEventListener('click', function(i) {
             if (i.target.className == 'bx bx-hide') {
                 i.target.previousElementSibling.type = 'text';
@@ -131,13 +143,27 @@
             }
         });
 
-
-        save.addEventListener('click', function() {
-            if (password[1].value != password[2].value) {
-                same.innerHTML = 'Password and Confirm password do not match';
-            } else {
-                same.innerHTML = '';
-            }
-        });
     </script>
+
+    @error('current-password')
+    <script>
+        info.classList.remove("dipilih")
+        change.classList.add("dipilih")
+        changeDisplay()
+    </script>
+    @enderror
+    @error('password')
+    <script>
+        info.classList.remove("dipilih")
+        change.classList.add("dipilih")
+        changeDisplay()
+    </script>
+    @enderror
+    @error('confirm-password')
+    <script>
+        info.classList.remove("dipilih")
+        change.classList.add("dipilih")
+        changeDisplay()
+    </script>
+    @enderror
 @endsection
