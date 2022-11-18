@@ -17,7 +17,7 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::middleware("isLogin")->group(function () {
+Route::middleware("guest")->group(function () {
     Route::get('/login', [UserController::class, "login"])->name("login");
     Route::get('/register', [UserController::class, "register"])->name("register");
     Route::post('/login', [UserController::class, "signIn"]);

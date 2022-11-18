@@ -71,6 +71,7 @@
                         <small>{{ $message }}</small>
                     @enderror
                 </div>
+                <a href="" class="forgot">Forgot Password</a>
                 <div class="submit">
                     <button type="submit" class="save">Save</button>
                 </div>
@@ -108,7 +109,7 @@
             }
         }
         navButton.forEach(elm => {
-            elm.addEventListener("click" , e => {
+            elm.addEventListener("click", e => {
                 navButton.forEach(el => el.classList.remove("dipilih"))
                 e.target.classList.add("dipilih")
 
@@ -118,21 +119,21 @@
 
         changeDisplay()
 
-        function changeDisplay(){
+        function changeDisplay() {
             navButton.forEach(elm => {
-                if(elm.classList.contains("dipilih")){
+                if (elm.classList.contains("dipilih")) {
                     let selected = elm.dataset.nav
-                    if(selected == "info"){
+                    if (selected == "info") {
                         profileInfo.classList.add("active")
                         changePassword.classList.remove("active")
-                    }else if(selected == "change"){
+                    } else if (selected == "change") {
                         changePassword.classList.add("active")
                         profileInfo.classList.remove("active")
                     }
                 }
             })
         }
-        
+
         changePassword.addEventListener('click', function(i) {
             if (i.target.className == 'bx bx-hide') {
                 i.target.previousElementSibling.type = 'text';
@@ -142,28 +143,27 @@
                 i.target.setAttribute('class', 'bx bx-hide');
             }
         });
-
     </script>
 
     @error('current-password')
-    <script>
-        info.classList.remove("dipilih")
-        change.classList.add("dipilih")
-        changeDisplay()
-    </script>
+        <script>
+            info.classList.remove("dipilih")
+            change.classList.add("dipilih")
+            changeDisplay()
+        </script>
     @enderror
     @error('password')
-    <script>
-        info.classList.remove("dipilih")
-        change.classList.add("dipilih")
-        changeDisplay()
-    </script>
+        <script>
+            info.classList.remove("dipilih")
+            change.classList.add("dipilih")
+            changeDisplay()
+        </script>
     @enderror
     @error('confirm-password')
-    <script>
-        info.classList.remove("dipilih")
-        change.classList.add("dipilih")
-        changeDisplay()
-    </script>
+        <script>
+            info.classList.remove("dipilih")
+            change.classList.add("dipilih")
+            changeDisplay()
+        </script>
     @enderror
 @endsection
