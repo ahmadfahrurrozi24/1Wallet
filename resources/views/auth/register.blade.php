@@ -20,7 +20,7 @@
                     <i class='bx bxs-key'></i>
                     <div class="box-password">
                         <input type="password" id="password" value="{{ old('password') }}" name="password"
-                        placeholder="Password">
+                            placeholder="Password">
                         <i class='bx bx-hide'></i>
                     </div>
                 </div>
@@ -66,7 +66,7 @@
         });
 
         let style = {
-            background: "red",
+            background: "#fa3f32",
             color: "white",
             fontFamily: "Roboto",
             borderRadius: "10px"
