@@ -7,7 +7,9 @@
                     <a href="/dashboard/history?t=month" class="@if (request('t') == 'month') active @endif">THIS
                         MONTH</a>
                     <a href="/dashboard/history" class="@if (!request('t')) active @endif">ALL</a>
-                    <a href="/dashboard/history?t=week" class="@if (request('t') == 'week') active @endif">THIS WEEK</a>
+                    <a href="/dashboard/history?t=today" class="@if (request('t') == 'today') active @endif">TODAY</a>
+                    <a href="/dashboard/history?t=week" class="@if (request('t') == 'week') active @endif">THIS
+                        WEEK</a>
                 </div>
                 <div class="transaction">
                     <div class="inflow">

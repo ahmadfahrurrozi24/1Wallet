@@ -94,6 +94,8 @@ class Record extends Model
                         Carbon::now()->startOfMonth(),
                         Carbon::now()->endOfMonth()
                     ]);
+                } elseif ($t == "today") {
+                    $query->whereDate("date", Carbon::today());
                 }
             }
         );
