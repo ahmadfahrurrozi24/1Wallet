@@ -78,7 +78,7 @@
                 @endforeach
             @endforeach
         </div>
-        {{ $records->links() }}
+        {{ $records->appends(request()->input())->links() }}
     </div>
 @endsection
 @section('js')

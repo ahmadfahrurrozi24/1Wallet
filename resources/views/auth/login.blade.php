@@ -25,6 +25,7 @@
             </div>
             <button type="submit">Sign In</button>
             <p>Not registered yet ? <a href="/register">Click here</a></p>
+            <a href="" class="forgot">Forgot Password</a>
         </form>
     </div>
 @endsection
