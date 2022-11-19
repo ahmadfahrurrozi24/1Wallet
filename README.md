@@ -69,7 +69,7 @@ You only need to scan the barcode that has been provided, without having to take
 
 
 
-[![forthebadge made-with-go](http://ForTheBadge.com/images/badges/made-with-go.svg)](http://127.0.0.1:8000/register)
+[![forthebadge made-with-go](http://ForTheBadge.com/images/badges/made-with-go.svg)](http://127.0.0.1:8000/register)     
 
 
 
