@@ -68,12 +68,10 @@
     </div> --}}
 @endsection
 @section('js')
-
-<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/chartjs-plugin-datalabels/2.1.0/chartjs-plugin-datalabels.min.js"
-    integrity="sha512-Tfw6etYMUhL4RTki37niav99C6OHwMDB2iBT5S5piyHO+ltK2YX8Hjy9TXxhE1Gm/TmAV0uaykSpnHKFIAif/A=="
-    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chartjs-plugin-datalabels/2.1.0/chartjs-plugin-datalabels.min.js"
+        integrity="sha512-Tfw6etYMUhL4RTki37niav99C6OHwMDB2iBT5S5piyHO+ltK2YX8Hjy9TXxhE1Gm/TmAV0uaykSpnHKFIAif/A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     {{-- line chart --}}
     <script>
         let dynamicColors = function() {
@@ -83,21 +81,28 @@
             return "rgb(" + r + "," + g + "," + b + ")";
         };
 
+        const weekData = {!! $weekChartData !!}
+        let labelWeekExpense = Object.keys(weekData.expense)
+        let dataWeekExpense = Object.values(weekData.expense)
+        let labelWeekIncome = Object.keys(weekData.income)
+        let dataWeekIncome = Object.values(weekData.income)
+
+
         const ctx = document.getElementById('myChart');
         const myChart = new Chart(ctx, {
             type: 'line',
             data: {
-                labels: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
+                labels: labelWeekExpense,
                 datasets: [{
                         label: 'Expense',
-                        data: [12, 19, 3, 5, 2, 3, 69],
+                        data: dataWeekExpense,
                         backgroundColor: "#de0a26",
                         borderColor: "#de0a26",
                         borderWidth: 3
                     },
                     {
                         label: 'Income',
-                        data: [16, 14, 25, 7, 6, 1, 57],
+                        data: dataWeekIncome,
                         backgroundColor: "#03ac13",
                         borderColor: "#03ac13",
                         borderWidth: 3
@@ -114,26 +119,5 @@
                 }
             }
         });
-
-        function getTotalData(objectData) {
-            let total = {};
-
-            // console.log(dataExpenseChart)
-            for (const [key, value] of Object.entries(objectData)) {
-                let sum = 0;
-                for (const data of value) {
-                    sum += parseInt(data)
-                }
-
-                if (sum < 0) sum *= -1
-
-                total = {
-                    ...total,
-                    [key]: sum
-                }
-            }
-
-            return total
-        }
     </script>
 @endsection

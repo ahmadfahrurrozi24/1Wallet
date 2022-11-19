@@ -6,6 +6,9 @@ use App\Helper\Helper;
 use App\Http\Requests\UserRequest;
 use App\Models\User;
 use App\Rules\PasswordIsSame;
+use Illuminate\Auth\Access\AuthorizationException;
+use Illuminate\Auth\Events\Registered;
+use Illuminate\Auth\Events\Verified;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\File as FacadesFile;
@@ -120,8 +123,10 @@ class UserController extends Controller
         unset($data["balance"]);
         unset($data["_token"]);
 
-        User::create($data);
-        return redirect()->to("login")->with("message", "Register success, please login!");
+        $user = User::create($data);
+        event(new Registered($user));
+
+        return redirect()->to("login")->with("message", "Register success, please verify your email address first!");
     }
 
     public function signIn(Request $request)
@@ -184,5 +189,27 @@ class UserController extends Controller
         User::find(auth()->id())->update($data);
 
         return redirect()->back()->with("message", "Password successfully changed.");
+    }
+
+    public function verifyUser(Request $request)
+    {
+        $user = User::find($request->route('id'));
+        if (auth()->check()) {
+            if ($user->id != auth()->id()) return redirect()->to("/dashboard");
+        }
+
+        if (!hash_equals((string) $request->route('hash'), sha1($user->getEmailForVerification()))) {
+            throw new AuthorizationException();
+        }
+
+        if ($user->markEmailAsVerified()) {
+            event(new Verified($user));
+        }
+
+        if (auth()->guest()) {
+            return redirect("/login")->with("message", "Your email has been verified, please login to continue !");
+        }
+
+        return redirect()->to("/dashboard")->with("message", "Your email has been verified.");
     }
 }

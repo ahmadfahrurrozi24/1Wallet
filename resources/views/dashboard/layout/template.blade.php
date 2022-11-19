@@ -25,6 +25,21 @@
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
     {{-- <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script> --}}
     <script src="{{ asset('js/index.js') }}"></script>
+    @if (session()->has('message'))
+        <script>
+            Toastify({
+                text: "{{ session()->get('message') }}",
+                style: {
+                    background: "#40db5a",
+                    color: "white",
+                    fontFamily: "Roboto",
+                    borderRadius: "10px"
+                },
+                gravity: "top",
+                position: "right"
+            }).showToast();
+        </script>
+    @endif
     @yield('js')
 </body>
 
