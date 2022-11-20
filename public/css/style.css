@@ -750,8 +750,9 @@ body {
     .headbox-history {
         width: 100%;
     }
-    .headbox-history .tabs a{
+    .headbox-history .tabs a {
         font-size: 14px;
+        text-align: center;
     }
     .accordion,
     .history-date {
