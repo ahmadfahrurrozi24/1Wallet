@@ -156,6 +156,7 @@ body {
     width: 120px;
     height: 50px;
     text-decoration: none;
+    text-align: center;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -748,6 +749,9 @@ body {
     /* history */
     .headbox-history {
         width: 100%;
+    }
+    .headbox-history .tabs a{
+        font-size: 14px;
     }
     .accordion,
     .history-date {
