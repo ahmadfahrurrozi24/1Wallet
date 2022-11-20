@@ -22,6 +22,11 @@ Route::middleware("guest")->group(function () {
     Route::get('/register', [UserController::class, "register"])->name("register");
     Route::post('/login', [UserController::class, "signIn"]);
     Route::post('/register', [UserController::class, "signUp"]);
+
+    Route::get('/forgot-password', [UserController::class, "forgotPassword"])->name('password.request');
+    Route::post('/forgot-password', [UserController::class, "sendLinkPassword"])->name('password.email');
+    Route::get('/reset-password/{token}', [UserController::class, "resetPassword"])->name('password.reset');
+    Route::post('/reset-password', [UserController::class, "resettingPassword"])->name('password.update');
 });
 
 Route::middleware("auth")->group(function () {
@@ -39,6 +44,8 @@ Route::middleware("auth")->group(function () {
         Route::get("/profile", [DashboardController::class, "profile"]);
         Route::put("/profile", [UserController::class, "update"]);
         Route::post("/profile/changepassword", [UserController::class, "changePassword"]);
+
+        Route::get('/admin/category', [DashboardController::class, "categoryAdmin"]);
     });
 
     Route::get("/imgprofile/{path}", [UserController::class, "profileImageShow"]);
