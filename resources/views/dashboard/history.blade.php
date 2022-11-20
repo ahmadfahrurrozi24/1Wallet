@@ -79,6 +79,9 @@
                     </div>
                 @endforeach
             @endforeach
+            @if ($records->count() <= 0)
+                <p class="no-record-p">No records avaiable.Try to add new record.</p>
+            @endif
         </div>
         {{ $records->appends(request()->input())->links() }}
     </div>
