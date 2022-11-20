@@ -22,6 +22,11 @@ Route::middleware("guest")->group(function () {
     Route::get('/register', [UserController::class, "register"])->name("register");
     Route::post('/login', [UserController::class, "signIn"]);
     Route::post('/register', [UserController::class, "signUp"]);
+
+    Route::get('/forgot-password', [UserController::class, "forgotPassword"])->name('password.request');
+    Route::post('/forgot-password', [UserController::class, "sendLinkPassword"])->name('password.email');
+    Route::get('/reset-password/{token}', [UserController::class, "resetPassword"])->name('password.reset');
+    Route::post('/reset-password', [UserController::class, "resettingPassword"])->name('password.update');
 });
 
 Route::middleware("auth")->group(function () {
