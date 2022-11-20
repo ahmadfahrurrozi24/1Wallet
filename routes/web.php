@@ -4,6 +4,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\RecordController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
+use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,6 +31,9 @@ Route::middleware("auth")->group(function () {
         Route::get("/", [DashboardController::class, "index"]);
         Route::get("/history", [DashboardController::class, "history"]);
         Route::get("/insight", [DashboardController::class, "insight"]);
+        Route::get("/admin", function(){
+            return view("dashboard.admin", ["title" => "Admin Page"]);
+        });
 
         Route::resource('record', RecordController::class)->except([
             "index"
@@ -37,10 +41,15 @@ Route::middleware("auth")->group(function () {
 
         Route::get("/profile", [DashboardController::class, "profile"]);
         Route::put("/profile", [UserController::class, "update"]);
+        Route::post("/profile/changepassword", [UserController::class, "changePassword"]);
+        Route::get("/admin", function(){
+            return view('dashboard.admin', ['title' => 'Admin']);
+        });
+
     });
 
     Route::get("/imgprofile/{path}", [UserController::class, "profileImageShow"]);
-  // });
+    // });
 });
 
 Route::get('/', function () {

@@ -44,6 +44,12 @@
             </a>
         </li>
         <li>
+            <a href="/dashboard/admin">
+                <i class='bx bxs-user-badge'></i>
+                <span class="name">Admin</span>
+            </a>
+        </li>
+        <li>
             <form action="/logout" method="POST">
                 @csrf
                 <button type="submit">
