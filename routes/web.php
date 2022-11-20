@@ -39,6 +39,8 @@ Route::middleware("auth")->group(function () {
         Route::get("/profile", [DashboardController::class, "profile"]);
         Route::put("/profile", [UserController::class, "update"]);
         Route::post("/profile/changepassword", [UserController::class, "changePassword"]);
+
+        Route::get('/admin/category', [DashboardController::class, "categoryAdmin"]);
     });
 
     Route::get("/imgprofile/{path}", [UserController::class, "profileImageShow"]);
