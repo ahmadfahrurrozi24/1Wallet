@@ -56,15 +56,4 @@ class DashboardController extends Controller
 
         return view("dashboard.profile", $data);
     }
-
-    public function categoryAdmin()
-    {
-        $data = [
-            "title" => "Category Setting",
-            "categories" => Category::all(),
-            "types" => Type::with("category")->get()
-        ];
-
-        return view("dashboard.admin.category", $data);
-    }
 }
