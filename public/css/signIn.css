@@ -94,10 +94,10 @@ input:focus {
     right: 0;
     cursor: pointer;
 }
-.password .box-password{
+.password .box-password {
     border-bottom: 1px solid black;
 }
-.password .box-password input{
+.password .box-password input {
     width: 88%;
     border-bottom: none;
 }
@@ -123,6 +123,12 @@ P {
 }
 p a {
     text-decoration: none;
+    color: #0812a4;
+}
+
+.forgot {
+    text-decoration: none;
+    margin-top: 5px;
     color: #0812a4;
 }
 

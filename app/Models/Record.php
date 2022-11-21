@@ -76,7 +76,7 @@ class Record extends Model
 
     public function scopeMyLastTransaction()
     {
-        return $this->where("user_id", auth()->user()->id)->latest();
+        return $this->where("user_id", auth()->user()->id)->orderBy("date", "desc");
     }
 
     public function scopeFilter($query, array $fillters)
@@ -94,6 +94,8 @@ class Record extends Model
                         Carbon::now()->startOfMonth(),
                         Carbon::now()->endOfMonth()
                     ]);
+                } elseif ($t == "today") {
+                    $query->whereDate("date", Carbon::today());
                 }
             }
         );
@@ -143,15 +145,6 @@ class Record extends Model
                 });
             })->oldest()->get();
 
-        // dump(Category::with(["record", "type"])->whereHas("record", function (Builder $q) {
-        //     $q->without("category")->where("user_id", auth()->id());
-        // })->whereHas("type", function ($q) {
-        //     $q->where("name", "INCOME");
-        // })->latest()->get()->toArray());
-        // foreach ($expenseMonth as $Em) {
-        // }
-
-
         $expenseMonthCategoryCount = array_count_values($expenseMonth);
         $incomeMonthCategoryCount = array_count_values($incomeMonth);
 
@@ -159,5 +152,53 @@ class Record extends Model
             "expense" => $expenseMonthCategoryCount,
             "income" => $incomeMonthCategoryCount
         ];
+    }
+
+    private function getOnlyExpense()
+    {
+        return $this->where("user_id", auth()->id())->whereHas("category", function ($q) {
+            $q->whereHas("type", function ($q) {
+                $q->where("name", "EXPENSE");
+            });
+        });
+    }
+
+    private function getOnlyIncome()
+    {
+        return $this->where("user_id", auth()->id())->whereHas("category", function ($q) {
+            $q->whereHas("type", function ($q) {
+                $q->where("name", "INCOME");
+            });
+        });
+    }
+
+    public function scopeWeekRecordTotal()
+    {
+        $firstDay = Carbon::now()->startOfWeek();
+        $thisWeekExpense = [
+            "Monday" => $this->getOnlyExpense()->where("date", $firstDay)->get()->sum("amount"),
+            "Tuesday" => $this->getOnlyExpense()->where("date", $firstDay->addDays(1))->get()->sum("amount"),
+            "Wednesday" => $this->getOnlyExpense()->where("date", $firstDay->addDays(1))->get()->sum("amount"),
+            "Thursday" => $this->getOnlyExpense()->where("date", $firstDay->addDays(1))->get()->sum("amount"),
+            "Friday" => $this->getOnlyExpense()->where("date", $firstDay->addDays(1))->get()->sum("amount"),
+            "Saturday" => $this->getOnlyExpense()->where("date", $firstDay->addDays(1))->get()->sum("amount"),
+            "Sunday" => $this->getOnlyExpense()->where("date", $firstDay->addDays(1))->get()->sum("amount"),
+        ];
+
+        $firstDay = Carbon::now()->startOfWeek();
+        $thisWeekIncome = [
+            "Monday" => $this->getOnlyIncome()->where("date", $firstDay)->get()->sum("amount"),
+            "Tuesday" => $this->getOnlyIncome()->where("date", $firstDay->addDays(1))->get()->sum("amount"),
+            "Wednesday" => $this->getOnlyIncome()->where("date", $firstDay->addDays(1))->get()->sum("amount"),
+            "Thursday" => $this->getOnlyIncome()->where("date", $firstDay->addDays(1))->get()->sum("amount"),
+            "Friday" => $this->getOnlyIncome()->where("date", $firstDay->addDays(1))->get()->sum("amount"),
+            "Saturday" => $this->getOnlyIncome()->where("date", $firstDay->addDays(1))->get()->sum("amount"),
+            "Sunday" => $this->getOnlyIncome()->where("date", $firstDay->addDays(1))->get()->sum("amount"),
+        ];
+
+        return collect([
+            "expense" => $thisWeekExpense,
+            "income" => $thisWeekIncome
+        ])->toJson();
     }
 }

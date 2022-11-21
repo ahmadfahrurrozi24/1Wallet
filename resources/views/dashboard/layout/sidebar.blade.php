@@ -44,9 +44,9 @@
             </a>
         </li>
         <li>
-            <a href="/dashboard/admin">
+            <a href="/dashboard/admin/category">
                 <i class='bx bxs-user-badge'></i>
-                <span class="name">Admin</span>
+                <span class="name">Category</span>
             </a>
         </li>
         <li>

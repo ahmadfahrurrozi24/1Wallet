@@ -5,10 +5,6 @@ namespace App\Http\Controllers;
 use App\Models\Category;
 use App\Models\Record;
 use App\Models\Type;
-use App\Models\User;
-use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Event;
 
 class DashboardController extends Controller
 {
@@ -17,7 +13,9 @@ class DashboardController extends Controller
         $data = [
             "title" => "Dashboard",
             "recordTotal" => Record::MyTotal(),
-            "lastRecord" => Record::MyLastTransaction()->take(5)->get()
+            "lastRecord" => Record::MyLastTransaction()->take(5)->get(),
+            "weekChartData" => Record::WeekRecordTotal()
+
         ];
 
         return view("dashboard.index", $data);
@@ -25,9 +23,12 @@ class DashboardController extends Controller
 
     public function history()
     {
+        $records = Record::MyLastTransaction()->filter(request(["t"]))->paginate(10);
+
         $data = [
             "title" => "History",
-            "records" => Record::MyLastTransaction()->filter(request(["t"]))->latest()->paginate(10),
+            "records" => $records,
+            "recordsByDate" => collect($records->items())->groupBy("date"),
             "addition" => Record::HistoryAddition()
         ];
 
@@ -39,7 +40,9 @@ class DashboardController extends Controller
         $data = [
             "title" => "Insight",
             "recordTotal" => Record::MyTotal(),
-            "categoryChartData" => Category::CategoryChart()
+            "categoryChartData" => Category::CategoryChart(),
+            "recordTotal" => Record::MyTotal(),
+            "weekChartData" => Record::WeekRecordTotal()
         ];
 
         return view("dashboard.insight", $data);
@@ -52,5 +55,16 @@ class DashboardController extends Controller
         ];
 
         return view("dashboard.profile", $data);
+    }
+
+    public function categoryAdmin()
+    {
+        $data = [
+            "title" => "Category Setting",
+            "categories" => Category::all(),
+            "types" => Type::with("category")->get()
+        ];
+
+        return view("dashboard.admin.category", $data);
     }
 }

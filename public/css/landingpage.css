@@ -19,7 +19,6 @@ body {
 }
 
 .header {
-    /* background-color: rgb(21, 23, 99); */
     display: flex;
     padding: 0 10px;
     justify-content: space-between;

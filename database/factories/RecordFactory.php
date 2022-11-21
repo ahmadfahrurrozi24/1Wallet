@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -26,12 +27,12 @@ class RecordFactory extends Factory
         }
 
         return [
-            "user_id" => fake()->numberBetween(1, 11),
-            // "user_id" => 1,
+            // "user_id" => fake()->numberBetween(1, 11),
+            "user_id" => 1,
             "category_id" => $category_id,
             "amount" => $amount,
             "note" => fake()->text(50),
-            "date" => now()
+            "date" => fake()->dateTimeBetween(Carbon::now()->startOfWeek(), Carbon::now()->endOfWeek())
         ];
     }
 }

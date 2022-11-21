@@ -33,11 +33,6 @@
             </div>
         @endauth
     </div>
-
-    {{-- <div class="bg"></div>
-    <div class="bg bg2"></div>
-    <div class="bg bg3"></div> --}}
-
     {{-- Content --}}
     <div class="content">
         {{-- slogan --}}
@@ -98,5 +93,4 @@
     <script>
         AOS.init();
     </script>
-
 </body>
