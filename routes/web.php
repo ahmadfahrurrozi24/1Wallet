@@ -36,6 +36,9 @@ Route::middleware("auth")->group(function () {
         Route::get("/", [DashboardController::class, "index"]);
         Route::get("/history", [DashboardController::class, "history"]);
         Route::get("/insight", [DashboardController::class, "insight"]);
+        Route::get("/admin", function(){
+            return view("dashboard.admin", ["title" => "Admin Page"]);
+        });
 
         Route::resource('record', RecordController::class)->except([
             "index"
@@ -44,7 +47,6 @@ Route::middleware("auth")->group(function () {
         Route::get("/profile", [DashboardController::class, "profile"]);
         Route::put("/profile", [UserController::class, "update"]);
         Route::post("/profile/changepassword", [UserController::class, "changePassword"]);
-
         Route::get('/admin/category', [DashboardController::class, "categoryAdmin"]);
     });
 
