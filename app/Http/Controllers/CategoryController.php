@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Models\Category;
 use App\Models\Type;
+use Illuminate\Http\Request;
+
+use function PHPUnit\Framework\returnSelf;
 
 class CategoryController extends Controller
 {
@@ -40,12 +43,25 @@ class CategoryController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \App\Http\Requests\StoreCategoryRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store($request)
+    public function store(Request $request)
     {
-        //
+        $request->validate(
+            [
+                "type_id" => "required",
+                "name" => "required",
+                "icon" => "required",
+            ],
+            [
+                "type_id.required" => "Type must be selected."
+            ]
+        );
+
+        $data = $request->except("_token");
+        Category::create($data);
+
+        return redirect()->route("category.index")->with("message", "Category successfully added.");
     }
 
     /**
