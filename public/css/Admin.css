@@ -1,0 +1,111 @@
+/* Admin */
+
+.wrapper-admin {
+    position: none;
+}
+
+/* Category Select */
+
+.head-input-Category {
+    display: flex;
+    gap: 10px;
+}
+.input-group-Category {
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.input-group-Category input,
+.input-group-Category textarea {
+    /* justify-content: center; */
+    padding: 10px;
+    margin: auto;
+    border-radius: 12px;
+    height: 50px;
+    border: 2px solid #c4c4c4;
+    width: 550px;
+    /* flex-grow: 1; */
+}
+
+.input-group-Category input:focus,
+.input-group-Category textarea:focus {
+    outline: none;
+    border: 2px solid rgb(81, 12, 219);
+}
+
+.input-group-Category textarea {
+    height: 80px;
+    max-height: 90px;
+    resize: none;
+}
+
+/* .head-input-Category {
+    display: flex;
+    gap: 10px;
+} */
+
+.bottom-input {
+    text-align: center;
+}
+
+.bottom-input button {
+    /* margin-top: 10px;
+    margin-left: 100px; */
+    padding: 12px;
+    width: 400px;
+    background: rgb(81, 12, 219) !important;
+    color: #fff;
+    border-radius: 12px;
+    cursor: pointer;
+    border: none;
+}
+
+/* .Category-field .input-category {
+    border: 2px solid #c4c4c4;
+    width: 100%;
+} */
+
+@media screen and (max-width: 860px) {
+    /* Admin */
+
+    /* Category Select */
+
+    .Category-Title {
+        margin-left: 145px;
+    }
+
+    .input-group-Category input,
+    .input-group-Category textarea {
+        margin-left: 145px;
+        height: 45px;
+        width: 60%;
+    }
+
+    .bottom-input button {
+        padding: 7px;
+        width: 30%;
+    }
+}
+
+@media screen and (max-width: 515px) {
+    /* Admin */
+
+    /* Category Select */
+
+    .Category-Title {
+        margin-left: 55px;
+    }
+
+    .input-group-Category input,
+    .input-group-Category textarea {
+        margin-left: 55px;
+        height: 40px;
+        width: 70%;
+    }
+
+    .bottom-input button {
+        padding: 6px;
+    }
+}

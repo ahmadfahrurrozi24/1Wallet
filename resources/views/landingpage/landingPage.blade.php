@@ -1,7 +1,14 @@
-<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-<link rel="stylesheet" href="{{ asset('css/landingpage.css') }}">
+<head>
+    {{-- <meta charset="UTF-8"> --}}
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    {{-- <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"> --}}
+    <link rel="stylesheet" href="{{ asset('css/landingpage.css') }}">
+    <title>LandingPage</title>
+</head>
 
 <body>
+
     <div class="header">
 
         {{-- Title & Logo --}}
@@ -26,7 +33,6 @@
             </div>
         @endauth
     </div>
-
     {{-- Content --}}
     <div class="content">
         {{-- slogan --}}
@@ -38,42 +44,47 @@
         {{-- Button --}}
         <div class="button-wrapper">
             @if (auth()->guest())
-                <button class="button-33" role="button"><a class="button-link" href="/register">Get
-                        Started</a></button>
-                <button class="button-33" role="button"> <a class="button-link" href="/login">Login Now</a></button>
+                <a class="button-link button-33" href="/register">Get
+                    Started</a>
+                <a class="button-link button-33" href="/login">Login Now</a>
             @else
-                <button class="button-33" role="button"> <a class="button-link" href="/dashboard">Go to
-                        Dashboard</a></button>
+                <a class="button-link button-33" href="/dashboard">Go to
+                    Dashboard</a>
+                {{-- <button class="button-33" role="button"> </button> --}}
             @endif
         </div>
 
-        {{-- Img Transaction --}}
-        <div class="Content-Transaction" data-aos="fade-right" data-aos-duration="1000">
-            <img class="img-transaction" src="{{ asset('img/transaction.png') }}">
-            <div class="img-slogan">
-                <h1>Easy way to</h1>
-                <h1>Add transaction</h1>
-            </div>
-        </div>
+        <div class="Content-About">
 
-        {{-- img History --}}
-        <div class="Content-History" data-aos="fade-left" data-aos-duration="1000">
-            <div class="img-slogan">
-                <h1>Easy way to check</h1>
-                <h1>Financial statement</h1>
+            {{-- Img Transaction --}}
+            <div class="Content-Transaction" data-aos="fade-right" data-aos-duration="1000">
+                <img class="img-transaction" src="{{ asset('img/transaction.jpg') }}">
+                <div class="img-slogan">
+                    <h1>Easy way to</h1>
+                    <h1>Add transaction</h1>
+                </div>
             </div>
-            <img class="img-History" src="{{ asset('img/history.png') }}">
+
+            {{-- img History --}}
+            <div class="Content-History" data-aos="fade-left" data-aos-duration="1000">
+                <img class="img-History" src="{{ asset('img/history.jpg') }}">
+                <div class="img-slogan">
+                    <h1>Easy way to check</h1>
+                    <h1>Financial statement</h1>
+                </div>
+            </div>
+
+            {{-- Img Insight --}}
+            <div class="Content-Insight" data-aos="fade-right" data-aos-duration="1000">
+                <img class="img-Insight" src="{{ asset('img/insight.jpg') }}">
+                <div class="img-slogan">
+                    <h1>Easy way to check</h1>
+                    <h1>Income and expense</h1>
+                </div>
+            </div>
         </div>
     </div>
 
-    {{-- Img Insight --}}
-    <div class="Content-Insight" data-aos="fade-right" data-aos-duration="1000">
-        <img class="img-Insight" src="{{ asset('img/insight.jpg') }}">
-        <div class="img-slogan">
-            <h1>Easy way to check</h1>
-            <h1>Income and expense</h1>
-        </div>
-    </div>
 
 
     {{-- JS AOS --}}

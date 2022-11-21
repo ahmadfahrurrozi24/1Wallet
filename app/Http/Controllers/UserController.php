@@ -6,13 +6,19 @@ use App\Helper\Helper;
 use App\Http\Requests\UserRequest;
 use App\Models\User;
 use App\Rules\PasswordIsSame;
+use Illuminate\Auth\Access\AuthorizationException;
+use Illuminate\Auth\Events\PasswordReset;
+use Illuminate\Auth\Events\Registered;
+use Illuminate\Auth\Events\Verified;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\File as FacadesFile;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Password;
 use Illuminate\Support\Facades\Response as FacadesResponse;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Validation\Rules\File;
+use Illuminate\Support\Str;
 
 class UserController extends Controller
 {
@@ -120,8 +126,10 @@ class UserController extends Controller
         unset($data["balance"]);
         unset($data["_token"]);
 
-        User::create($data);
-        return redirect()->to("login")->with("message", "Register success, please login!");
+        $user = User::create($data);
+        event(new Registered($user));
+
+        return redirect()->to("login")->with("message", "Register success, please verify your email address first!");
     }
 
     public function signIn(Request $request)
@@ -174,7 +182,9 @@ class UserController extends Controller
             "password" => "required|min:8|max:15",
             "confirm-password" => "required|same:password"
         ], [
-            "confirm-password.same" => "The confirm password and new password must match."
+            "current-password.required" => "The current password field is required..",
+            "confirm-password.required" => "The confirm password field is required..",
+            "confirm-password.same" => "The confirm password must match."
         ]);
         $data = $request->except(["current-password", "confirm-password"]);
         $data["password"] = Hash::make($data["password"]);
@@ -182,5 +192,76 @@ class UserController extends Controller
         User::find(auth()->id())->update($data);
 
         return redirect()->back()->with("message", "Password successfully changed.");
+    }
+
+    public function verifyUser(Request $request)
+    {
+        $user = User::find($request->route('id'));
+        if (auth()->check()) {
+            if ($user->id != auth()->id()) return redirect()->to("/dashboard");
+        }
+
+        if (!hash_equals((string) $request->route('hash'), sha1($user->getEmailForVerification()))) {
+            throw new AuthorizationException();
+        }
+
+        if ($user->markEmailAsVerified()) {
+            event(new Verified($user));
+        }
+
+        if (auth()->guest()) {
+            return redirect("/login")->with("message", "Your email has been verified, please login to continue !");
+        }
+
+        return redirect()->to("/dashboard")->with("message", "Your email has been verified.");
+    }
+
+    public function forgotPassword()
+    {
+        return view('auth.forgot-password', ["title" => "Forgot Password"]);
+    }
+
+    public function sendLinkPassword(Request $request)
+    {
+        $request->validate(['email' => 'required|email']);
+
+        $status = Password::sendResetLink(
+            $request->only('email')
+        );
+
+        return $status === Password::RESET_LINK_SENT
+            ? back()->with(['message' => __($status)])
+            : back()->withErrors(['email' => __($status)]);
+    }
+
+    public function resetPassword($token)
+    {
+        return view('auth.reset-password', ["title" => "Reset Password", "token" => $token]);
+    }
+
+    public function resettingPassword(Request $request)
+    {
+        $request->validate([
+            'token' => 'required',
+            'email' => 'required|email',
+            'password' => 'required|min:8|confirmed',
+        ]);
+
+        $status = Password::reset(
+            $request->only('email', 'password', 'password_confirmation', 'token'),
+            function ($user, $password) {
+                $user->forceFill([
+                    'password' => Hash::make($password)
+                ])->setRememberToken(Str::random(60));
+
+                $user->save();
+
+                event(new PasswordReset($user));
+            }
+        );
+
+        return $status === Password::PASSWORD_RESET
+            ? redirect()->route('login')->with('message', __($status))
+            : back()->withErrors(['email' => [__($status)]]);
     }
 }
