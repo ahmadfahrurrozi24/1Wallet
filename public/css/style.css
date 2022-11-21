@@ -11,13 +11,11 @@ body {
     position: relative;
     min-height: 100vh;
     width: 100%;
-    /* overflow: hidden; */
 }
 
 /* slide navbar */
 .dashboard-content {
     position: absolute;
-    /* height: 100%; */
     width: calc(100% - 78px);
     left: 78px;
     transition: all 0.5s ease;
@@ -34,9 +32,6 @@ body {
 }
 
 .wrapper {
-    /* background-color: brown; */
-    /* display: flex; */
-    /* justify-content: center; */
     margin: 10px;
 }
 
@@ -51,7 +46,6 @@ body {
 }
 
 .box-dashboard {
-    /* width: 380px; */
     flex-grow: 1;
     border-radius: 10px;
     background-image: linear-gradient(
@@ -604,7 +598,6 @@ body {
 }
 
 .box-insight {
-    /* width: 380px; */
     flex-grow: 1;
     border-radius: 10px;
     background-image: linear-gradient(
@@ -616,7 +609,6 @@ body {
     padding: 20px;
     display: flex;
     flex-direction: column;
-    /* justify-content: center; */
     gap: 30px;
     color: white;
 }

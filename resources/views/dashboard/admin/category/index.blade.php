@@ -5,9 +5,7 @@
 @section('content')
     <div class="wrapper">
         <div class="create-title">
-            <a href="/dashboard/admin/category/create">
-                <h2>Create Category
-            </a>
+            <button class="button-36" role="button"> <a href="/dashboard/admin/category/create">Create Category</a> </button>
         </div>
         <div class="table-wrapper">
             <table>

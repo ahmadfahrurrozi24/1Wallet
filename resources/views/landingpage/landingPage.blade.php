@@ -2,7 +2,6 @@
     {{-- <meta charset="UTF-8"> --}}
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    {{-- <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"> --}}
     <link rel="stylesheet" href="{{ asset('css/landingpage.css') }}">
     <title>LandingPage</title>
 </head>
@@ -15,15 +14,6 @@
         <div class="Title">
             <img class="logo" src="{{ asset('img/logo.png') }}" />
             <h2>1Wallet</h2>
-
-            {{-- Navbar --}}
-            {{-- <div class="navbar">
-            <ul>
-                <li><a class="login" href="/login">Sign In</a></li>
-                <li><a href="/register">Sign Up</a></li>
-                <li><a href="#about">About Us</a></li>
-              </ul>
-        </div> --}}
         </div>
         @auth
             <div class="user-information">
@@ -36,7 +26,7 @@
     {{-- Content --}}
     <div class="content">
         {{-- slogan --}}
-        <div class="slogan" data-aos="fade-up" data-aos-duration="1000">
+        <div class="slogan">
             <h1>Simple way to manage money for</h1>
             <h1>Everyone anywhere and anytime</h1>
         </div>
@@ -50,6 +40,7 @@
             @else
                 <a class="button-link button-33" href="/dashboard">Go to
                     Dashboard</a>
+                <a class="button-link button-33" href="/dashboard">Logout</a>
                 {{-- <button class="button-33" role="button"> </button> --}}
             @endif
         </div>
@@ -57,7 +48,7 @@
         <div class="Content-About">
 
             {{-- Img Transaction --}}
-            <div class="Content-Transaction" data-aos="fade-right" data-aos-duration="1000">
+            <div class="Content-Transaction">
                 <img class="img-transaction" src="{{ asset('img/transaction.jpg') }}">
                 <div class="img-slogan">
                     <h1>Easy way to</h1>
@@ -66,7 +57,7 @@
             </div>
 
             {{-- img History --}}
-            <div class="Content-History" data-aos="fade-left" data-aos-duration="1000">
+            <div class="Content-History">
                 <img class="img-History" src="{{ asset('img/history.jpg') }}">
                 <div class="img-slogan">
                     <h1>Easy way to check</h1>
@@ -75,8 +66,8 @@
             </div>
 
             {{-- Img Insight --}}
-            <div class="Content-Insight" data-aos="fade-right" data-aos-duration="1000">
-                <img class="img-Insight" src="{{ asset('img/insight.jpg') }}">
+            <div class="Content-Insight">
+                <img class="img-Insight" src="{{ asset('img/dashboard.jpg') }}">
                 <div class="img-slogan">
                     <h1>Easy way to check</h1>
                     <h1>Income and expense</h1>
@@ -85,12 +76,4 @@
         </div>
     </div>
 
-
-
-    {{-- JS AOS --}}
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-
-    <script>
-        AOS.init();
-    </script>
 </body>
