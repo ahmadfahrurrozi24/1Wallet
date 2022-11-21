@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
+use App\Models\Type;
 
 class CategoryController extends Controller
 {
@@ -13,7 +14,11 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        //
+        $data = [
+            "title" => "Category",
+        ];
+
+        return view("dashboard.admin.category.index", $data);
     }
 
     /**
@@ -23,7 +28,13 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        //
+        $data = [
+            "title" => "Category Add",
+            "categories" => Category::all(),
+            "types" => Type::with("category")->get()
+        ];
+
+        return view("dashboard.admin.category.create", $data);
     }
 
     /**
@@ -32,7 +43,7 @@ class CategoryController extends Controller
      * @param  \App\Http\Requests\StoreCategoryRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store( $request)
+    public function store($request)
     {
         //
     }
@@ -65,7 +76,7 @@ class CategoryController extends Controller
      * @param  \App\Models\Category  $category
      * @return \Illuminate\Http\Response
      */
-    public function update( $request, Category $category)
+    public function update($request, Category $category)
     {
         //
     }

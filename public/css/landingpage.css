@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap");
+
 * {
     margin: 0;
     padding: 0;
@@ -7,14 +9,16 @@
 
 body {
     overflow-x: hidden;
-    background-color: rgb(9, 11, 69);
+    background-image: linear-gradient(to right, #6927e5, #17eaa7);
+    /* background-repeat: no-repeat; */
+    /* background-size: cover; */
     position: relative;
-    min-height: 100vh;
+    /* min-height: 100vh; */
+    height: 800px;
     width: 100%;
 }
 
 .header {
-    background-color: rgb(21, 23, 99);
     display: flex;
     padding: 0 10px;
     justify-content: space-between;
@@ -85,6 +89,36 @@ h2 {
     background-color: rgb(37, 39, 191);
 } */
 
+/* Background */
+/* .bg {
+    animation: slide 3s ease-in-out infinite alternate;
+    background-image: linear-gradient(
+        -60deg,
+        rgb(154, 203, 222) 50%,
+        rgb(3, 95, 207) 30%
+    );
+    bottom: 0;
+    left: -50%;
+    opacity: 0.5;
+    position: fixed;
+    right: -50%;
+    top: 0;
+    z-index: -1;
+}
+
+.bg2 {
+    animation-direction: alternate-reverse;
+    animation-duration: 4s;
+}
+
+.bg3 {
+    animation-duration: 5s;
+} */
+
+.content {
+    margin-top: 20px;
+}
+
 /* Content */
 .slogan {
     margin-top: 160px;
@@ -101,7 +135,7 @@ h2 {
 }
 
 .button-33 {
-    background-color: rgb(43 48 255);
+    background-color: white;
     border-radius: 100px;
     box-shadow: rgba(44, 56, 187, 0.372) 0 -25px 18px -14px inset,
         rgba(44, 56, 187, 0.372) 0 1px 2px, rgba(44, 56, 187, 0.372) 0 2px 4px,
@@ -131,13 +165,15 @@ h2 {
 }
 
 .button-link {
+    font-weight: bold;
     text-decoration: none;
-    color: white;
+    color: black;
 }
 
 /* Transaction */
 
 .Content-Transaction {
+    justify-content: center;
     align-items: center;
     box-sizing: border-box;
     padding: 40px;
@@ -149,7 +185,7 @@ h2 {
 .img-transaction {
     border-radius: 12px;
     width: 600px;
-    height: 350px;
+    height: 300px;
 }
 
 .img-slogan {
@@ -158,7 +194,7 @@ h2 {
 
 /* History */
 .Content-History {
-    float: right;
+    justify-content: center;
     align-items: center;
     box-sizing: border-box;
     padding: 40px;
@@ -170,15 +206,16 @@ h2 {
 .img-History {
     border-radius: 12px;
     width: 600px;
-    height: 350px;
+    height: 300px;
 }
 
 /* Insight */
 .Content-Insight {
+    justify-content: center;
     align-items: center;
     box-sizing: border-box;
     padding: 40px;
-    margin-top: 850px;
+    margin-top: 200px;
     display: flex;
     gap: 20px;
 }
@@ -186,9 +223,128 @@ h2 {
 .img-Insight {
     border-radius: 12px;
     width: 600px;
-    height: 350px;
+    height: 300px;
 }
 
 /* Mobile Responsive */
+@media screen and (max-width: 860px) {
+    .Content-Transaction {
+        justify-content: center;
+        margin-top: 100px;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .Content-History {
+        margin-top: 100px;
+        justify-content: center;
+        /* margin-left: 60px; */
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .Content-Insight {
+        justify-content: center;
+        margin-top: 100px;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .img-slogan {
+        font-size: 10px;
+    }
+
+    .img-transaction {
+        width: 400px;
+        height: 200px;
+    }
+
+    .img-History {
+        width: 400px;
+        height: 200px;
+    }
+
+    .img-Insight {
+        width: 400px;
+        height: 200px;
+    }
+}
+
 @media screen and (max-width: 515px) {
+    .header {
+        width: 100%;
+        height: 60px;
+        /* background-color: aquamarine; */
+    }
+
+    h2 {
+        font-size: 15px;
+    }
+
+    .logo {
+        width: 40px;
+        height: 40px;
+    }
+
+    .user-image {
+        width: 30px;
+        height: 30px;
+    }
+
+    /* .slogan {
+       
+    } */
+
+    .button-33 {
+        padding: 13px 23px;
+    }
+
+    .button-link {
+        font-size: 20px;
+    }
+
+    .slogan {
+        margin-top: 50px;
+        font-size: 12px;
+        justify-content: center;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .Content-Transaction {
+        margin-top: 100px;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .Content-History {
+        margin-top: 150px;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .Content-Insight {
+        margin-top: 150px;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .img-transaction {
+        width: 300px;
+        height: 150px;
+    }
+
+    .img-slogan {
+        font-size: 10px;
+    }
+
+    .img-History {
+        width: 300px;
+        height: 150px;
+    }
+
+    .img-Insight {
+        width: 300px;
+        height: 150px;
+    }
 }

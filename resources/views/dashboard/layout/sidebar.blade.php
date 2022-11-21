@@ -43,12 +43,14 @@
                 <span class="name">Profile</span>
             </a>
         </li>
-        <li>
-            <a href="/dashboard/admin/category">
-                <i class='bx bxs-user-badge'></i>
-                <span class="name">Category</span>
-            </a>
-        </li>
+        @if (auth()->user()->role->id == 1)
+            <li>
+                <a href="/dashboard/admin/category">
+                    <i class='bx bxs-user-badge'></i>
+                    <span class="name">Category</span>
+                </a>
+            </li>
+        @endif
         <li>
             <form action="/logout" method="POST">
                 @csrf
