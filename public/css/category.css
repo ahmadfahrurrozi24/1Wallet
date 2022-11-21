@@ -1,5 +1,5 @@
 .wrapper-category {
-    margin-top: 40px;
+    margin-top: 90px;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -25,8 +25,6 @@
     display: flex;
     width: 100%;
     gap: 10px;
-    /* flex-wrap: wrap; */
-    /* justify-content: center; */
 }
 
 .category-select-item {
@@ -95,4 +93,17 @@
 .category-input-item input:focus {
     outline: none;
     border: 2px solid rgb(81, 12, 219);
+}
+
+@media screen and (max-width: 860px) {
+}
+
+@media screen and (max-width: 515px) {
+    .container-category {
+        width: 100%;
+    }
+
+    .category-select {
+        flex-wrap: wrap;
+    }
 }
