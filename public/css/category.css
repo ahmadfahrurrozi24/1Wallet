@@ -96,3 +96,16 @@
     outline: none;
     border: 2px solid rgb(81, 12, 219);
 }
+
+@media screen and (max-width: 860px) {
+}
+
+@media screen and (max-width: 515px) {
+    .container-category {
+        width: 100%;
+    }
+
+    .category-select {
+        flex-wrap: wrap;
+    }
+}

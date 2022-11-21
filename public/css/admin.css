@@ -1,0 +1,63 @@
+.create-title {
+    color: white;
+    margin: auto;
+    margin-top: 120px;
+    width: 800px;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+.table-wrapper {
+    margin-top: 40px;
+}
+
+table {
+    border-spacing: 1;
+    border-collapse: collapse;
+    background: rgb(228, 228, 228);
+    border-radius: 6px;
+    overflow: hidden;
+    max-width: 800px;
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+}
+
+table * {
+    position: relative;
+}
+table td,
+table th {
+    padding-left: 8px;
+}
+table thead tr {
+    height: 60px;
+    background-image: linear-gradient(to right, #6927e5, #17eaa7);
+    font-size: 16px;
+}
+table tbody tr {
+    height: 48px;
+    border-bottom: 1px solid #b1b2af;
+}
+table tbody tr:last-child {
+    border: 0;
+}
+table td,
+table th {
+    text-align: left;
+}
+table td.l,
+table th.l {
+    text-align: right;
+}
+table td.c,
+table th.c {
+    text-align: center;
+}
+table td.r,
+table th.r {
+    text-align: center;
+}
