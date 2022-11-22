@@ -78,7 +78,7 @@ h2 {
 
 .button-33 {
     background-color: white;
-    width: 16%;
+    width: 200px;
     border-radius: 100px;
     box-shadow: rgba(44, 56, 187, 0.372) 0 -25px 18px -14px inset,
         rgba(44, 56, 187, 0.372) 0 1px 2px, rgba(44, 56, 187, 0.372) 0 2px 4px,
@@ -147,6 +147,10 @@ h2 {
     gap: 20px;
 }
 
+.Content-History:nth-child(2){
+    flex-direction: row-reverse;
+}
+
 .img-History {
     border-radius: 12px;
     width: 600px;
@@ -160,7 +164,6 @@ h2 {
     box-sizing: border-box;
     padding: 40px;
     margin-top: 200px;
-    margin-left: 40px;
     display: flex;
     gap: 20px;
 }
@@ -267,14 +270,14 @@ h2 {
     }
 
     .Content-History {
-        margin-right: 30px;
+        margin: auto;
         margin-top: 150px;
         display: flex;
         flex-wrap: wrap;
     }
 
     .Content-Insight {
-        margin-right: 30px;
+        margin: auto;
         margin-top: 150px;
         display: flex;
         flex-wrap: wrap;
