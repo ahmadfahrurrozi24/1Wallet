@@ -8,17 +8,10 @@
 [![GitHub Branches](https://badgen.net/github/branches/ahmadfahrurrozi24/1Wallet)](https://github.com/ahmadfahrurrozi24/1Wallet/) 
 
 
-# _Wallet is a expense manager for building user interfaces_.
-
-·Declarative: Wallets make it easy to create interactive UIs. Design simple views for each state in your app, and Wallet will efficiently update and render the right components as your data changes. Declarative views make your code more predictable, easier to understand, and easier
-
-·Component Based: Build encapsulated components that manage their own state, then structure them to create complex UIs. Because component logic is written in JavaScript instead of you can easily pass rich data through your app and keep state away from the DOM.
-
-·Learn Once, Write Anywhere: So you can develop new features in Wallet without rewriting existing code. Wallet can also render on the server using Node and run mobile apps using My Wallets.
-You can find the Wallet documentation on the website.
+# _Wallet is a manager and expenses_
 
 
-# _Check out the Getting Started page for a quick feature._
+# _Check out the page for fast features only in my wallet._
 
 ## _Fitur 1Wallet_
            
@@ -34,9 +27,8 @@ You can find the Wallet documentation on the website.
 
 ## _Profit One-Wallet:_
 
-Transactions made easier:
-Compared to using coins or paper currency, the transaction process using e-Wallet is relatively faster.
-You only need to scan the barcode that has been provided, without having to take out a wallet or physical money to make payments.
+So, you can use the wallet feature without having to come to an ATM. 
+Compared to using paper currency or coins, transactions are easier and faster only in my wallet.
 
 .Examples such as Payment:
 
