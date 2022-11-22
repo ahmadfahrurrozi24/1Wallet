@@ -68,11 +68,9 @@ You only need to scan the barcode that has been provided, without having to take
 
 
 
-[![forthebadge made-with-go](http://ForTheBadge.com/images/badges/made-with-go.svg)](http://127.0.0.1:8000/register)     
-
 
 
 
 # _✨Thanks, see you next time everyone✨_
 
-[![saythanks](https://img.shields.io/badge/say-thanks-ff69b4.svg)](https://github.com/ahmadfahrurrozi24?tab=repositories/to/ahmadfahrurrozi24)
+[![saythanks](https://img.shields.io/badge/say-thanks-ff69b4.svg)](https://github.com/)
