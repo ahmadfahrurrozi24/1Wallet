@@ -9,8 +9,8 @@
         }
 
         /* .user {
-                            height: 0;
-                        } */
+                                height: 0;
+                            } */
     </style>
 @endsection
 
@@ -25,7 +25,8 @@
             <div class="user">
                 <div class="email">
                     <i class='bx bx-envelope bx-flip-horizontal'></i>
-                    <input type="email" placeholder="Your Email" value="{{ old('email') }}" name="email">
+                    <input type="email" placeholder="Your Email" value="{{ old('email', request('email')) }}"
+                        name="email">
                 </div>
                 <div class="password">
                     <i class='bx bxs-key'></i>
