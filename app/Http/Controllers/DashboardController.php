@@ -23,7 +23,7 @@ class DashboardController extends Controller
 
     public function history()
     {
-        $records = Record::MyLastTransaction()->filter(request(["t"]))->paginate(10);
+        $records = Record::MyLastTransaction()->latest()->filter(request(["t"]))->paginate(10);
 
         $data = [
             "title" => "History",
