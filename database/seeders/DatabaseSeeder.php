@@ -28,6 +28,7 @@ class DatabaseSeeder extends Seeder
             'email' => 'diandra@gmail.com',
             "password" => '$2y$10$lyHoIWuzoQ1n3yFTd83F1e7ajzCEMXRkzMXaCwQZWYFUlL2VFowfa',
             "role_id" => 1,
+            "email_verified_at" => now(),
             "current_balance" => 120000,
             "first_balance" => 120000
         ]);

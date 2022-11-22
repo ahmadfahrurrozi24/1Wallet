@@ -3,7 +3,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="{{ asset('css/landingpage.css') }}">
-    <title>LandingPage</title>
+    <title>1Wallet</title>
 </head>
 
 <body>
@@ -40,7 +40,13 @@
             @else
                 <a class="button-link button-33" href="/dashboard">Go to
                     Dashboard</a>
-                <a class="button-link button-33" href="/dashboard">Logout</a>
+                <form action="/logout" method="POST">
+                    @csrf
+                    <button type="submit" class="button-link button-33">
+                        Logout
+                    </button>
+                </form>
+                {{-- <a class="" href="/dashboard">Logout</a> --}}
                 {{-- <button class="button-33" role="button"> </button> --}}
             @endif
         </div>
