@@ -49,7 +49,7 @@ Route::middleware("auth")->group(function () {
         Route::put("/profile", [UserController::class, "update"]);
         Route::post("/profile/changepassword", [UserController::class, "changePassword"]);
         // Route::get('/admin/category', [DashboardController::class, "categoryAdmin"]);
-        Route::resource('admin/category', CategoryController::class)->middleware("isAdmin");
+        Route::resource('admin/category', CategoryController::class)->except(["show", "delete"])->middleware("isAdmin");
     });
 
     Route::get("/imgprofile/{path}", [UserController::class, "profileImageShow"]);
