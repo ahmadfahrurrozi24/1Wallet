@@ -64,13 +64,24 @@ h2 {
 }
 
 .user-information {
+    box-sizing: border-box;
+    margin-right: 17px; 
+    display: flex;  
+    align-items: center;
+    height: 60px;
+}
+.info{
     display: flex;
-    /* width: 100px; */
     align-items: center;
     justify-content: center;
     padding: 5px;
     gap: 10px;
+    text-decoration: none;
 }
+.info:hover h2{
+    color: rgba(255, 255, 255, 0.89);
+}
+
 
 .content {
     margin-top: 20px;

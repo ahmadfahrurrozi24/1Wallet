@@ -16,11 +16,13 @@
             <h2>1Wallet</h2>
         </div>
         @auth
-            <div class="user-information">
+        <div class="user-information">
+            <a href="/dashboard/profile" class="info">
                 <div class="user-image" style="background-image:url(@avatar(auth()->user()->profile_image))">
                 </div>
                 <h2>{{ auth()->user()->name }}</h2>
-            </div>
+            </a>
+        </div>
         @endauth
     </div>
     {{-- Content --}}
