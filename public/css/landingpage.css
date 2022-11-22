@@ -7,6 +7,20 @@
     font-family: "Roboto", sans-serif;
 }
 
+::-webkit-scrollbar {
+    width: 13px;
+    background: #17eaa7;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #5f24ce;
+    border-radius: 15px;
+}
+
+::-webkit-scrollbar-thumb:hover{
+    background: #228566;
+}
+
 body {
     overflow-x: hidden;
     background-image: linear-gradient(to right, #6927e5, #17eaa7);
@@ -36,6 +50,7 @@ body {
 h2 {
     color: white;
 }
+
 
 .user-image {
     width: 35px;
@@ -113,22 +128,26 @@ h2 {
     color: black;
 }
 
+.Content-About p{
+    font-size: 20px;
+}
+
 /* Transaction */
 
 .Content-Transaction {
-    justify-content: center;
-    align-items: center;
-    box-sizing: border-box;
     padding: 40px;
+    box-sizing: border-box;
     margin-top: 200px;
     display: flex;
+    justify-content: center;
+    align-items: center;
     gap: 20px;
 }
 
 .img-transaction {
-    border-radius: 12px;
     width: 600px;
     height: 300px;
+    border-radius: 12px;
 }
 
 .img-slogan {
@@ -137,13 +156,12 @@ h2 {
 
 /* History */
 .Content-History {
+    padding: 40px;
+    box-sizing: border-box;
+    margin-top: 200px;
+    display: flex;
     justify-content: center;
     align-items: center;
-    box-sizing: border-box;
-    padding: 40px;
-    margin-top: 200px;
-    margin-left: 40px;
-    display: flex;
     gap: 20px;
 }
 
@@ -152,27 +170,44 @@ h2 {
 }
 
 .img-History {
-    border-radius: 12px;
     width: 600px;
     height: 300px;
+    border-radius: 12px;
 }
 
 /* Insight */
 .Content-Insight {
+    padding: 40px;
+    box-sizing: border-box;
+    margin-top: 200px;
+    margin-bottom: 80px;
+    display: flex;
     justify-content: center;
     align-items: center;
-    box-sizing: border-box;
-    padding: 40px;
-    margin-top: 200px;
-    display: flex;
     gap: 20px;
 }
 
 .img-Insight {
-    border-radius: 12px;
-    width: 600px;
     height: 300px;
+    width: 600px;
+    border-radius: 12px;
 }
+
+.footer{
+    width: 100%;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer p{
+    width: 80%;
+    font-size: 17px;
+    text-align: center;
+    color: white;
+}
+
 
 /* Mobile Responsive */
 @media screen and (max-width: 860px) {
@@ -180,28 +215,31 @@ h2 {
         justify-content: center;
         padding: 13px 23px;
         width: 175px;
-        /* margin-right: 12px; */
+    }
+
+    .Content-About p{
+        width: 400px;
+        margin: auto;
     }
 
     .Content-Transaction {
-        justify-content: center;
         margin-top: 100px;
         display: flex;
+        justify-content: center;
         flex-wrap: wrap;
     }
 
     .Content-History {
         margin-top: 100px;
-        justify-content: center;
-        /* margin-left: 60px; */
         display: flex;
+        justify-content: center;
         flex-wrap: wrap;
     }
 
     .Content-Insight {
-        justify-content: center;
         margin-top: 100px;
         display: flex;
+        justify-content: center;
         flex-wrap: wrap;
     }
 
@@ -246,9 +284,9 @@ h2 {
     }
 
     .button-33 {
+        width: 135px;
         justify-content: center;
         padding: 13px 23px;
-        width: 135px;
     }
 
     .button-link {
@@ -258,9 +296,19 @@ h2 {
     .slogan {
         margin-top: 50px;
         font-size: 10px;
-        justify-content: center;
         display: flex;
+        justify-content: center;
         flex-wrap: wrap;
+    }
+
+    .Content-About h1{
+        width: 300px;
+        font-size: 23px;
+    }
+
+    .Content-About p{
+        width: 300px;
+        margin: auto;
     }
 
     .Content-Transaction {
@@ -271,14 +319,14 @@ h2 {
 
     .Content-History {
         margin: auto;
-        margin-top: 150px;
+        margin-top: 50px;
         display: flex;
         flex-wrap: wrap;
     }
 
     .Content-Insight {
         margin: auto;
-        margin-top: 150px;
+        margin-top: 50px;
         display: flex;
         flex-wrap: wrap;
     }
@@ -300,5 +348,9 @@ h2 {
     .img-Insight {
         width: 300px;
         height: 150px;
+    }
+
+    .footer p{
+        font-size: 14px;
     }
 }
