@@ -5,34 +5,34 @@
 
 ## Features in 1Wallet
            
- -Authentication and authorization         <img align="right" src="https://cdn.dribbble.com/users/1162077/screenshots/3848914/programmer.gif" width="260px">
+ - Authentication and authorization         <img align="right" src="https://cdn.dribbble.com/users/1162077/screenshots/3848914/programmer.gif" width="260px">
  
- -Record income and expenses
+ - Record income and expenses
  
- -Review income and expense history
+ - Review income and expense history
  
- -Categorize recorded income and expenses
+ - Categorize recorded income and expenses
  
- -Can delete or change categories of income and expenses that have been recorded
+ - Can delete or change categories of income and expenses that have been recorded
 
-## _Profit One-Wallet:_
+## Profit One-Wallet
 
 So, you can use the wallet feature without having to come to an ATM. 
 Compared to using paper currency or coins, transactions are easier and faster only in my wallet.
 
-.Examples such as Payment:
+- Examples such as Payment:
 
-·Shopping
+- Shopping
 
-·Food & Beverage
+- Food & Beverage
 
-·Water Bill
+- Water Bill
 
-.Transportation
+- Transportation
 
-# _We have interesting features on the website_
+# We have interesting features on the website
 
-## _Here's an example of this feature:_
+## Here's an example of this feature
 
 
 
