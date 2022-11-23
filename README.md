@@ -1,29 +1,19 @@
-<img src="https://raw.githubusercontent.com/ahmadfahrurrozi24/1Wallet/tester/public/img/logo.png" width="150px">
+<p align="center"><img src="https://raw.githubusercontent.com/ahmadfahrurrozi24/1Wallet/tester/public/img/logo.png" width="150px"></p>
 
-# 1Wallet Expense Manager  
+## About 1Wallet
+1Wallet is a web Daily Expenses Manager to easily manage your money anytime and everywhere with a user-friendly interface
 
-
-## [My Wallet](http://127.0.0.1:8000/)         [![GitHub](https://badgen.net/badge/icon/github?icon=github&label)](https://github.com/ahmadfahrurrozi24/1Wallet)
-
-[![GitHub Branches](https://badgen.net/github/branches/ahmadfahrurrozi24/1Wallet)](https://github.com/ahmadfahrurrozi24/1Wallet/) 
-
-
-# _Wallet is a manager and expenses_
-
-
-# _Check out the page for fast features only in my wallet._
-
-## _Fitur 1Wallet_
+## Features in 1Wallet
            
- -Dasboard                       <img align="right" src="https://cdn.dribbble.com/users/1162077/screenshots/3848914/programmer.gif" width="260px">
+ -Authentication and authorization         <img align="right" src="https://cdn.dribbble.com/users/1162077/screenshots/3848914/programmer.gif" width="260px">
  
- -History  
+ -Record income and expenses
  
- -Add Record
+ -Review income and expense history
  
- -Insight
+ -Categorize recorded income and expenses
  
- -User Profile
+ -Can delete or change categories of income and expenses that have been recorded
 
 ## _Profit One-Wallet:_
 
