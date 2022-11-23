@@ -48,12 +48,7 @@ body {
 .box-dashboard {
     flex-grow: 1;
     border-radius: 10px;
-    background-image: linear-gradient(
-        to right,
-        rgb(9, 11, 69),
-        rgb(21, 23, 99),
-        rgb(40, 41, 131)
-    );
+    background-image: linear-gradient(to right, #6927e5, #17eaa7);
     padding: 20px;
     display: flex;
     flex-direction: column;
@@ -72,11 +67,7 @@ body {
     position: fixed;
     width: calc(100% - 78px);
     height: 60px;
-    background-image: linear-gradient(
-        to right,
-        rgb(9, 11, 69),
-        rgb(21, 23, 99)
-    );
+    background-color: rgb(15, 19, 146);
     color: white;
     display: flex;
     justify-content: space-between;
@@ -409,7 +400,7 @@ body {
 }
 
 .select-box .option-container {
-    background: rgb(21, 23, 99);
+    background: rgb(53, 57, 183);
     color: white;
     max-height: 0;
     width: 100%;
@@ -421,7 +412,7 @@ body {
 }
 
 .selected {
-    background: rgb(21, 23, 99);
+    background: rgb(53, 57, 183);
     border-radius: 12px;
     margin-bottom: 6px;
     color: white;
@@ -600,12 +591,7 @@ body {
 .box-insight {
     flex-grow: 1;
     border-radius: 10px;
-    background-image: linear-gradient(
-        to right,
-        rgb(9, 11, 69),
-        rgb(21, 23, 99),
-        rgb(40, 41, 131)
-    );
+    background-image: linear-gradient(to right, #6927e5, #17eaa7);
     padding: 20px;
     display: flex;
     flex-direction: column;
