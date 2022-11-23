@@ -24,7 +24,7 @@
                             <td>Expense</td>
                             <td>Fuel Cost</td>
                             <td>
-                                <div class="Action"> <a class="delete" href=""><i class='bx bx-trash'></i></a>
+                                <div class="Action">
                                     <a class="edit" href=""><i class='bx bxs-edit'></i></a>
                                 </div>
                             </td>
@@ -37,7 +37,7 @@
                             <td>Income</td>
                             <td>Entertainment</td>
                             <td>
-                                <div class="Action"> <a class="delete" href=""><i class='bx bx-trash'></i></a>
+                                <div class="Action">
                                     <a class="edit" href=""><i class='bx bxs-edit'></i></a>
                                 </div>
                             </td>
@@ -49,7 +49,7 @@
                             <td>Income</td>
                             <td>Clothes</td>
                             <td>
-                                <div class="Action"> <a class="delete" href=""><i class='bx bx-trash'></i></a>
+                                <div class="Action">
                                     <a class="edit" href=""><i class='bx bxs-edit'></i></a>
                                 </div>
                             </td>
@@ -61,7 +61,7 @@
                             <td>Expense</td>
                             <td>Food & Baverage</td>
                             <td>
-                                <div class="Action"> <a class="delete" href=""><i class='bx bx-trash'></i></a>
+                                <div class="Action">
                                     <a class="edit" href=""><i class='bx bxs-edit'></i></a>
                                 </div>
                             </td>

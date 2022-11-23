@@ -245,14 +245,11 @@ body {
     height: 0;
     padding: 0 20px;
     background-image: linear-gradient(92.88deg, #6927e5de, #17eaa7e8);
-    /* background-color: rgb(9, 11, 69); */
-    /* background-color: rgb(34, 36, 173); */
     transition: all 0.5s;
     overflow-y: hidden;
     color: white;
     border-radius: 0 0 12px 12px;
     z-index: -1;
-    /* position: relative; */
 }
 
 .accordion .contentbx.active .history {
