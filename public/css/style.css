@@ -411,7 +411,8 @@ body {
 }
 
 .select-box .option-container {
-    background: rgb(53, 57, 183);
+    /* background: rgb(53, 57, 183); */
+    background-image: linear-gradient(92.88deg, #6927e5de, #17eaa7e8);
     color: white;
     max-height: 0;
     width: 100%;
@@ -423,7 +424,8 @@ body {
 }
 
 .selected {
-    background: rgb(53, 57, 183);
+    /* background: rgb(53, 57, 183); */
+    background: linear-gradient(92.88deg, #6927e5, #17eaa7);
     border-radius: 12px;
     margin-bottom: 6px;
     color: white;
@@ -448,8 +450,6 @@ body {
 .select-box .option-container.active {
     max-height: 130px;
     opacity: 1;
-    overflow: auto;
-    /* overflow-y: auto; */
 }
 
 .select-box .selected.is-option {
@@ -471,12 +471,12 @@ body {
 
 .select-box .option-container::-webkit-scrollbar {
     width: 8px;
-    background: rgb(9, 11, 69);
+    /* background: rgb(9, 11, 69); */
     border-radius: 0 8px 8px 0;
 }
 
 .select-box .option-container::-webkit-scrollbar-thumb {
-    background: rgb(35, 38, 145);
+    /* background: rgb(35, 38, 145); */
     border-radius: 0 8px 8px 0;
 }
 
@@ -505,10 +505,12 @@ body {
 }
 
 .select-box .option:hover {
-    background: rgb(43, 45, 141);
+    /* background: rgb(43, 45, 141); */
+    background-color: rgba(0,0,0,0.2);
 }
 .select-box .option.option-selected {
-    background-color: rgb(43 48 255);
+    /* background-color: rgb(43 48 255); */
+    background-color: rgba(0,0,0,0.1);
 }
 
 .select-box label {
