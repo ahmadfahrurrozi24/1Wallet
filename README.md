@@ -1,4 +1,4 @@
-<p align="center"><img src="https://raw.githubusercontent.com/ahmadfahrurrozi24/1Wallet/tester/public/img/logo.png" width="150px"></p>
+<p align="center"><a href=""><img src="https://raw.githubusercontent.com/ahmadfahrurrozi24/1Wallet/tester/public/img/logo.png" width="150px"></a></p>
 
 ## About 1Wallet
 1Wallet is a web Daily Expenses Manager to easily manage your money anytime and everywhere with a user-friendly interface
@@ -14,6 +14,8 @@
  - Categorize recorded income and expenses
  
  - Can delete or change categories of income and expenses that have been recorded
+ 
+## Technology used
 
 ## Profit One-Wallet
 
