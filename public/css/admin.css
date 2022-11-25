@@ -5,7 +5,8 @@ a {
 
 /* Button */
 .button-36 {
-    background: rgb(21, 23, 99);
+    /* background: rgb(21, 23, 99); */
+    background-image: linear-gradient(to right, #6927e5, #17eaa7);
     border-radius: 12px;
     border-style: none;
     box-sizing: border-box;
@@ -31,37 +32,30 @@ a {
 }
 
 .table-wrapper {
-    margin-top: 20px;
-    width: 100%;
-    max-width: 800px;
-    margin: 0 auto;
+    width: 800px;
+    margin: 80px auto;
 }
 
 table {
-    margin-top: 20px;
+    width: 100%;
+    margin-top: 30px;
+    border-radius: 12px;
     border-spacing: 1;
     border-collapse: collapse;
     /* background: rgb(228, 228, 228); */
     background-image: linear-gradient(92.88deg, #6927e5de, #17eaa7e8);
-    border-radius: 12px;
     overflow: hidden;
-    /* max-width: 800px; */
-    width: 100%;
-    /* margin: 0 auto; */
-    position: relative;
     color: white;
 }
 
-table * {
-    position: relative;
-}
 table td,
 table th {
     padding-left: 20px;
 }
 table thead tr {
     height: 60px;
-    background: rgb(21, 23, 99);
+    /* background: rgb(21, 23, 99); */
+    background-image: linear-gradient(to right, #6927e5, #17eaa7);
     font-size: 16px;
 }
 table tbody tr {
@@ -132,17 +126,25 @@ th {
     border-radius: 5px;
 }
 
-@media screen and (max-width: 860px) {
+@media screen and (max-width: 1100px) {
+    .table-wrapper{
+        width: 600px;
+    }
+
+}
+@media screen and (max-width: 865px) {
+    .table-wrapper{
+        width: 500px;
+    }
 }
 
 @media screen and (max-width: 515px) {
     .button-36 {
-        /* padding: 0 2.6rem; */
-        /* height: 2.5rem; */
         font-size: 15px;
     }
 
     .table-wrapper {
+        width: 100%;
         margin-top: 80px !important;
     }
 }
