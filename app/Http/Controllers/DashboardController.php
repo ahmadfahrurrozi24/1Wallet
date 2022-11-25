@@ -42,7 +42,11 @@ class DashboardController extends Controller
             "recordTotal" => Record::MyTotal(),
             "categoryChartData" => Category::CategoryChart(),
             "recordTotal" => Record::MyTotal(),
-            "weekChartData" => Record::WeekRecordTotal()
+            "weekChartData" => Record::WeekRecordTotal(),
+            "available" => [
+                "expense" => Record::GetOnlyExpense()->count(),
+                "income" => Record::GetOnlyIncome()->count(),
+            ]
         ];
 
         return view("dashboard.insight", $data);

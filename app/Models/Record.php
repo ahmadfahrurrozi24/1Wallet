@@ -154,7 +154,7 @@ class Record extends Model
         ];
     }
 
-    private function getOnlyExpense()
+    public function scopeGetOnlyExpense()
     {
         return $this->where("user_id", auth()->id())->whereHas("category", function ($q) {
             $q->whereHas("type", function ($q) {
@@ -163,7 +163,7 @@ class Record extends Model
         });
     }
 
-    private function getOnlyIncome()
+    public function scopeGetOnlyIncome()
     {
         return $this->where("user_id", auth()->id())->whereHas("category", function ($q) {
             $q->whereHas("type", function ($q) {

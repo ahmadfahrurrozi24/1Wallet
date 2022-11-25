@@ -36,16 +36,20 @@
 
             <div class="pieWrap">
                 {{-- Expense Pie Chart --}}
-                <div class="piechart-">
-                    <h3>Expense</h3>
-                    <canvas id="ExpenseChart"></canvas>
-                </div>
+                @if ($available['expense'])
+                    <div class="piechart-">
+                        <h3>Expense</h3>
+                        <canvas id="ExpenseChart"></canvas>
+                    </div>
+                @endif
 
                 {{-- Income Pie Chart --}}
-                <div class="piechart-">
-                    <h3>Income</h3>
-                    <canvas id="IncomeChart"></canvas>
-                </div>
+                @if ($available['income'])
+                    <div class="piechart-">
+                        <h3>Income</h3>
+                        <canvas id="IncomeChart"></canvas>
+                    </div>
+                @endif
             </div>
         </div>
 
