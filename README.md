@@ -15,8 +15,6 @@
  
  - Can delete or change categories of income and expenses that have been recorded
  
-## Technology used
-
 ## Profit One-Wallet
 
 So, you can use the wallet feature without having to come to an ATM. 
@@ -49,6 +47,9 @@ Compared to using paper currency or coins, transactions are easier and faster on
 ### _·Easy way to Add transaction_     
 <img align="lower" src="https://raw.githubusercontent.com/ahmadfahrurrozi24/1Wallet/main/public/img/transaction.png" width="370px">
 
+
+# Technology used
+<p align="center"><img src="https://raw.githubusercontent.com/ahmadfahrurrozi24/1Wallet/tester/public/img/technology 1wallet.png"></p>
 
 
 
