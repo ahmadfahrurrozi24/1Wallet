@@ -13,7 +13,7 @@
     justify-content: center;
     align-items: center;
     gap: 5px;
-    background-image: linear-gradient(90deg, rgb(6, 8, 51), rgb(17, 19, 83));
+    background-image: linear-gradient(to right, #6927e5, #17eaa7);
     font-family: "Roboto", sans-serif;
     color: white;
 }
