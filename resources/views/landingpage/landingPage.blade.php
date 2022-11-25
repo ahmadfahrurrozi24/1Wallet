@@ -49,15 +49,16 @@
 
         <div class="Content-About">
 
-            {{-- Img Transaction --}}
-            <div class="Content-Transaction">
-                <img class="img-transaction" src="{{ asset('img/transaction.jpg') }}">
+            {{-- Img Insight --}}
+            <div class="Content-Insight">
+                <img class="img-Insight" src="{{ asset('img/dashboard.jpg') }}">
                 <div class="img-slogan">
-                    <h1>Easy way to Add transaction</h1>
-                    <p>It will take a few minutes to record your daily transactions. choose a category that is clear and
-                        tailored to your Expenses such as: Food, Shopping or Income: Salary, Gifts.</p>
+                    <h1>Easy way to check Income and expense</h1>
+                    <p>it takes seconds to start efficient management performance indicator, are you ready to manage
+                        your money well?</p>
                 </div>
             </div>
+
 
             {{-- img History --}}
             <div class="Content-History">
@@ -69,15 +70,16 @@
                 </div>
             </div>
 
-            {{-- Img Insight --}}
-            <div class="Content-Insight">
-                <img class="img-Insight" src="{{ asset('img/dashboard.jpg') }}">
+            {{-- Img Transaction --}}
+            <div class="Content-Transaction">
+                <img class="img-transaction" src="{{ asset('img/transaction.jpg') }}">
                 <div class="img-slogan">
-                    <h1>Easy way to check Income and expense</h1>
-                    <p>it takes seconds to start efficient management performance indicator, are you ready to manage
-                        your money well?</p>
+                    <h1>Easy way to Add transaction</h1>
+                    <p>It will take a few minutes to record your daily transactions. choose a category that is clear and
+                        tailored to your Expenses such as: Food, Shopping or Income: Salary, Gifts.</p>
                 </div>
             </div>
+
         </div>
     </div>
     <div class="footer">
