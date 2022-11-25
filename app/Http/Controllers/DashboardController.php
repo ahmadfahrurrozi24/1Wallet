@@ -23,7 +23,7 @@ class DashboardController extends Controller
 
     public function history()
     {
-        $records = Record::MyLastTransaction()->filter(request(["t"]))->paginate(10);
+        $records = Record::MyLastTransaction()->latest()->filter(request(["t"]))->paginate(10);
 
         $data = [
             "title" => "History",
@@ -42,7 +42,11 @@ class DashboardController extends Controller
             "recordTotal" => Record::MyTotal(),
             "categoryChartData" => Category::CategoryChart(),
             "recordTotal" => Record::MyTotal(),
-            "weekChartData" => Record::WeekRecordTotal()
+            "weekChartData" => Record::WeekRecordTotal(),
+            "available" => [
+                "expense" => Record::GetOnlyExpense()->count(),
+                "income" => Record::GetOnlyIncome()->count(),
+            ]
         ];
 
         return view("dashboard.insight", $data);
@@ -55,16 +59,5 @@ class DashboardController extends Controller
         ];
 
         return view("dashboard.profile", $data);
-    }
-
-    public function categoryAdmin()
-    {
-        $data = [
-            "title" => "Category Setting",
-            "categories" => Category::all(),
-            "types" => Type::with("category")->get()
-        ];
-
-        return view("dashboard.admin.category", $data);
     }
 }

@@ -11,13 +11,11 @@ body {
     position: relative;
     min-height: 100vh;
     width: 100%;
-    /* overflow: hidden; */
 }
 
 /* slide navbar */
 .dashboard-content {
     position: absolute;
-    /* height: 100%; */
     width: calc(100% - 78px);
     left: 78px;
     transition: all 0.5s ease;
@@ -34,9 +32,6 @@ body {
 }
 
 .wrapper {
-    /* background-color: brown; */
-    /* display: flex; */
-    /* justify-content: center; */
     margin: 10px;
 }
 
@@ -51,15 +46,9 @@ body {
 }
 
 .box-dashboard {
-    /* width: 380px; */
     flex-grow: 1;
     border-radius: 10px;
-    background-image: linear-gradient(
-        to right,
-        rgb(9, 11, 69),
-        rgb(21, 23, 99),
-        rgb(40, 41, 131)
-    );
+    background-image: linear-gradient(to right, #6927e5, #17eaa7);
     padding: 20px;
     display: flex;
     flex-direction: column;
@@ -78,11 +67,7 @@ body {
     position: fixed;
     width: calc(100% - 78px);
     height: 60px;
-    background-image: linear-gradient(
-        to right,
-        rgb(9, 11, 69),
-        rgb(21, 23, 99)
-    );
+    background-color: rgb(15, 19, 146);
     color: white;
     display: flex;
     justify-content: space-between;
@@ -139,7 +124,8 @@ body {
     width: 600px;
     border-radius: 12px;
     height: auto;
-    background-color: rgb(21, 23, 99);
+    /* background-color: rgb(21, 23, 99); */
+    background-image: linear-gradient(92.88deg, #6927e5, #17eaa7);
     overflow: hidden;
 }
 
@@ -164,7 +150,7 @@ body {
 }
 
 .headbox-history .tabs a.active {
-    background-color: rgb(12, 14, 82);
+    background-color: rgba(0,0,0,0.1);
 }
 
 .headbox-history .transaction {
@@ -218,8 +204,8 @@ body {
 .accordion .contentbx .label {
     position: relative;
     padding: 15px;
-    /* background-color: rgb(21, 23, 99); */
-    background-color: rgb(34, 36, 173);
+    /* background-color: rgb(34, 36, 173); */
+    background-image: linear-gradient(92.88deg, #6927e5, #17eaa7);
     color: white;
     display: flex;
     justify-content: space-between;
@@ -247,8 +233,6 @@ body {
 }
 
 .accordion .contentbx .label.expense-label {
-    /* background-color: rgb(43 48 255); */
-    /* background-color: rgb(51, 57, 243); */
     background-color: rgb(21, 23, 99);
 }
 
@@ -260,14 +244,12 @@ body {
 .accordion .contentbx .history {
     height: 0;
     padding: 0 20px;
-    background-color: rgb(9, 11, 69);
-    /* background-color: rgb(34, 36, 173); */
+    background-image: linear-gradient(92.88deg, #6927e5de, #17eaa7e8);
     transition: all 0.5s;
     overflow-y: hidden;
     color: white;
     border-radius: 0 0 12px 12px;
     z-index: -1;
-    /* position: relative; */
 }
 
 .accordion .contentbx.active .history {
@@ -306,6 +288,12 @@ body {
     justify-content: space-between;
     /* background-color: aqua; */
 }
+.delete-edit form{
+    border-radius: 5px;
+}
+.delete-edit form:hover{
+    background-color: rgba(0,0,0,0.1);
+}
 
 .head-detail button {
     border: none;
@@ -317,20 +305,25 @@ body {
     height: 30px;
     text-decoration: none;
     border-radius: 5px;
-    background-color: rgb(51, 39, 121);
+    /* background-color: rgb(51, 39, 121); */
+    /* background-color:#6927e5; */
+    border: 1px solid white;
+    background: none;
     display: flex;
     justify-content: center;
     align-items: center;
     color: white;
     cursor: pointer;
 }
+
 .head-detail a:nth-child(2) {
-    background-color: rgb(27, 30, 121);
+    /* background-color: rgb(27, 30, 121); */
+    /* background-color:#000000; */
+    border: 1px solid white;
     /* background-color: rgb(30, 172, 30); */
 }
 .head-detail a:hover {
-    /* background-color: rgba(0, 0, 0, 0.87); */
-    opacity: 0.9;
+    background-color: rgba(0, 0, 0, 0.1);
 }
 
 .biaya {
@@ -370,15 +363,18 @@ body {
     align-items: center;
     width: 35px;
     height: 35px;
-    background: rgb(21, 23, 99);
+    /* background: rgb(21, 23, 99); */
+    background-color: rgb(43 48 255);
+    
     text-decoration: none;
 }
 
 .page-link:hover {
     background: rgb(35, 38, 145);
+    /* background: #14b482;  */
 }
 .page-item.active .page-link {
-    background-color: rgb(43 48 255);
+    background:#6927e5;
 }
 
 .page-item.disabled .page-link {
@@ -415,7 +411,7 @@ body {
 }
 
 .select-box .option-container {
-    background: rgb(21, 23, 99);
+    background: rgb(53, 57, 183);
     color: white;
     max-height: 0;
     width: 100%;
@@ -427,7 +423,7 @@ body {
 }
 
 .selected {
-    background: rgb(21, 23, 99);
+    background: rgb(53, 57, 183);
     border-radius: 12px;
     margin-bottom: 6px;
     color: white;
@@ -452,8 +448,6 @@ body {
 .select-box .option-container.active {
     max-height: 130px;
     opacity: 1;
-    overflow: auto;
-    /* overflow-y: auto; */
 }
 
 .select-box .selected.is-option {
@@ -475,12 +469,12 @@ body {
 
 .select-box .option-container::-webkit-scrollbar {
     width: 8px;
-    background: rgb(9, 11, 69);
+    /* background: rgb(9, 11, 69); */
     border-radius: 0 8px 8px 0;
 }
 
 .select-box .option-container::-webkit-scrollbar-thumb {
-    background: rgb(35, 38, 145);
+    /* background: rgb(35, 38, 145); */
     border-radius: 0 8px 8px 0;
 }
 
@@ -509,10 +503,12 @@ body {
 }
 
 .select-box .option:hover {
-    background: rgb(43, 45, 141);
+    /* background: rgb(43, 45, 141); */
+    background-color: rgba(0,0,0,0.2);
 }
 .select-box .option.option-selected {
-    background-color: rgb(43 48 255);
+    /* background-color: rgb(43 48 255); */
+    background-color: rgba(0,0,0,0.1);
 }
 
 .select-box label {
@@ -604,19 +600,12 @@ body {
 }
 
 .box-insight {
-    /* width: 380px; */
     flex-grow: 1;
     border-radius: 10px;
-    background-image: linear-gradient(
-        to right,
-        rgb(9, 11, 69),
-        rgb(21, 23, 99),
-        rgb(40, 41, 131)
-    );
+    background-image: linear-gradient(to right, #6927e5, #17eaa7);
     padding: 20px;
     display: flex;
     flex-direction: column;
-    /* justify-content: center; */
     gap: 30px;
     color: white;
 }

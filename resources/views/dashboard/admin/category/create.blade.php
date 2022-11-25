@@ -17,16 +17,19 @@
                         @endforeach
                     </div>
                 </div>
-                <form action="">
-                    <input type="hidden" name="category_id" class="input-typeId">
+                <form action="{{ route('category.store') }}" method="POST" autocomplete="off">
+                    @csrf
+                    <input type="hidden" name="type_id" value="{{ old('type_id') }}" class="input-typeId">
                     <div class="category-input">
                         <div class="category-input-item">
                             <label for="name">Category Name</label>
-                            <input type="text" placeholder="Name" class="name">
+                            <input type="text" placeholder="Name" value="{{ old('name') }}" name="name"
+                                class="name">
                         </div>
                         <div class="category-input-item">
                             <label for="name">Category Icon <a href="https://boxicons.com/">(search here)</a></label>
-                            <input type="text" placeholder="Icon" class="name">
+                            <input type="text" placeholder="Icon" name="icon" value="{{ old('icon') }}"
+                                class="name">
                         </div>
                         <div class="category-input-item-button">
                             <button type="submit">Add Category</button>
@@ -39,8 +42,17 @@
 @endsection
 @section('js')
     <script>
+        let typeOld = "{{ old('type_id') }}"
         const types = document.querySelectorAll(".category-select-item");
         const typesId = document.querySelector(".input-typeId");
+
+        if (typeOld != "") {
+            types.forEach((elm) => {
+                if (elm.getAttribute("data-typeid") == typeOld) {
+                    elm.classList.add("active")
+                }
+            });
+        }
 
         types.forEach((elm) => {
             elm.addEventListener("click", (e) => {
@@ -49,5 +61,43 @@
                 typesId.value = e.target.dataset.typeid;
             });
         });
+
+        let style = {
+            backgroundImage: `linear-gradient(to right,rgb(81, 12, 219),#FF2400`,
+            color: "white",
+            fontFamily: "Roboto",
+            borderRadius: "10px"
+        }
     </script>
+
+    @error('type_id')
+        <script>
+            Toastify({
+                text: "{{ $message }}",
+                style,
+                gravity: "bottom",
+                position: "center"
+            }).showToast();
+        </script>
+    @enderror
+    @error('name')
+        <script>
+            Toastify({
+                text: "{{ $message }}",
+                style,
+                gravity: "bottom",
+                position: "center"
+            }).showToast();
+        </script>
+    @enderror
+    @error('icon')
+        <script>
+            Toastify({
+                text: "{{ $message }}",
+                style,
+                gravity: "bottom",
+                position: "center"
+            }).showToast();
+        </script>
+    @enderror
 @endsection

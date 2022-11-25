@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\RecordController;
 use App\Http\Controllers\UserController;
@@ -36,7 +37,7 @@ Route::middleware("auth")->group(function () {
         Route::get("/", [DashboardController::class, "index"]);
         Route::get("/history", [DashboardController::class, "history"]);
         Route::get("/insight", [DashboardController::class, "insight"]);
-        Route::get("/admin", function(){
+        Route::get("/admin", function () {
             return view("dashboard.admin", ["title" => "Admin Page"]);
         });
 
@@ -47,7 +48,8 @@ Route::middleware("auth")->group(function () {
         Route::get("/profile", [DashboardController::class, "profile"]);
         Route::put("/profile", [UserController::class, "update"]);
         Route::post("/profile/changepassword", [UserController::class, "changePassword"]);
-        Route::get('/admin/category', [DashboardController::class, "categoryAdmin"]);
+        // Route::get('/admin/category', [DashboardController::class, "categoryAdmin"]);
+        Route::resource('admin/category', CategoryController::class)->except(["show", "delete"])->middleware("isAdmin");
     });
 
     Route::get("/imgprofile/{path}", [UserController::class, "profileImageShow"]);

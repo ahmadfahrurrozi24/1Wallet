@@ -3,6 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
+use App\Models\Type;
+use Illuminate\Http\Request;
+
+use function PHPUnit\Framework\returnSelf;
 
 class CategoryController extends Controller
 {
@@ -13,7 +17,12 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        //
+        $data = [
+            "title" => "Category",
+            "categories" => Category::all(),
+        ];
+
+        return view("dashboard.admin.category.index", $data);
     }
 
     /**
@@ -23,18 +32,37 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        //
+        $data = [
+            "title" => "Category Add",
+            "categories" => Category::all(),
+            "types" => Type::with("category")->get()
+        ];
+
+        return view("dashboard.admin.category.create", $data);
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \App\Http\Requests\StoreCategoryRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store( $request)
+    public function store(Request $request)
     {
-        //
+        $request->validate(
+            [
+                "type_id" => "required",
+                "name" => "required",
+                "icon" => "required",
+            ],
+            [
+                "type_id.required" => "Type must be selected."
+            ]
+        );
+
+        $data = $request->except("_token");
+        Category::create($data);
+
+        return redirect()->route("category.index")->with("message", "Category successfully added.");
     }
 
     /**
@@ -56,7 +84,13 @@ class CategoryController extends Controller
      */
     public function edit(Category $category)
     {
-        //
+        $data = [
+            "title" => "Category Add",
+            "category" => $category,
+            "types" => Type::with("category")->get()
+        ];
+
+        return view("dashboard.admin.category.edit", $data);
     }
 
     /**
@@ -65,9 +99,23 @@ class CategoryController extends Controller
      * @param  \App\Models\Category  $category
      * @return \Illuminate\Http\Response
      */
-    public function update( $request, Category $category)
+    public function update(Request $request, Category $category)
     {
-        //
+        $request->validate(
+            [
+                "type_id" => "required",
+                "name" => "required",
+                "icon" => "required",
+            ],
+            [
+                "type_id.required" => "Type must be selected."
+            ]
+        );
+
+        $data = $request->except("_token");
+        Category::find($category->id)->update($data);
+
+        return redirect()->route("category.index")->with("message", "Category successfully edited.");
     }
 
     /**
@@ -78,6 +126,5 @@ class CategoryController extends Controller
      */
     public function destroy(Category $category)
     {
-        //
     }
 }

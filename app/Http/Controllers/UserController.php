@@ -194,9 +194,9 @@ class UserController extends Controller
         return redirect()->back()->with("message", "Password successfully changed.");
     }
 
-    public function verifyUser(Request $request)
+    public function verifyUser(Request $request, $id)
     {
-        $user = User::find($request->route('id'));
+        $user = User::find($id);
         if (auth()->check()) {
             if ($user->id != auth()->id()) return redirect()->to("/dashboard");
         }

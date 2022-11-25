@@ -71,7 +71,6 @@
                         <small>{{ $message }}</small>
                     @enderror
                 </div>
-                <a href="" class="forgot">Forgot Password</a>
                 <div class="submit">
                     <button type="submit" class="save">Save</button>
                 </div>

@@ -7,13 +7,24 @@
     font-family: "Roboto", sans-serif;
 }
 
+::-webkit-scrollbar {
+    width: 13px;
+    background: #17eaa7;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #5f24ce;
+    border-radius: 15px;
+}
+
+::-webkit-scrollbar-thumb:hover{
+    background: #228566;
+}
+
 body {
     overflow-x: hidden;
     background-image: linear-gradient(to right, #6927e5, #17eaa7);
-    /* background-repeat: no-repeat; */
-    /* background-size: cover; */
     position: relative;
-    /* min-height: 100vh; */
     height: 800px;
     width: 100%;
 }
@@ -28,20 +39,18 @@ body {
 .Title {
     display: flex;
     align-items: center;
-    /* gap: 20px; */
     gap: 10px;
 }
 
 .logo {
-    /* margin-left: 10px; */
     width: 60px;
     height: 60px;
 }
 
 h2 {
-    /* margin-top: 20px; */
     color: white;
 }
+
 
 .user-image {
     width: 35px;
@@ -55,65 +64,24 @@ h2 {
 }
 
 .user-information {
+    box-sizing: border-box;
+    margin-right: 17px; 
+    display: flex;  
+    align-items: center;
+    height: 60px;
+}
+.info{
     display: flex;
-    /* width: 100px; */
     align-items: center;
     justify-content: center;
     padding: 5px;
     gap: 10px;
-}
-
-/* Navbar */
-/* .navbar ul {
-    list-style-type: none;
-    padding: 0;
-    margin-top: 5px;
-    margin-left: 790px;
-    overflow: hidden;
-}
-
-.navbar li {
-    float: right;
-}
-
-.navbar li a {
-    display: block;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
     text-decoration: none;
 }
-
-.navbar li a:hover {
-    border-radius: 12px;
-    background-color: rgb(37, 39, 191);
-} */
-
-/* Background */
-/* .bg {
-    animation: slide 3s ease-in-out infinite alternate;
-    background-image: linear-gradient(
-        -60deg,
-        rgb(154, 203, 222) 50%,
-        rgb(3, 95, 207) 30%
-    );
-    bottom: 0;
-    left: -50%;
-    opacity: 0.5;
-    position: fixed;
-    right: -50%;
-    top: 0;
-    z-index: -1;
+.info:hover h2{
+    color: rgba(255, 255, 255, 0.89);
 }
 
-.bg2 {
-    animation-direction: alternate-reverse;
-    animation-duration: 4s;
-}
-
-.bg3 {
-    animation-duration: 5s;
-} */
 
 .content {
     margin-top: 20px;
@@ -136,6 +104,7 @@ h2 {
 
 .button-33 {
     background-color: white;
+    width: 200px;
     border-radius: 100px;
     box-shadow: rgba(44, 56, 187, 0.372) 0 -25px 18px -14px inset,
         rgba(44, 56, 187, 0.372) 0 1px 2px, rgba(44, 56, 187, 0.372) 0 2px 4px,
@@ -170,22 +139,26 @@ h2 {
     color: black;
 }
 
+.Content-About p{
+    font-size: 20px;
+}
+
 /* Transaction */
 
 .Content-Transaction {
-    justify-content: center;
-    align-items: center;
-    box-sizing: border-box;
     padding: 40px;
+    box-sizing: border-box;
     margin-top: 200px;
     display: flex;
+    justify-content: center;
+    align-items: center;
     gap: 20px;
 }
 
 .img-transaction {
-    border-radius: 12px;
     width: 600px;
     height: 300px;
+    border-radius: 12px;
 }
 
 .img-slogan {
@@ -194,59 +167,90 @@ h2 {
 
 /* History */
 .Content-History {
-    justify-content: center;
-    align-items: center;
-    box-sizing: border-box;
     padding: 40px;
+    box-sizing: border-box;
     margin-top: 200px;
     display: flex;
+    justify-content: center;
+    align-items: center;
     gap: 20px;
 }
 
+.Content-History:nth-child(2){
+    flex-direction: row-reverse;
+}
+
 .img-History {
-    border-radius: 12px;
     width: 600px;
     height: 300px;
+    border-radius: 12px;
 }
 
 /* Insight */
 .Content-Insight {
+    padding: 40px;
+    box-sizing: border-box;
+    margin-top: 200px;
+    margin-bottom: 80px;
+    display: flex;
     justify-content: center;
     align-items: center;
-    box-sizing: border-box;
-    padding: 40px;
-    margin-top: 200px;
-    display: flex;
     gap: 20px;
 }
 
 .img-Insight {
-    border-radius: 12px;
-    width: 600px;
     height: 300px;
+    width: 600px;
+    border-radius: 12px;
 }
+
+.footer{
+    width: 100%;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer p{
+    width: 80%;
+    font-size: 17px;
+    text-align: center;
+    color: white;
+}
+
 
 /* Mobile Responsive */
 @media screen and (max-width: 860px) {
-    .Content-Transaction {
+    .button-33 {
         justify-content: center;
+        padding: 13px 23px;
+        width: 175px;
+    }
+
+    .Content-About p{
+        width: 400px;
+        margin: auto;
+    }
+
+    .Content-Transaction {
         margin-top: 100px;
         display: flex;
+        justify-content: center;
         flex-wrap: wrap;
     }
 
     .Content-History {
         margin-top: 100px;
-        justify-content: center;
-        /* margin-left: 60px; */
         display: flex;
+        justify-content: center;
         flex-wrap: wrap;
     }
 
     .Content-Insight {
-        justify-content: center;
         margin-top: 100px;
         display: flex;
+        justify-content: center;
         flex-wrap: wrap;
     }
 
@@ -274,7 +278,6 @@ h2 {
     .header {
         width: 100%;
         height: 60px;
-        /* background-color: aquamarine; */
     }
 
     h2 {
@@ -291,24 +294,32 @@ h2 {
         height: 30px;
     }
 
-    /* .slogan {
-       
-    } */
-
     .button-33 {
+        width: 135px;
+        justify-content: center;
         padding: 13px 23px;
     }
 
     .button-link {
-        font-size: 20px;
+        font-size: 11px;
     }
 
     .slogan {
         margin-top: 50px;
-        font-size: 12px;
-        justify-content: center;
+        font-size: 10px;
         display: flex;
+        justify-content: center;
         flex-wrap: wrap;
+    }
+
+    .Content-About h1{
+        width: 300px;
+        font-size: 23px;
+    }
+
+    .Content-About p{
+        width: 300px;
+        margin: auto;
     }
 
     .Content-Transaction {
@@ -318,13 +329,15 @@ h2 {
     }
 
     .Content-History {
-        margin-top: 150px;
+        margin: auto;
+        margin-top: 50px;
         display: flex;
         flex-wrap: wrap;
     }
 
     .Content-Insight {
-        margin-top: 150px;
+        margin: auto;
+        margin-top: 50px;
         display: flex;
         flex-wrap: wrap;
     }
@@ -346,5 +359,9 @@ h2 {
     .img-Insight {
         width: 300px;
         height: 150px;
+    }
+
+    .footer p{
+        font-size: 14px;
     }
 }
