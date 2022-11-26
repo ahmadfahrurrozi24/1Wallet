@@ -37,15 +37,15 @@ Compared to using paper currency or coins, transactions are easier and faster on
 
 
 ### _·Easy way to Income and expense_   
-<img align="lower" src="https://raw.githubusercontent.com/ahmadfahrurrozi24/1Wallet/tester/public/img/insight.jpg" width="370px">
+<img align="lower" src="https://raw.githubusercontent.com/ahmadfahrurrozi24/1Wallet/main/public/img/dashboard.jpg" width="370px">
 
 
 ### _·Easy way to check Financial statement_    
-<img align="lower" src="https://raw.githubusercontent.com/ahmadfahrurrozi24/1Wallet/main/public/img/history.png" width="370px">
+<img align="lower" src="https://raw.githubusercontent.com/ahmadfahrurrozi24/1Wallet/main/public/img/history.jpg" width="370px">
 
 
 ### _·Easy way to Add transaction_     
-<img align="lower" src="https://raw.githubusercontent.com/ahmadfahrurrozi24/1Wallet/main/public/img/transaction.png" width="370px">
+<img align="lower" src="https://raw.githubusercontent.com/ahmadfahrurrozi24/1Wallet/main/public/img/transaction.jpg" width="370px">
 
 
 # Technology used
