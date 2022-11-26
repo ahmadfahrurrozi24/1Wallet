@@ -1,11 +1,11 @@
 <p align="center"><a href=""><img src="https://raw.githubusercontent.com/ahmadfahrurrozi24/1Wallet/tester/public/img/logo.png" width="150px"></a></p>
 
-## About 1Wallet
+# About 1Wallet
 1Wallet is a web Daily Expenses Manager to easily manage your money anytime and everywhere with a user-friendly interface
 
 ## Features in 1Wallet
            
- - Authentication and authorization         <img align="right" src="https://cdn.dribbble.com/users/1162077/screenshots/3848914/programmer.gif" width="260px">
+ - Authentication and authorization         
  
  - Record income and expenses
  
@@ -15,36 +15,26 @@
  
  - Can delete or change categories of income and expenses that have been recorded
  
-## Profit One-Wallet
+## Profit in 1Wallet
 
-So, you can use the wallet feature without having to come to an ATM. 
-Compared to using paper currency or coins, transactions are easier and faster only in my wallet.
+💨 Quickly record income and expenses
 
-- Examples such as Payment:
+📋 Recording transaction history clearly and detail
 
-- Shopping
+✨ With an attractive design and user friendly
 
-- Food & Beverage
+So, you can manage your daily income and expenses without having to use note paper. Manage your transactions easier and faster only in 1Wallet.
 
-- Water Bill
+# Preview 1Wallet
 
-- Transportation
-
-# We have interesting features on the website
-
-## Here's an example of this feature
-
-
-
-### _·Easy way to Income and expense_   
+<h3>Manage your income and expenses easily</h3>
 <img align="lower" src="https://raw.githubusercontent.com/ahmadfahrurrozi24/1Wallet/main/public/img/dashboard.jpg" width="370px">
 
-
-### _·Easy way to check Financial statement_    
+<h3>Recording your income and expenses</h3>
 <img align="lower" src="https://raw.githubusercontent.com/ahmadfahrurrozi24/1Wallet/main/public/img/history.jpg" width="370px">
 
 
-### _·Easy way to Add transaction_     
+<h3>Simple way to add transactions</h3>
 <img align="lower" src="https://raw.githubusercontent.com/ahmadfahrurrozi24/1Wallet/main/public/img/transaction.jpg" width="370px">
 
 
@@ -57,5 +47,3 @@ Compared to using paper currency or coins, transactions are easier and faster on
 
 
 # _✨Thanks, see you next time everyone✨_
-
-[![saythanks](https://img.shields.io/badge/say-thanks-ff69b4.svg)](https://github.com/)
