@@ -1,4 +1,4 @@
-<p align="center"><a href=""><img src="https://raw.githubusercontent.com/ahmadfahrurrozi24/1Wallet/tester/public/img/logo.png" width="150px"></a></p>
+< p  align = "center" >< a  href = "" >< img  src = " https://raw.githubusercontent.com/ahmadfahrurrozi24/1Wallet/tester/public/img/logo.png "  width = "150px" > </a> < / p >
 
 # About 1Wallet
 1Wallet is a web Daily Expenses Manager to easily manage your money anytime and everywhere with a user-friendly interface
@@ -25,10 +25,10 @@
 
 So, you can manage your daily income and expenses without having to use note paper. Manage your transactions easier and faster only in 1Wallet.
 
-# Preview 1Wallet
+# Pratinjau 1 Dompet
 
-<h3>Manage your income and expenses easily</h3>
-<img align="lower" src="https://raw.githubusercontent.com/ahmadfahrurrozi24/1Wallet/main/public/img/dashboard.jpg" width="370px">
+< h3 > Kelola pendapatan dan pengeluaran Anda dengan mudah </ h3 >
+< img  align = "lower"  src = " https://raw.githubusercontent.com/ahmadfahrurrozi24/1Wallet/main/public/img/dashboard.jpg "  width = "370px" >
 
 <h3>Recording your income and expenses</h3>
 <img align="lower" src="https://raw.githubusercontent.com/ahmadfahrurrozi24/1Wallet/main/public/img/history.jpg" width="370px">
@@ -38,12 +38,12 @@ So, you can manage your daily income and expenses without having to use note pap
 <img align="lower" src="https://raw.githubusercontent.com/ahmadfahrurrozi24/1Wallet/main/public/img/transaction.jpg" width="370px">
 
 
-# Technology used
+# Teknologi yang digunakan
 <p align="center"><img src="https://raw.githubusercontent.com/ahmadfahrurrozi24/1Wallet/tester/public/img/technology 1wallet.png"></p>
 
 
 
-# _Click This Link Below To Try It_
+# Klik Tautan Di Bawah Ini Untuk Mencobanya
 
    https://onewallet.my.id/
 
