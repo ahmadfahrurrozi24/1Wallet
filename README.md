@@ -1,66 +1,49 @@
-<img src="https://raw.githubusercontent.com/ahmadfahrurrozi24/1Wallet/tester/public/img/logo.png" width="150px">
+<p align="center"><a href=""><img src="https://raw.githubusercontent.com/ahmadfahrurrozi24/1Wallet/tester/public/img/logo.png" width="150px"></a></p>
 
-# 1Wallet Expense Manager [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com) [![made-for-VSCode](https://img.shields.io/badge/Made%20for-VSCode-1f425f.svg)](https://code.visualstudio.com/) [![GitHub commits](https://badgen.net/github/commits/Naereen/Strapdown.js)](https://GitHub.com/ahmadfahrurrozi24/1Wallet/commit/) [![GitHub](https://badgen.net/badge/icon/github?icon=github&label)](https://github.com/ahmadfahrurrozi24/1Wallet)
+# About 1Wallet
+1Wallet is a web Daily Expenses Manager to easily manage your money anytime and everywhere with a user-friendly interface
 
-## My Wallet · (http://127.0.0.1:8000/) [![Open In Collab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Naereen/badges)
+## Features in 1Wallet
+           
+ - Authentication and authorization         
+ 
+ - Record income and expenses
+ 
+ - Review income and expense history
+ 
+ - Categorize recorded income and expenses
+ 
+ - Can delete or change categories of income and expenses that have been recorded
+ 
+## Profit in 1Wallet
 
-[![N|Solid](https://cldup.com/dTxpPi9lDf.thumb.png)](https://nodesource.com/products/nsolid)
+💨 Quickly record income and expenses
 
-[![GitHub Branches](https://badgen.net/github/branches/ahmadfahrurrozi24/1Wallet)](https://github.com/ahmadfahrurrozi24/1Wallet/)
+📋 Recording transaction history clearly and detail
 
-# _Wallet is a expense manager for building user interfaces_.
+✨ With an attractive design and user friendly
 
-·Declarative: Wallets make it easy to create interactive UIs. Design simple views for each state in your app, and Wallet will efficiently update and render the right components as your data changes. Declarative views make your code more predictable, easier to understand, and easier to debug.
+So, you can manage your daily income and expenses without having to use note paper. Manage your transactions easier and faster only in 1Wallet.
 
-·Component Based: Build encapsulated components that manage their own state, then structure them to create complex UIs. Because component logic is written in JavaScript instead of templates, you can easily pass rich data through your app and keep state away from the DOM.
+# Preview 1Wallet
 
-·Learn Once, Write Anywhere: So you can develop new features in React without rewriting existing code. React can also render on the server using Node and run mobile apps using React Native.
-You can find the Wallet documentation on the website.
+<h3>Manage your income and expenses easily</h3>
+<img align="lower" src="https://raw.githubusercontent.com/ahmadfahrurrozi24/1Wallet/main/public/img/dashboard.jpg" width="370px">
 
-# _Check out the Getting Started page for a quick feature._
+<h3>Recording your income and expenses</h3>
+<img align="lower" src="https://raw.githubusercontent.com/ahmadfahrurrozi24/1Wallet/main/public/img/history.jpg" width="370px">
 
-## _Fitur 1Wallet_
 
--Sign UP
+<h3>Simple way to add transactions</h3>
+<img align="lower" src="https://raw.githubusercontent.com/ahmadfahrurrozi24/1Wallet/main/public/img/transaction.jpg" width="370px">
 
--Sign IN <img align="right" src="https://cdn.dribbble.com/users/1162077/screenshots/3848914/programmer.gif" width="330px">
 
--Dasboard
+# Technology used
+<p align="center"><img src="https://raw.githubusercontent.com/ahmadfahrurrozi24/1Wallet/tester/public/img/technology 1wallet.png"></p>
 
--History
 
--Add Record
 
--Insight
 
--User Profile
 
--Log Out
-
-## _Profit One-Wallet:_
-
-Transactions made easier:
-Compared to using coins or paper currency, the transaction process using e-Wallet is relatively faster.
-You only need to scan the barcode that has been provided, without having to take out a wallet or physical money to make payments.
-
-.Examples such as Payment:
-
-·Shopping
-
-·Food & Beverage
-
-·Water Bill
-
-.Transportation
-
-# Examples
-
-## _We have several examples on the website. Here is the first one to get you started:_
-
-### I have updated src/main/resources/assets/src/js/apps/codingtest/expenses/expenses-controller.js and src/main/resources/assets/src/js/apps/codingtest/partials/expenses-content.html . There fore you may need to rebuild the client if using something other than development mode.
-
-[![forthebadge made-with-go](http://ForTheBadge.com/images/badges/made-with-go.svg)](http://127.0.0.1:8000/register)
 
 # _✨Thanks, see you next time everyone✨_
-
-[![saythanks](https://img.shields.io/badge/say-thanks-ff69b4.svg)](https://github.com/ahmadfahrurrozi24?tab=repositories/to/ahmadfahrurrozi24)
