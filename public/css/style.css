@@ -418,7 +418,7 @@ body {
     opacity: 0;
     transition: all 0.4s;
     border-radius: 8px;
-    overflow: hidden;
+    overflow-y: auto;
     order: 1;
 }
 
